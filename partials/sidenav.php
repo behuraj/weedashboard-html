@@ -383,7 +383,7 @@
                 </div>
             </li> -->
 
-            <li class="side-nav-title mt-2">
+            <?php /*<li class="side-nav-title mt-2">
                 More
             </li>
 
@@ -912,14 +912,15 @@
                     </ul>
                 </div>
             </li>
+            */ ?>
         </ul>
 
         <!-- Help Box -->
-        <div class="help-box text-center">
+        <!-- <div class="help-box text-center">
             <h5 class="fw-semibold fs-16">Unlimited Access</h5>
             <p class="mb-3 opacity-75">Upgrade to plan to get access to unlimited reports</p>
             <a href="javascript: void(0);" class="btn btn-danger btn-sm">Upgrade</a>
-        </div>
+        </div> -->
 
         <div class="clearfix"></div>
     </div>
