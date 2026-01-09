@@ -31,22 +31,22 @@
 
                 <div class="row row-cols-xxl-4 row-cols-lg-3 row-cols-md-2 row-cols-1">
                     <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-2 justify-content-between">
-                                    <div>
-                                        <h5 class="text-muted fs-13 fw-bold text-uppercase">
+                        <div class="card border-top border-top-4 border-primary h-100" style="transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-3 justify-content-between">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted fs-13 fw-bold text-uppercase mb-2">
                                             WEE Index</h5>
-                                        <h3 class="my-2 py-1 fw-bold">65</h3>
-                                        <p class="mb-0 text-muted">
+                                        <h3 class="my-2 py-1 fw-bold mb-2">65</h3>
+                                        <p class="mb-0 text-muted small">
                                             <span class="text-danger me-1"><i class="ri-arrow-left-down-box-line"></i>
                                                 9.19%</span>
                                             <span class="text-nowrap">From last year</span>
                                         </p>
                                     </div>
                                     <div class="avatar-xl flex-shrink-0">
-                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-42">
-                                            <iconify-icon icon="solar:bill-list-bold-duotone"></iconify-icon>
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-42 d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                                            <iconify-icon icon="solar:chart-bold-duotone" style="font-size: 32px;"></iconify-icon>
                                         </span>
                                     </div>
                                 </div>
@@ -55,21 +55,21 @@
                     </div><!-- end col -->
 
                     <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-2 justify-content-between">
-                                    <div>
-                                        <h5 class="text-muted fs-13 fw-bold text-uppercase">No of Indicators</h5>
-                                        <h3 class="my-2 py-1 fw-bold">43</h3>
-                                        <p class="mb-0 text-muted">
+                        <div class="card border-top border-top-4 border-success h-100" style="transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-3 justify-content-between">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted fs-13 fw-bold text-uppercase mb-2">No of Indicators</h5>
+                                        <h3 class="my-2 py-1 fw-bold mb-2">43</h3>
+                                        <p class="mb-0 text-muted small">
                                             <span class="text-success me-1"><i class="ri-arrow-left-up-box-line"></i>
                                                 4.67%</span>
                                             <span class="text-nowrap">From last year</span>
                                         </p>
                                     </div>
                                     <div class="avatar-xl flex-shrink-0">
-                                        <span class="avatar-title bg-success-subtle text-success rounded-circle fs-42">
-                                            <iconify-icon icon="solar:wad-of-money-bold-duotone"></iconify-icon>
+                                        <span class="avatar-title bg-success-subtle text-success rounded-circle fs-42 d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                                            <iconify-icon icon="solar:graph-bold-duotone" style="font-size: 32px;"></iconify-icon>
                                         </span>
                                     </div>
                                 </div>
@@ -78,21 +78,21 @@
                     </div><!-- end col -->
 
                     <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-2 justify-content-between">
-                                    <div>
-                                        <h5 class="text-muted fs-13 fw-bold text-uppercase">No of Departments</h5>
-                                        <h3 class="my-2 py-1 fw-bold">71</h3>
-                                        <p class="mb-0 text-muted">
+                        <div class="card border-top border-top-4 border-primary h-100" style="transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-3 justify-content-between">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted fs-13 fw-bold text-uppercase mb-2">No of Departments</h5>
+                                        <h3 class="my-2 py-1 fw-bold mb-2">71</h3>
+                                        <p class="mb-0 text-muted small">
                                             <span class="text-success me-1"><i class="ri-arrow-left-up-box-line"></i>
                                                 2.85%</span>
                                             <span class="text-nowrap">From last year</span>
                                         </p>
                                     </div>
                                     <div class="avatar-xl flex-shrink-0">
-                                        <span class="avatar-title bg-warning-subtle text-warning rounded-circle fs-42">
-                                            <iconify-icon icon="solar:user-plus-bold-duotone"></iconify-icon>
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-42 d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                                            <iconify-icon icon="solar:buildings-bold-duotone" style="font-size: 32px;"></iconify-icon>
                                         </span>
                                     </div>
                                 </div>
@@ -101,21 +101,21 @@
                     </div><!-- end col -->
 
                     <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-2 justify-content-between">
-                                    <div>
-                                        <h5 class="text-muted fs-13 fw-bold text-uppercase">Entrepreneurship</h5>
-                                        <h3 class="my-2 py-1 fw-bold">87</h3>
-                                        <p class="mb-0 text-muted">
+                        <div class="card border-top border-top-4 border-info h-100" style="transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-3 justify-content-between">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted fs-13 fw-bold text-uppercase mb-2">Entrepreneurship</h5>
+                                        <h3 class="my-2 py-1 fw-bold mb-2">87</h3>
+                                        <p class="mb-0 text-muted small">
                                             <span class="text-success me-1"><i class="ri-arrow-left-up-box-line"></i>
                                                 1.32%</span>
                                             <span class="text-nowrap">From last year</span>
                                         </p>
                                     </div>
                                     <div class="avatar-xl flex-shrink-0">
-                                        <span class="avatar-title bg-info-subtle text-info rounded-circle fs-42">
-                                            <iconify-icon icon="solar:sticker-smile-circle-bold-duotone"></iconify-icon>
+                                        <span class="avatar-title bg-info-subtle text-info rounded-circle fs-42 d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                                            <iconify-icon icon="solar:lightbulb-bold-duotone" style="font-size: 32px;"></iconify-icon>
                                         </span>
                                     </div>
                                 </div>
@@ -124,21 +124,21 @@
                     </div><!-- end col -->
 
                     <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-2 justify-content-between">
-                                    <div>
-                                        <h5 class="text-muted fs-13 fw-bold text-uppercase">Employment</h5>
-                                        <h3 class="my-2 py-1 fw-bold">94</h3>
-                                        <p class="mb-0 text-muted">
+                        <div class="card border-top border-top-4 border-primary h-100" style="transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-3 justify-content-between">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted fs-13 fw-bold text-uppercase mb-2">Employment</h5>
+                                        <h3 class="my-2 py-1 fw-bold mb-2">94</h3>
+                                        <p class="mb-0 text-muted small">
                                             <span class="text-danger me-1"><i class="ri-arrow-left-down-box-line"></i>
                                                 9.19%</span>
                                             <span class="text-nowrap">From last year</span>
                                         </p>
                                     </div>
                                     <div class="avatar-xl flex-shrink-0">
-                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-42">
-                                            <iconify-icon icon="solar:bill-list-bold-duotone"></iconify-icon>
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-42 d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                                            <iconify-icon icon="solar:case-bold-duotone" style="font-size: 32px;"></iconify-icon>
                                         </span>
                                     </div>
                                 </div>
@@ -147,21 +147,21 @@
                     </div><!-- end col -->
 
                     <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-2 justify-content-between">
-                                    <div>
-                                        <h5 class="text-muted fs-13 fw-bold text-uppercase">Education & Skilling</h5>
-                                        <h3 class="my-2 py-1 fw-bold">96</h3>
-                                        <p class="mb-0 text-muted">
+                        <div class="card border-top border-top-4 border-success h-100" style="transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-3 justify-content-between">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted fs-13 fw-bold text-uppercase mb-2">Education & Skilling</h5>
+                                        <h3 class="my-2 py-1 fw-bold mb-2">96</h3>
+                                        <p class="mb-0 text-muted small">
                                             <span class="text-success me-1"><i class="ri-arrow-left-up-box-line"></i>
                                                 4.67%</span>
                                             <span class="text-nowrap">From last year</span>
                                         </p>
                                     </div>
                                     <div class="avatar-xl flex-shrink-0">
-                                        <span class="avatar-title bg-success-subtle text-success rounded-circle fs-42">
-                                            <iconify-icon icon="solar:wad-of-money-bold-duotone"></iconify-icon>
+                                        <span class="avatar-title bg-success-subtle text-success rounded-circle fs-42 d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                                            <iconify-icon icon="solar:book-bold-duotone" style="font-size: 32px;"></iconify-icon>
                                         </span>
                                     </div>
                                 </div>
@@ -170,21 +170,21 @@
                     </div><!-- end col -->
 
                     <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-2 justify-content-between">
-                                    <div>
-                                        <h5 class="text-muted fs-13 fw-bold text-uppercase">Livelihood</h5>
-                                        <h3 class="my-2 py-1 fw-bold">66</h3>
-                                        <p class="mb-0 text-muted">
+                        <div class="card border-top border-top-4 border-success h-100" style="transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-3 justify-content-between">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted fs-13 fw-bold text-uppercase mb-2">Livelihood</h5>
+                                        <h3 class="my-2 py-1 fw-bold mb-2">66</h3>
+                                        <p class="mb-0 text-muted small">
                                             <span class="text-success me-1"><i class="ri-arrow-left-up-box-line"></i>
                                                 2.85%</span>
                                             <span class="text-nowrap">From last year</span>
                                         </p>
                                     </div>
                                     <div class="avatar-xl flex-shrink-0">
-                                        <span class="avatar-title bg-warning-subtle text-warning rounded-circle fs-42">
-                                            <iconify-icon icon="solar:user-plus-bold-duotone"></iconify-icon>
+                                        <span class="avatar-title bg-success-subtle text-success rounded-circle fs-42 d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                                            <iconify-icon icon="solar:hand-money-bold-duotone" style="font-size: 32px;"></iconify-icon>
                                         </span>
                                     </div>
                                 </div>
@@ -193,21 +193,21 @@
                     </div><!-- end col -->
 
                     <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-2 justify-content-between">
-                                    <div>
-                                        <h5 class="text-muted fs-13 fw-bold text-uppercase">Mobility, Safety & Inclusive Infra</h5>
-                                        <h3 class="my-2 py-1 fw-bold">77</h3>
-                                        <p class="mb-0 text-muted">
+                        <div class="card border-top border-top-4 border-info h-100" style="transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-3 justify-content-between">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted fs-13 fw-bold text-uppercase mb-2">Mobility, Safety & Inclusive Infra</h5>
+                                        <h3 class="my-2 py-1 fw-bold mb-2">77</h3>
+                                        <p class="mb-0 text-muted small">
                                             <span class="text-success me-1"><i class="ri-arrow-left-up-box-line"></i>
                                                 1.32%</span>
                                             <span class="text-nowrap">From last year</span>
                                         </p>
                                     </div>
                                     <div class="avatar-xl flex-shrink-0">
-                                        <span class="avatar-title bg-info-subtle text-info rounded-circle fs-42">
-                                            <iconify-icon icon="solar:sticker-smile-circle-bold-duotone"></iconify-icon>
+                                        <span class="avatar-title bg-info-subtle text-info rounded-circle fs-42 d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                                            <iconify-icon icon="solar:car-bold-duotone" style="font-size: 32px;"></iconify-icon>
                                         </span>
                                     </div>
                                 </div>
@@ -274,13 +274,15 @@
                             <div class="d-flex card-header justify-content-between align-items-center">
                                 <div>
                                     <!-- <h4 class="header-title">WEE Index Uttar Pradesh Overall Details</h4> -->
-                                    <h5 class="header-subtitle mb-0 mt-1">Agra</h5>
+                                    <h5 class="header-subtitle mb-0 mt-1">District Wise Ranking</h5>
                                 </div>
                                 
                             </div>
 
                             <div class="card-body px-0 pt-0" style="max-height: 504px; overflow-y: auto;">
-                                <div class="border-top border-bottom border-light border-dashed">
+                            <h5 class="header-subtitle mb-3 px-3">Agra</h5>
+                                     
+                            <div class="border-top border-bottom border-light border-dashed">
                                     <div class="row text-center align-items-center">
                                         <div class="col-md-4 col-6">
                                             <p class="text-muted mt-3 mb-1">WEE Index</p>
