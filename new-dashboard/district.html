@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>District Wise - WEE Index Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                </div>
+            </div>
+            <div class="header-center">
+                <h1 class="dashboard-title">WEE Index Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="profile-dropdown">
+                    <button class="profile-btn" id="profileBtn">
+                        <div class="profile-avatar">
+                            <img src="../assets/images/users/avatar-1.jpg" alt="Profile" class="avatar-img">
+                        </div>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                    <div class="dropdown-menu" id="profileMenu">
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-user-line"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-logout-box-line"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="ri-bar-chart-box-line"></i>
+                            <span class="nav-text">WEE Index</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-lightbulb-line"></i>
+                            <span class="nav-text">Entrepreneurship</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-user-line"></i>
+                            <span class="nav-text">Employment</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-book-open-line"></i>
+                            <span class="nav-text">Education & Skilling</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-hand-heart-line"></i>
+                            <span class="nav-text">Livelihood</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-road-map-line"></i>
+                            <span class="nav-text">Mobility, Safety &<br>Inclusive Infra</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="district.html" class="nav-link">
+                            <i class="ri-map-pin-line"></i>
+                            <span class="nav-text">District wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-building-line"></i>
+                            <span class="nav-text">Department wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-camera-line"></i>
+                            <span class="nav-text">UP Snapshot</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-card">
+                        <div class="filter-header">
+                            <h3 class="filter-title">
+                                <i class="ri-filter-3-line"></i>
+                                Filter Data
+                            </h3>
+                        </div>
+                        <div class="filter-body">
+                            <div class="filter-grid">
+                                <div class="filter-item">
+                                    <label for="yearFilter" class="filter-label">
+                                        <i class="ri-calendar-line"></i>
+                                        Year:
+                                    </label>
+                                    <select id="yearFilter" class="filter-select">
+                                        <option value="">All Years</option>
+                                        <option value="2024" selected>2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <label for="districtFilter" class="filter-label">
+                                        <i class="ri-map-pin-line"></i>
+                                        District:
+                                    </label>
+                                    <select id="districtFilter" class="filter-select">
+                                        <option value="">All Districts</option>
+                                        <option value="agra">Agra</option>
+                                        <option value="aligarh">Aligarh</option>
+                                        <option value="ambedkar nagar">Ambedkar Nagar</option>
+                                        <option value="amethi">Amethi</option>
+                                        <option value="amroha">Amroha</option>
+                                        <option value="auraiya">Auraiya</option>
+                                        <option value="ayodhya">Ayodhya</option>
+                                        <option value="azamgarh">Azamgarh</option>
+                                        <option value="badaun">Badaun</option>
+                                        <option value="baghpat">Baghpat</option>
+                                        <option value="bahraich">Bahraich</option>
+                                        <option value="ballia">Ballia</option>
+                                        <option value="balrampur">Balrampur</option>
+                                        <option value="banda">Banda</option>
+                                        <option value="barabanki">Barabanki</option>
+                                        <option value="bareilly">Bareilly</option>
+                                        <option value="basti">Basti</option>
+                                        <option value="bhadohi">Bhadohi</option>
+                                        <option value="bijnor">Bijnor</option>
+                                        <option value="bulandshahar">Bulandshahar</option>
+                                        <option value="chandauli">Chandauli</option>
+                                        <option value="chitrakoot">Chitrakoot</option>
+                                        <option value="deoria">Deoria</option>
+                                        <option value="etah">Etah</option>
+                                        <option value="etawah">Etawah</option>
+                                        <option value="farrukhabad">Farrukhabad</option>
+                                        <option value="fatehpur">Fatehpur</option>
+                                        <option value="firozabad">Firozabad</option>
+                                        <option value="g. b. nagar">G. B. Nagar</option>
+                                        <option value="ghaziabad">Ghaziabad</option>
+                                        <option value="ghazipur">Ghazipur</option>
+                                        <option value="gonda">Gonda</option>
+                                        <option value="gorakhpur">Gorakhpur</option>
+                                        <option value="hamirpur">Hamirpur</option>
+                                        <option value="hapur">Hapur</option>
+                                        <option value="hardoi">Hardoi</option>
+                                        <option value="hathras">Hathras</option>
+                                        <option value="jalaun">Jalaun</option>
+                                        <option value="jaunpur">Jaunpur</option>
+                                        <option value="jhansi">Jhansi</option>
+                                        <option value="kannauj">Kannauj</option>
+                                        <option value="kanpur dehat">Kanpur Dehat</option>
+                                        <option value="kanpur nagar">Kanpur Nagar</option>
+                                        <option value="kasganj">Kasganj</option>
+                                        <option value="kaushambi">Kaushambi</option>
+                                        <option value="kushi nagar">Kushi Nagar</option>
+                                        <option value="lakhimpur kheri">Lakhimpur Kheri</option>
+                                        <option value="lalitpur">Lalitpur</option>
+                                        <option value="lucknow">Lucknow</option>
+                                        <option value="mahoba">Mahoba</option>
+                                        <option value="mahrajganj">Mahrajganj</option>
+                                        <option value="mainpuri">Mainpuri</option>
+                                        <option value="mathura">Mathura</option>
+                                        <option value="mau">Mau</option>
+                                        <option value="meerut">Meerut</option>
+                                        <option value="mirzapur">Mirzapur</option>
+                                        <option value="moradabad">Moradabad</option>
+                                        <option value="muzaffarnagar">Muzaffarnagar</option>
+                                        <option value="pilibhit">Pilibhit</option>
+                                        <option value="pratapgarh">Pratapgarh</option>
+                                        <option value="prayagraj">Prayagraj</option>
+                                        <option value="raebareli">Raebareli</option>
+                                        <option value="rampur">Rampur</option>
+                                        <option value="saharanpur">Saharanpur</option>
+                                        <option value="sambhal">Sambhal</option>
+                                        <option value="sant kabir nagar">Sant Kabir Nagar</option>
+                                        <option value="shahjahanpur">Shahjahanpur</option>
+                                        <option value="shamli">Shamli</option>
+                                        <option value="shrawasti">Shrawasti</option>
+                                        <option value="siddharth nagar">Siddharth Nagar</option>
+                                        <option value="sitapur">Sitapur</option>
+                                        <option value="sonbhadra">Sonbhadra</option>
+                                        <option value="sultanpur">Sultanpur</option>
+                                        <option value="unnao">Unnao</option>
+                                        <option value="varanasi">Varanasi</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <button class="filter-reset-btn" id="resetFilter">
+                                        <i class="ri-refresh-line"></i>
+                                        Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8 Cards Section -->
+                <div class="cards-grid">
+                    <!-- Card 1: WEE Index -->
+                    <div class="stat-card card-primary">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">WEE Index</h5>
+                                <h3 class="card-value">65</h3>
+                                <p class="card-change negative">
+                                    <i class="ri-arrow-down-line"></i>
+                                    <span>9.19%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:chart-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: No of Indicators -->
+                    <div class="stat-card card-success">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">No of Indicators</h5>
+                                <h3 class="card-value">43</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>4.67%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:graph-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: No of Departments -->
+                    <div class="stat-card card-primary">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">No of Departments</h5>
+                                <h3 class="card-value">71</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>2.85%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:buildings-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Entrepreneurship -->
+                    <div class="stat-card card-info">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Entrepreneurship</h5>
+                                <h3 class="card-value">87</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>1.32%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:lightbulb-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Employment -->
+                    <div class="stat-card card-primary">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Employment</h5>
+                                <h3 class="card-value">94</h3>
+                                <p class="card-change negative">
+                                    <i class="ri-arrow-down-line"></i>
+                                    <span>9.19%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:case-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Education & Skilling -->
+                    <div class="stat-card card-success">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Education & Skilling</h5>
+                                <h3 class="card-value">96</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>4.67%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:book-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Livelihood -->
+                    <div class="stat-card card-success">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Livelihood</h5>
+                                <h3 class="card-value">66</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>2.85%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:hand-money-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 8: Mobility, Safety & Inclusive Infra -->
+                    <div class="stat-card card-info">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Mobility, Safety & Inclusive Infra</h5>
+                                <h3 class="card-value">77</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>1.32%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <i class="ri-road-map-line" style="font-size: 48px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrics Sections with Charts -->
+                <div class="metrics-sections">
+                    <!-- Section Tabs -->
+                    <div class="section-tabs-container">
+                        <div class="section-tabs">
+                            <button class="section-tab-btn active" data-section="entrepreneurship">
+                                <i class="ri-lightbulb-line"></i>
+                                Entrepreneurship
+                            </button>
+                            <button class="section-tab-btn" data-section="employment">
+                                <i class="ri-user-line"></i>
+                                Employment
+                            </button>
+                            <button class="section-tab-btn" data-section="education">
+                                <i class="ri-book-open-line"></i>
+                                Education & Skilling
+                            </button>
+                            <button class="section-tab-btn" data-section="livelihood">
+                                <i class="ri-hand-heart-line"></i>
+                                Livelihood
+                            </button>
+                            <button class="section-tab-btn" data-section="mobility">
+                                <i class="ri-road-map-line"></i>
+                                Mobility, Safety & Inclusive Infra
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Section Content -->
+                    <div class="section-content-wrapper">
+                        <!-- Entrepreneurship Section -->
+                        <div class="section-content active" id="section-entrepreneurship">
+                            <div class="charts-grid">
+                                <!-- Chart 1 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of rural SHGs receiving CIF loans from CLFs</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart1" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 2 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women receiving ODOP Margin Money loans</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart2" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 3 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women receiving PMEGP Margin Money loans</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart3" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 4 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women led startups among StartInUP incubatees</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart4" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 5 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women availing StartInUP sustenance allowance</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart5" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 6 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women availing StartInUP prototype grant</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart6" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 7 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among Udyam registered entrepreneurs</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart7" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 8 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Individual SEP loans to women per lakh eligible urban women</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart8" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 9 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of urban SHG loans given to women under SEP</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart9" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Employment Section -->
+                        <div class="section-content" id="section-employment">
+                            <div class="charts-grid">
+                                <!-- Chart 1 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among total DDUGKY placements</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-1" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 2 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among total polytechnic placements</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-2" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 3 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among total engineering placements</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-3" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 4 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among selections via employment exchange Rozgaar Melas</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-4" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 5 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women placed in ITI employment fairs</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-5" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 6 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women registered as Building and Other Construction Labourers</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-6" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 7 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among total SSDF placements</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-7" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education & Skilling Section -->
+                        <div class="section-content" id="section-education">
+                            <div class="charts-grid">
+                                <!-- Chart 1 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled under DDUGKY</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-1" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 2 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women completing DDUGKY out of those enrolled</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-2" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 3 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled in ITIs Government and Private</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-3" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 4 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women completing ITI out of those enrolled</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-4" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 5 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled in paramedical courses</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-5" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 6 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled in polytechnics</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-6" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 7 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women completing polytechnics out of those enrolled</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-7" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 8 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled under SSDF</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-8" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 9 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women completing SSDF out of those enrolled</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-9" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 10 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of girls enrolled in STEM Science in HSS</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-10" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 11 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of girls completing STEM Science in HSS</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-11" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 12 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled under PMKVY</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-12" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 13 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women completing PMKVY out of those enrolled</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-13" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 14 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among engineering college enrollees</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-14" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Livelihood Section -->
+                        <div class="section-content" id="section-livelihood">
+                            <div class="charts-grid">
+                                <!-- Chart 1 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women receiving loans under MYSY</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-1" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 2 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women trained under ODOP Toolkit</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-2" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 3 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of rural households mobilised into SHGs</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-3" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 4 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of rural SHGs availing bank loans</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-4" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 5 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of Community Sakhis achieved against target</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-5" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 6 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of SHGs receiving Revolving Fund</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-6" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 7 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women trained under Vishwakarma Yojana</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-7" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 8 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women receiving second term PM SVANidhi loans</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-8" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 9 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women receiving third term PM SVANidhi loans</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-9" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 10 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women PM SVANidhi beneficiaries with digital activation</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-10" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobility, Safety & Inclusive Infra Section -->
+                        <div class="section-content" id="section-mobility">
+                            <div class="charts-grid">
+                                <!-- Chart 1 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among total bus conductors</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-1" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 2 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of women police per lakh female population</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-2" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 3 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of women Home Guards per lakh female population</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-3" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 4 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of land holdings owned by women</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-4" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 5 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of PMJJBY enrolments per lakh eligible women</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-5" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 6 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of PMSBY enrolments per lakh eligible women</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-6" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 7 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among bus drivers</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-7" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 8 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of functional factory creches per lakh working women</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-8" class="chart-container"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart 9 -->
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of female Prantiya Rakshaks per lakh female population</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-9" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/district.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+</html>

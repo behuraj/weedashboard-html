@@ -1,0 +1,485 @@
+﻿                    <!-- Section Content -->
+                    <div class="section-content-wrapper">
+                        <!-- MSME & Export Promotion Section -->
+                        <div class="section-content active" id="section-msme">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women receiving ODOP Margin Money loans</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart2" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women receiving PMEGP Margin Money loans</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart3" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among Udyam registered entrepreneurs</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart7" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women receiving loans under MYSY</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-1" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women trained under ODOP Toolkit</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-2" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women trained under Vishwakarma Yojana</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-7" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Urban Development Section -->
+                        <div class="section-content" id="section-urban">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Individual SEP loans to women per lakh eligible urban women</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart8" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of urban SHG loans given to women under SEP</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart9" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women receiving second term PM SVANidhi loans</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-8" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women receiving third term PM SVANidhi loans</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-9" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women PM SVANidhi beneficiaries with digital activation</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-10" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vocational Education, Skill Development and Entrepreneurship Section -->
+                        <div class="section-content" id="section-vocational">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among selections via employment exchange Rozgaar Melas</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-4" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women placed in ITI employment fairs</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-5" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among total DDUGKY placements</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-1" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among total SSDF placements</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-7" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled under DDUGKY</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-1" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women completing DDUGKY out of those enrolled</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-2" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled in ITIs Government and Private</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-3" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women completing ITI out of those enrolled</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-4" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled under SSDF</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-8" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women completing SSDF out of those enrolled</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-9" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled under PMKVY</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-12" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women completing PMKVY out of those enrolled</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-13" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- IT & Electronics Section -->
+                        <div class="section-content" id="section-it">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women led startups among StartInUP incubatees</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart4" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women availing StartInUP sustenance allowance</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart5" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women availing StartInUP prototype grant</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart6" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rural Development Section -->
+                        <div class="section-content" id="section-rural">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of rural SHGs receiving CIF loans from CLFs</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart1" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of rural households mobilised into SHGs</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-3" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of rural SHGs availing bank loans</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-4" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of Community Sakhis achieved against target</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-5" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of SHGs receiving Revolving Fund</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-livelihood-6" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Education Section -->
+                        <div class="section-content" id="section-technical">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among total polytechnic placements</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-2" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among total engineering placements</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-3" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled in polytechnics</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-6" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women completing polytechnics out of those enrolled</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-7" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among engineering college enrollees</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-14" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Education Section -->
+                        <div class="section-content" id="section-secondary">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of girls enrolled in STEM Science in HSS</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-10" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of girls completing STEM Science in HSS</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-11" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Medical Education Section -->
+                        <div class="section-content" id="section-medical">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women enrolled in paramedical courses</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-education-5" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transport Section -->
+                        <div class="section-content" id="section-transport">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among total bus conductors</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-1" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women among total bus drivers</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-7" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Home Section -->
+                        <div class="section-content" id="section-home">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of women police per lakh female population</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-2" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Home Guard Section -->
+                        <div class="section-content" id="section-homeguard">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of women Home Guards per lakh female population</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-3" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Revenue Section -->
+                        <div class="section-content" id="section-revenue">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of land holdings owned by women</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-4" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Finance and Institutional Finance Section -->
+                        <div class="section-content" id="section-finance">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of PMJJBY enrolments per lakh eligible women</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-5" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of PMSBY enrolments per lakh eligible women</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-6" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Youth Welfare and Prantiya Rakshak Dal Section -->
+                        <div class="section-content" id="section-youth">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of female Prantiya Rakshaks per lakh female population</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-9" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Labour Section -->
+                        <div class="section-content" id="section-labour">
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Percentage of women registered as Building and Other Construction Labourers</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-employment-6" class="chart-container"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <div class="chart-header">
+                                        <h4 class="chart-title">Number of functional factory creches per lakh working women</h4>
+                                    </div>
+                                    <div class="chart-body">
+                                        <div id="chart-mobility-8" class="chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
