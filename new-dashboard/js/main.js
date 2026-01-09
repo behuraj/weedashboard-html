@@ -30,6 +30,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Submenu Toggle Functionality
+    const submenuToggles = document.querySelectorAll('.submenu-toggle');
+    
+    submenuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const navItem = this.closest('.nav-item');
+            navItem.classList.toggle('submenu-open');
+        });
+    });
+
+    // Submenu Link Click Handler
+    const submenuLinks = document.querySelectorAll('.submenu-link');
+    
+    submenuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Allow navigation to proceed - don't prevent default
+            // Remove active class from all submenu links
+            submenuLinks.forEach(l => l.classList.remove('active'));
+            // Add active class to clicked link
+            this.classList.add('active');
+            // Navigation will happen naturally via href
+        });
+    });
+
     // Tab Switching Functionality
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
