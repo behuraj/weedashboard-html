@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEE Index Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                </div>
+            </div>
+            <div class="header-center">
+                <h1 class="dashboard-title">WEE Index Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="profile-dropdown">
+                    <button class="profile-btn" id="profileBtn">
+                        <div class="profile-avatar">
+                            <img src="../assets/images/users/avatar-1.jpg" alt="Profile" class="avatar-img">
+                        </div>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                    <div class="dropdown-menu" id="profileMenu">
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-user-line"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-logout-box-line"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="ri-bar-chart-box-line"></i>
+                            <span class="nav-text">WEE Index</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-lightbulb-line"></i>
+                            <span class="nav-text">Entrepreneurship</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-user-line"></i>
+                            <span class="nav-text">Employment</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-book-open-line"></i>
+                            <span class="nav-text">Education & Skilling</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-hand-heart-line"></i>
+                            <span class="nav-text">Livelihood</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-road-map-line"></i>
+                            <span class="nav-text">Mobility, Safety &<br>Inclusive Infra</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-map-pin-line"></i>
+                            <span class="nav-text">District wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-building-line"></i>
+                            <span class="nav-text">Department wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-camera-line"></i>
+                            <span class="nav-text">UP Snapshot</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- 8 Cards Section -->
+                <div class="cards-grid">
+                    <!-- Card 1: WEE Index -->
+                    <div class="stat-card card-primary">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">WEE Index</h5>
+                                <h3 class="card-value">65</h3>
+                                <p class="card-change negative">
+                                    <i class="ri-arrow-down-line"></i>
+                                    <span>9.19%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:chart-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: No of Indicators -->
+                    <div class="stat-card card-success">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">No of Indicators</h5>
+                                <h3 class="card-value">43</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>4.67%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:graph-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: No of Departments -->
+                    <div class="stat-card card-primary">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">No of Departments</h5>
+                                <h3 class="card-value">71</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>2.85%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:buildings-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Entrepreneurship -->
+                    <div class="stat-card card-info">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Entrepreneurship</h5>
+                                <h3 class="card-value">87</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>1.32%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:lightbulb-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Employment -->
+                    <div class="stat-card card-primary">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Employment</h5>
+                                <h3 class="card-value">94</h3>
+                                <p class="card-change negative">
+                                    <i class="ri-arrow-down-line"></i>
+                                    <span>9.19%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:case-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Education & Skilling -->
+                    <div class="stat-card card-success">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Education & Skilling</h5>
+                                <h3 class="card-value">96</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>4.67%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:book-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Livelihood -->
+                    <div class="stat-card card-success">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Livelihood</h5>
+                                <h3 class="card-value">66</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>2.85%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:hand-money-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 8: Mobility, Safety & Inclusive Infra -->
+                    <div class="stat-card card-info">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Mobility, Safety & Inclusive Infra</h5>
+                                <h3 class="card-value">77</h3>
+                                <p class="card-change positive">
+                                    <i class="ri-arrow-up-line"></i>
+                                    <span>1.32%</span>
+                                    <span class="change-text">From last year</span>
+                                </p>
+                            </div>
+                            <div class="card-icon">
+                                <i class="ri-road-map-line" style="font-size: 48px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map and District Ranking Section -->
+                <div class="content-section">
+                    <!-- Left: Map Image -->
+                    <div class="map-container">
+                        <div class="map-card">
+                            <div class="map-header">
+                                <div class="tabs-container">
+                                    <button class="tab-btn active" data-tab="entrepreneurship">Entrepreneurship</button>
+                                    <button class="tab-btn" data-tab="employment">Employment</button>
+                                    <button class="tab-btn" data-tab="education">Education</button>
+                                    <button class="tab-btn" data-tab="livelihood">Livelihood</button>
+                                    <button class="tab-btn" data-tab="mobility">Mobility</button>
+                                    <button class="tab-btn" data-tab="wee-index">WEE Index</button>
+                                </div>
+                            </div>
+                            <div class="map-body">
+                                <div class="tab-content active" id="tab-entrepreneurship">
+                                    <img src="../assets/images/wee-index-map.jpeg" alt="Entrepreneurship Map" class="map-image">
+                                </div>
+                                <div class="tab-content" id="tab-employment">
+                                    <img src="../assets/images/wee-index-map.jpeg" alt="Employment Map" class="map-image">
+                                </div>
+                                <div class="tab-content" id="tab-education">
+                                    <img src="../assets/images/wee-index-map.jpeg" alt="Education Map" class="map-image">
+                                </div>
+                                <div class="tab-content" id="tab-livelihood">
+                                    <img src="../assets/images/wee-index-map.jpeg" alt="Livelihood Map" class="map-image">
+                                </div>
+                                <div class="tab-content" id="tab-mobility">
+                                    <img src="../assets/images/wee-index-map.jpeg" alt="Mobility Map" class="map-image">
+                                </div>
+                                <div class="tab-content" id="tab-wee-index">
+                                    <img src="../assets/images/wee-index-map.jpeg" alt="WEE Index Uttar Pradesh Map" class="map-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: District Wise Ranking -->
+                    <div class="ranking-container">
+                        <div class="ranking-card">
+                            <div class="ranking-header">
+                                <h4 class="ranking-title">District Wise Ranking</h4>
+                                <div class="ranking-controls">
+                                    <button class="search-toggle" id="searchToggle" title="Search">
+                                        <i class="ri-search-line"></i>
+                                    </button>
+                                    <div class="search-box" id="searchBox">
+                                        <i class="ri-search-line"></i>
+                                        <input type="text" id="districtSearch" placeholder="Search district..." class="search-input">
+                                    </div>
+                                    <div class="sort-buttons">
+                                        <button class="sort-btn" data-sort="alphabetical" title="Sort Alphabetically">
+                                            <i class="ri-sort-asc"></i>
+                                        </button>
+                                        <button class="sort-btn" data-sort="rank" title="Sort by Rank">
+                                            <i class="ri-trophy-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ranking-body" id="rankingBody">
+                                <!-- District: Agra -->
+                                <div class="district-item" data-district="agra" data-rank="65">
+                                    <h5 class="district-name">Agra</h5>
+                                    <div class="indicators-grid">
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">WEE Index</p>
+                                            <h4 class="indicator-value positive">65</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Employment</p>
+                                            <h4 class="indicator-value negative">94</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Education & Skilling</p>
+                                            <h4 class="indicator-value positive">96</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Livelihood</p>
+                                            <h4 class="indicator-value positive">66</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Mobility, Safety & Inclusive Infra</p>
+                                            <h4 class="indicator-value negative">77</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Entrepreneurship</p>
+                                            <h4 class="indicator-value negative">87</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- District: Aligarh -->
+                                <div class="district-item" data-district="aligarh" data-rank="65">
+                                    <h5 class="district-name">Aligarh</h5>
+                                    <div class="indicators-grid">
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">WEE Index</p>
+                                            <h4 class="indicator-value positive">65</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Employment</p>
+                                            <h4 class="indicator-value negative">94</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Education & Skilling</p>
+                                            <h4 class="indicator-value positive">96</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Livelihood</p>
+                                            <h4 class="indicator-value negative">66</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Mobility, Safety & Inclusive Infra</p>
+                                            <h4 class="indicator-value positive">77</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Entrepreneurship</p>
+                                            <h4 class="indicator-value positive">87</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- District: Ambedkar Nagar -->
+                                <div class="district-item" data-district="ambedkar nagar" data-rank="65">
+                                    <h5 class="district-name">Ambedkar Nagar</h5>
+                                    <div class="indicators-grid">
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">WEE Index</p>
+                                            <h4 class="indicator-value positive">65</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Employment</p>
+                                            <h4 class="indicator-value negative">94</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Education & Skilling</p>
+                                            <h4 class="indicator-value positive">96</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Livelihood</p>
+                                            <h4 class="indicator-value negative">66</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Mobility, Safety & Inclusive Infra</p>
+                                            <h4 class="indicator-value positive">77</h4>
+                                        </div>
+                                        <div class="indicator-item">
+                                            <p class="indicator-label">Entrepreneurship</p>
+                                            <h4 class="indicator-value positive">87</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top 10 and Bottom 10 Districts Section -->
+                <div class="districts-ranking-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Top 10 & Bottom 10 Districts Ranking</h3>
+                    </div>
+
+                    <!-- Metric Tabs -->
+                    <div class="metric-tabs-container">
+                        <div class="metric-tabs">
+                            <button class="metric-tab-btn active" data-metric="wee-index">WEE Index</button>
+                            <button class="metric-tab-btn" data-metric="entrepreneurship">Entrepreneurship</button>
+                            <button class="metric-tab-btn" data-metric="employment">Employment</button>
+                            <button class="metric-tab-btn" data-metric="education">Education</button>
+                            <button class="metric-tab-btn" data-metric="livelihood">Livelihood</button>
+                            <button class="metric-tab-btn" data-metric="mobility">Mobility</button>
+                        </div>
+                    </div>
+
+                    <!-- Metric Content - Image and Lists -->
+                    <div class="metric-content-wrapper">
+                        <!-- WEE Index -->
+                        <div class="metric-content active" id="metric-wee-index">
+                            <div class="metric-content-grid">
+                                <div class="metric-image-container">
+                                    <div class="metric-image-card">
+                                        <img src="../assets/images/wee-index-map.jpeg" alt="WEE Index Map" class="metric-image">
+                                    </div>
+                                </div>
+                                <div class="metric-lists-container">
+                                    <div class="ranking-lists-grid">
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header top">
+                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="top-10-wee-index">
+                                                <!-- Top 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header bottom">
+                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="bottom-10-wee-index">
+                                                <!-- Bottom 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Entrepreneurship -->
+                        <div class="metric-content" id="metric-entrepreneurship">
+                            <div class="metric-content-grid">
+                                <div class="metric-image-container">
+                                    <div class="metric-image-card">
+                                        <img src="../assets/images/wee-index-map.jpeg" alt="Entrepreneurship Map" class="metric-image">
+                                    </div>
+                                </div>
+                                <div class="metric-lists-container">
+                                    <div class="ranking-lists-grid">
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header top">
+                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="top-10-entrepreneurship">
+                                                <!-- Top 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header bottom">
+                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="bottom-10-entrepreneurship">
+                                                <!-- Bottom 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Employment -->
+                        <div class="metric-content" id="metric-employment">
+                            <div class="metric-content-grid">
+                                <div class="metric-image-container">
+                                    <div class="metric-image-card">
+                                        <img src="../assets/images/wee-index-map.jpeg" alt="Employment Map" class="metric-image">
+                                    </div>
+                                </div>
+                                <div class="metric-lists-container">
+                                    <div class="ranking-lists-grid">
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header top">
+                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="top-10-employment">
+                                                <!-- Top 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header bottom">
+                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="bottom-10-employment">
+                                                <!-- Bottom 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education -->
+                        <div class="metric-content" id="metric-education">
+                            <div class="metric-content-grid">
+                                <div class="metric-image-container">
+                                    <div class="metric-image-card">
+                                        <img src="../assets/images/wee-index-map.jpeg" alt="Education Map" class="metric-image">
+                                    </div>
+                                </div>
+                                <div class="metric-lists-container">
+                                    <div class="ranking-lists-grid">
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header top">
+                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="top-10-education">
+                                                <!-- Top 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header bottom">
+                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="bottom-10-education">
+                                                <!-- Bottom 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Livelihood -->
+                        <div class="metric-content" id="metric-livelihood">
+                            <div class="metric-content-grid">
+                                <div class="metric-image-container">
+                                    <div class="metric-image-card">
+                                        <img src="../assets/images/wee-index-map.jpeg" alt="Livelihood Map" class="metric-image">
+                                    </div>
+                                </div>
+                                <div class="metric-lists-container">
+                                    <div class="ranking-lists-grid">
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header top">
+                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="top-10-livelihood">
+                                                <!-- Top 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header bottom">
+                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="bottom-10-livelihood">
+                                                <!-- Bottom 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobility -->
+                        <div class="metric-content" id="metric-mobility">
+                            <div class="metric-content-grid">
+                                <div class="metric-image-container">
+                                    <div class="metric-image-card">
+                                        <img src="../assets/images/wee-index-map.jpeg" alt="Mobility Map" class="metric-image">
+                                    </div>
+                                </div>
+                                <div class="metric-lists-container">
+                                    <div class="ranking-lists-grid">
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header top">
+                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="top-10-mobility">
+                                                <!-- Top 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                        <div class="ranking-list-card">
+                                            <div class="ranking-card-header bottom">
+                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
+                                            </div>
+                                            <div class="ranking-card-body" id="bottom-10-mobility">
+                                                <!-- Bottom 10 will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
