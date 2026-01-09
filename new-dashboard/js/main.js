@@ -172,7 +172,8 @@ document.addEventListener('DOMContentLoaded', function() {
         metrics.forEach(metric => {
             const pairs = districts.map(district => ({
                 district: district,
-                value: Math.floor(Math.random() * 100) + 1 // Values between 1-100
+                value: Math.floor(Math.random() * 100) + 1, // Values between 1-100
+                change: (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 10 + 1) // Random change between -11 to +11
             }));
             
             // Sort by value descending
@@ -196,12 +197,19 @@ document.addEventListener('DOMContentLoaded', function() {
         
         districts.forEach((item, index) => {
             const rank = isTop ? index + 1 : index + 1;
+            const isPositive = item.change > 0;
+            const arrowIcon = isPositive ? 'ri-arrow-up-line' : 'ri-arrow-down-line';
+            const arrowClass = isPositive ? 'arrow-up' : 'arrow-down';
+            
             const districtItem = document.createElement('div');
             districtItem.className = 'district-rank-item';
             districtItem.innerHTML = `
                 <div class="rank-number ${isTop ? 'rank-top' : 'rank-bottom'}">${rank}</div>
                 <div class="rank-district-name">${item.district}</div>
-                <div class="rank-value">${item.value}</div>
+                <div class="rank-value-wrapper">
+                    <div class="rank-value">${item.value}</div>
+                    <i class="${arrowIcon} ${arrowClass}"></i>
+                </div>
             `;
             container.appendChild(districtItem);
         });
