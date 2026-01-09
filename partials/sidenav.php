@@ -97,7 +97,7 @@
             </li> -->
 
             <li class="side-nav-item">
-                <a href="layouts-hover.php" class="side-nav-link">
+                <a href="index.php" class="side-nav-link">
                     <span class="menu-icon"><i class="ri-bar-chart-box-line"></i></span>
                     <span class="menu-text"> WEE Index </span>
                 </a>
