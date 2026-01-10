@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employment - WEE Index Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                </div>
+            </div>
+            <div class="header-center">
+                <h1 class="dashboard-title">WEE Index Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="profile-dropdown">
+                    <button class="profile-btn" id="profileBtn">
+                        <div class="profile-avatar">
+                            <img src="../assets/images/users/avatar-1.jpg" alt="Profile" class="avatar-img">
+                        </div>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                    <div class="dropdown-menu" id="profileMenu">
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-user-line"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-logout-box-line"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-bar-chart-box-line"></i>
+                            <span class="nav-text">WEE Index</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2025</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2024</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2023</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="entrepreneurship.html" class="nav-link">
+                            <i class="ri-lightbulb-line"></i>
+                            <span class="nav-text">Entrepreneurship</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="employment.html" class="nav-link">
+                            <i class="ri-user-line"></i>
+                            <span class="nav-text">Employment</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-book-open-line"></i>
+                            <span class="nav-text">Education & Skilling</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-hand-heart-line"></i>
+                            <span class="nav-text">Livelihood</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-road-map-line"></i>
+                            <span class="nav-text">Mobility, Safety &<br>Inclusive Infra</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="district.html" class="nav-link">
+                            <i class="ri-map-pin-line"></i>
+                            <span class="nav-text">District wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="department.html" class="nav-link">
+                            <i class="ri-building-line"></i>
+                            <span class="nav-text">Department wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="snapshot.html" class="nav-link">
+                            <i class="ri-camera-line"></i>
+                            <span class="nav-text">UP Snapshot</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="indicator.html" class="nav-link">
+                            <i class="ri-bar-chart-2-line"></i>
+                            <span class="nav-text">Indicator wise</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-card">
+                        <div class="filter-header">
+                            <h3 class="filter-title">
+                                <i class="ri-filter-3-line"></i>
+                                Filter Data
+                            </h3>
+                        </div>
+                        <div class="filter-body">
+                            <div class="filter-grid">
+                                <div class="filter-item">
+                                    <label for="yearFilter" class="filter-label">
+                                        <i class="ri-calendar-line"></i>
+                                        Year:
+                                    </label>
+                                    <select id="yearFilter" class="filter-select">
+                                        <option value="2024" selected>2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <label for="districtTypeFilter" class="filter-label">
+                                        <i class="ri-filter-3-line"></i>
+                                        District Type:
+                                    </label>
+                                    <select id="districtTypeFilter" class="filter-select">
+                                        <option value="top10" selected>Top 10</option>
+                                        <option value="bottom10">Bottom 10</option>
+                                        <option value="region">Region</option>
+                                        <option value="aspirational">Aspirational</option>
+                                        <option value="agra-division">Agra Division</option>
+                                        <option value="aligarh-division">Aligarh Division</option>
+                                        <option value="ayodhya-division">Ayodhya Division</option>
+                                        <option value="azamgarh-division">Azamgarh Division</option>
+                                        <option value="bareilly-division">Bareilly Division</option>
+                                        <option value="basti-division">Basti Division</option>
+                                        <option value="chitrakoot-division">Chitrakoot Division</option>
+                                        <option value="devipatan-division">Devipatan Division</option>
+                                        <option value="gorakhpur-division">Gorakhpur Division</option>
+                                        <option value="jhansi-division">Jhansi Division</option>
+                                        <option value="kanpur-division">Kanpur Division</option>
+                                        <option value="lucknow-division">Lucknow Division</option>
+                                        <option value="meerut-division">Meerut Division</option>
+                                        <option value="mirzapur-division">Mirzapur Division</option>
+                                        <option value="moradabad-division">Moradabad Division</option>
+                                        <option value="prayagraj-division">Prayagraj Division</option>
+                                        <option value="saharanpur-division">Saharanpur Division</option>
+                                        <option value="varanasi-division">Varanasi Division</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <button class="filter-reset-btn" id="resetFilter">
+                                        <i class="ri-refresh-line"></i>
+                                        Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employment Charts Section -->
+                <div class="employment-charts-section">
+                    <div class="charts-grid">
+                        <!-- Chart 1: DDUGKY placements -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women among total DDUGKY placements</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="employment-chart-1" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 2: SSDF placements -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women among total SSDF placements</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="employment-chart-2" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 3: Employment exchange Rozgaar Melas -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women among selections via employment exchange Rozgaar Melas</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="employment-chart-3" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 4: ITI employment fairs -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women placed in ITI employment fairs</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="employment-chart-4" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 5: Polytechnic placements -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women among total polytechnic placements</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="employment-chart-5" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 6: Engineering placements -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women among total engineering placements</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="employment-chart-6" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 7: Building and Other Construction Labourers -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women registered as Building and Other Construction Labourers</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="employment-chart-7" class="chart-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/main.js"></script>
+    <script src="js/employment.js"></script>
+</body>
+</html>

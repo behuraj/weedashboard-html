@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrepreneurship - WEE Index Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                </div>
+            </div>
+            <div class="header-center">
+                <h1 class="dashboard-title">WEE Index Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="profile-dropdown">
+                    <button class="profile-btn" id="profileBtn">
+                        <div class="profile-avatar">
+                            <img src="../assets/images/users/avatar-1.jpg" alt="Profile" class="avatar-img">
+                        </div>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                    <div class="dropdown-menu" id="profileMenu">
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-user-line"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-logout-box-line"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-bar-chart-box-line"></i>
+                            <span class="nav-text">WEE Index</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2025</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2024</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2023</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="entrepreneurship.html" class="nav-link">
+                            <i class="ri-lightbulb-line"></i>
+                            <span class="nav-text">Entrepreneurship</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="employment.html" class="nav-link">
+                            <i class="ri-user-line"></i>
+                            <span class="nav-text">Employment</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-book-open-line"></i>
+                            <span class="nav-text">Education & Skilling</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-hand-heart-line"></i>
+                            <span class="nav-text">Livelihood</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-road-map-line"></i>
+                            <span class="nav-text">Mobility, Safety &<br>Inclusive Infra</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="district.html" class="nav-link">
+                            <i class="ri-map-pin-line"></i>
+                            <span class="nav-text">District wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="department.html" class="nav-link">
+                            <i class="ri-building-line"></i>
+                            <span class="nav-text">Department wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="snapshot.html" class="nav-link">
+                            <i class="ri-camera-line"></i>
+                            <span class="nav-text">UP Snapshot</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="indicator.html" class="nav-link">
+                            <i class="ri-bar-chart-2-line"></i>
+                            <span class="nav-text">Indicator wise</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-card">
+                        <div class="filter-header">
+                            <h3 class="filter-title">
+                                <i class="ri-filter-3-line"></i>
+                                Filter Data
+                            </h3>
+                        </div>
+                        <div class="filter-body">
+                            <div class="filter-grid">
+                                <div class="filter-item">
+                                    <label for="yearFilter" class="filter-label">
+                                        <i class="ri-calendar-line"></i>
+                                        Year:
+                                    </label>
+                                    <select id="yearFilter" class="filter-select">
+                                        <option value="2024" selected>2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <label for="districtTypeFilter" class="filter-label">
+                                        <i class="ri-filter-3-line"></i>
+                                        District Type:
+                                    </label>
+                                    <select id="districtTypeFilter" class="filter-select">
+                                        <option value="top10" selected>Top 10</option>
+                                        <option value="bottom10">Bottom 10</option>
+                                        <option value="region">Region</option>
+                                        <option value="aspirational">Aspirational</option>
+                                        <option value="agra-division">Agra Division</option>
+                                        <option value="aligarh-division">Aligarh Division</option>
+                                        <option value="ayodhya-division">Ayodhya Division</option>
+                                        <option value="azamgarh-division">Azamgarh Division</option>
+                                        <option value="bareilly-division">Bareilly Division</option>
+                                        <option value="basti-division">Basti Division</option>
+                                        <option value="chitrakoot-division">Chitrakoot Division</option>
+                                        <option value="devipatan-division">Devipatan Division</option>
+                                        <option value="gorakhpur-division">Gorakhpur Division</option>
+                                        <option value="jhansi-division">Jhansi Division</option>
+                                        <option value="kanpur-division">Kanpur Division</option>
+                                        <option value="lucknow-division">Lucknow Division</option>
+                                        <option value="meerut-division">Meerut Division</option>
+                                        <option value="mirzapur-division">Mirzapur Division</option>
+                                        <option value="moradabad-division">Moradabad Division</option>
+                                        <option value="prayagraj-division">Prayagraj Division</option>
+                                        <option value="saharanpur-division">Saharanpur Division</option>
+                                        <option value="varanasi-division">Varanasi Division</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <label class="filter-label">
+                                        <i class="ri-map-pin-line"></i>
+                                        Districts:
+                                    </label>
+                                    <div class="custom-multi-select">
+                                        <button type="button" class="custom-multi-select-trigger" id="districtMultiSelectBtn">
+                                            <span class="multi-select-placeholder">Select districts...</span>
+                                            <span class="selected-count" id="selectedDistrictsCount" style="display: none;"></span>
+                                            <i class="ri-arrow-down-s-line multi-select-arrow"></i>
+                                        </button>
+                                        <div class="custom-multi-select-dropdown" id="districtMultiSelectDropdown">
+                                            <div class="multi-select-search">
+                                                <input type="text" class="multi-select-search-input" id="districtSearch" placeholder="Search districts...">
+                                            </div>
+                                            <div class="multi-select-options" id="districtMultiSelectOptions">
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="agra" data-district="Agra">
+                                                    <span>Agra</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="aligarh" data-district="Aligarh">
+                                                    <span>Aligarh</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="ambedkar nagar" data-district="Ambedkar Nagar">
+                                                    <span>Ambedkar Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="amethi" data-district="Amethi">
+                                                    <span>Amethi</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="amroha" data-district="Amroha">
+                                                    <span>Amroha</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="auraiya" data-district="Auraiya">
+                                                    <span>Auraiya</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="ayodhya" data-district="Ayodhya">
+                                                    <span>Ayodhya</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="azamgarh" data-district="Azamgarh">
+                                                    <span>Azamgarh</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="badaun" data-district="Badaun">
+                                                    <span>Badaun</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="baghpat" data-district="Baghpat">
+                                                    <span>Baghpat</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="bahraich" data-district="Bahraich">
+                                                    <span>Bahraich</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="ballia" data-district="Ballia">
+                                                    <span>Ballia</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="balrampur" data-district="Balrampur">
+                                                    <span>Balrampur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="banda" data-district="Banda">
+                                                    <span>Banda</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="barabanki" data-district="Barabanki">
+                                                    <span>Barabanki</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="bareilly" data-district="Bareilly">
+                                                    <span>Bareilly</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="basti" data-district="Basti">
+                                                    <span>Basti</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="bhadohi" data-district="Bhadohi">
+                                                    <span>Bhadohi</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="bijnor" data-district="Bijnor">
+                                                    <span>Bijnor</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="bulandshahar" data-district="Bulandshahar">
+                                                    <span>Bulandshahar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="chandauli" data-district="Chandauli">
+                                                    <span>Chandauli</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="chitrakoot" data-district="Chitrakoot">
+                                                    <span>Chitrakoot</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="deoria" data-district="Deoria">
+                                                    <span>Deoria</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="etah" data-district="Etah">
+                                                    <span>Etah</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="etawah" data-district="Etawah">
+                                                    <span>Etawah</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="farrukhabad" data-district="Farrukhabad">
+                                                    <span>Farrukhabad</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="fatehpur" data-district="Fatehpur">
+                                                    <span>Fatehpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="firozabad" data-district="Firozabad">
+                                                    <span>Firozabad</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="gautam buddha nagar" data-district="Gautam Buddha Nagar">
+                                                    <span>Gautam Buddha Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="ghaziabad" data-district="Ghaziabad">
+                                                    <span>Ghaziabad</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="ghazipur" data-district="Ghazipur">
+                                                    <span>Ghazipur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="gonda" data-district="Gonda">
+                                                    <span>Gonda</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="gorakhpur" data-district="Gorakhpur">
+                                                    <span>Gorakhpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="hamirpur" data-district="Hamirpur">
+                                                    <span>Hamirpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="hapur" data-district="Hapur">
+                                                    <span>Hapur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="hardoi" data-district="Hardoi">
+                                                    <span>Hardoi</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="hathras" data-district="Hathras">
+                                                    <span>Hathras</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="jalaun" data-district="Jalaun">
+                                                    <span>Jalaun</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="jaunpur" data-district="Jaunpur">
+                                                    <span>Jaunpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="jhansi" data-district="Jhansi">
+                                                    <span>Jhansi</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kannauj" data-district="Kannauj">
+                                                    <span>Kannauj</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kanpur dehat" data-district="Kanpur Dehat">
+                                                    <span>Kanpur Dehat</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kanpur nagar" data-district="Kanpur Nagar">
+                                                    <span>Kanpur Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kasganj" data-district="Kasganj">
+                                                    <span>Kasganj</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kaushambi" data-district="Kaushambi">
+                                                    <span>Kaushambi</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kushi nagar" data-district="Kushi Nagar">
+                                                    <span>Kushi Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="lakhimpur kheri" data-district="Lakhimpur Kheri">
+                                                    <span>Lakhimpur Kheri</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="lalitpur" data-district="Lalitpur">
+                                                    <span>Lalitpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="lucknow" data-district="Lucknow">
+                                                    <span>Lucknow</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mahoba" data-district="Mahoba">
+                                                    <span>Mahoba</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mahrajganj" data-district="Mahrajganj">
+                                                    <span>Mahrajganj</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mainpuri" data-district="Mainpuri">
+                                                    <span>Mainpuri</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mathura" data-district="Mathura">
+                                                    <span>Mathura</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mau" data-district="Mau">
+                                                    <span>Mau</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="meerut" data-district="Meerut">
+                                                    <span>Meerut</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mirzapur" data-district="Mirzapur">
+                                                    <span>Mirzapur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="moradabad" data-district="Moradabad">
+                                                    <span>Moradabad</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="muzaffarnagar" data-district="Muzaffarnagar">
+                                                    <span>Muzaffarnagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="pilibhit" data-district="Pilibhit">
+                                                    <span>Pilibhit</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="pratapgarh" data-district="Pratapgarh">
+                                                    <span>Pratapgarh</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="prayagraj" data-district="Prayagraj">
+                                                    <span>Prayagraj</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="raebareli" data-district="Raebareli">
+                                                    <span>Raebareli</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="rampur" data-district="Rampur">
+                                                    <span>Rampur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="saharanpur" data-district="Saharanpur">
+                                                    <span>Saharanpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="sambhal" data-district="Sambhal">
+                                                    <span>Sambhal</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="sant kabir nagar" data-district="Sant Kabir Nagar">
+                                                    <span>Sant Kabir Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="shahjahanpur" data-district="Shahjahanpur">
+                                                    <span>Shahjahanpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="shamli" data-district="Shamli">
+                                                    <span>Shamli</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="shrawasti" data-district="Shrawasti">
+                                                    <span>Shrawasti</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="siddharth nagar" data-district="Siddharth Nagar">
+                                                    <span>Siddharth Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="sitapur" data-district="Sitapur">
+                                                    <span>Sitapur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="sonbhadra" data-district="Sonbhadra">
+                                                    <span>Sonbhadra</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="sultanpur" data-district="Sultanpur">
+                                                    <span>Sultanpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="unnao" data-district="Unnao">
+                                                    <span>Unnao</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="varanasi" data-district="Varanasi">
+                                                    <span>Varanasi</span>
+                                                </label>
+                                            </div>
+                                            <div class="multi-select-actions">
+                                                <button type="button" class="multi-select-select-all" id="selectAllDistricts">Select All</button>
+                                                <button type="button" class="multi-select-clear-all" id="clearAllDistricts">Clear All</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter-item">
+                                    <button class="filter-reset-btn" id="resetFilter">
+                                        <i class="ri-refresh-line"></i>
+                                        Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrepreneurship Charts Section -->
+                <div class="entrepreneurship-charts-section">
+                    <div class="charts-grid">
+                        <!-- Chart 1: ODOP Margin Money loans -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women receiving ODOP Margin Money loans</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="entrepreneurship-chart-1" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 2: PMEGP Margin Money loans -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women receiving PMEGP Margin Money loans</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="entrepreneurship-chart-2" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 3: Udyam registered entrepreneurs -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women among Udyam registered entrepreneurs</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="entrepreneurship-chart-3" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 4: MYSY loans -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women receiving loans under MYSY</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="entrepreneurship-chart-4" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 5: ODOP Toolkit training -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women trained under ODOP Toolkit</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="entrepreneurship-chart-5" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 6: Vishwakarma Yojana training -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women trained under Vishwakarma Yojana</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="entrepreneurship-chart-6" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 7: StartInUP incubatees -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women led startups among StartInUP incubatees</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="entrepreneurship-chart-7" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 8: StartInUP sustenance allowance -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women availing StartInUP sustenance allowance</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="entrepreneurship-chart-8" class="chart-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chart 9: StartInUP prototype grant -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title">Percentage of women availing StartInUP prototype grant</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="entrepreneurship-chart-9" class="chart-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/main.js"></script>
+    <script src="js/multi-select.js"></script>
+    <script src="js/entrepreneurship.js"></script>
+</body>
+</html>
