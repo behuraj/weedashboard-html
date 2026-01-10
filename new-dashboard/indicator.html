@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicator wise - WEE Index Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                </div>
+            </div>
+            <div class="header-center">
+                <h1 class="dashboard-title">WEE Index Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="profile-dropdown">
+                    <button class="profile-btn" id="profileBtn">
+                        <div class="profile-avatar">
+                            <img src="../assets/images/users/avatar-1.jpg" alt="Profile" class="avatar-img">
+                        </div>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                    <div class="dropdown-menu" id="profileMenu">
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-user-line"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-logout-box-line"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-bar-chart-box-line"></i>
+                            <span class="nav-text">WEE Index</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2025</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2024</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2023</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="entrepreneurship.html" class="nav-link">
+                            <i class="ri-lightbulb-line"></i>
+                            <span class="nav-text">Entrepreneurship</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="employment.html" class="nav-link">
+                            <i class="ri-user-line"></i>
+                            <span class="nav-text">Employment</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-book-open-line"></i>
+                            <span class="nav-text">Education & Skilling</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-hand-heart-line"></i>
+                            <span class="nav-text">Livelihood</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-road-map-line"></i>
+                            <span class="nav-text">Mobility, Safety &<br>Inclusive Infra</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="district.html" class="nav-link">
+                            <i class="ri-map-pin-line"></i>
+                            <span class="nav-text">District wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="department.html" class="nav-link">
+                            <i class="ri-building-line"></i>
+                            <span class="nav-text">Department wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="snapshot.html" class="nav-link">
+                            <i class="ri-camera-line"></i>
+                            <span class="nav-text">UP Snapshot</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="indicator.html" class="nav-link">
+                            <i class="ri-bar-chart-2-line"></i>
+                            <span class="nav-text">Indicator wise</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-card">
+                        <div class="filter-header">
+                            <h3 class="filter-title">
+                                <i class="ri-filter-3-line"></i>
+                                Filter Data
+                            </h3>
+                        </div>
+                        <div class="filter-body">
+                            <div class="filter-grid">
+                                <div class="filter-item">
+                                    <label for="yearFilter" class="filter-label">
+                                        <i class="ri-calendar-line"></i>
+                                        Year:
+                                    </label>
+                                    <select id="yearFilter" class="filter-select">
+                                        <option value="2024" selected>2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <label for="categoryFilter" class="filter-label">
+                                        <i class="ri-folder-line"></i>
+                                        Category:
+                                    </label>
+                                    <select id="categoryFilter" class="filter-select">
+                                        <option value="wee-index" selected>WEE Index</option>
+                                        <option value="entrepreneurship">Entrepreneurship</option>
+                                        <option value="employment">Employment</option>
+                                        <option value="education-skilling">Education & Skilling</option>
+                                        <option value="livelihood">Livelihood</option>
+                                        <option value="mobility-safety">Mobility, Safety & Inclusive Infra</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <label for="indicatorFilter" class="filter-label">
+                                        <i class="ri-bar-chart-line"></i>
+                                        Indicator:
+                                    </label>
+                                    <select id="indicatorFilter" class="filter-select">
+                                        <option value="">Select Indicator</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <button class="filter-reset-btn" id="resetFilter">
+                                        <i class="ri-refresh-line"></i>
+                                        Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pie Charts Section (Current Year and Previous Year) -->
+                <div class="pie-charts-section">
+                    <div class="charts-grid">
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title" id="current-year-title">Current Year (2024)</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="pie-chart-current-year" class="chart-container"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4 class="chart-title" id="previous-year-title">Previous Year (2023)</h4>
+                            </div>
+                            <div class="chart-body">
+                                <div id="pie-chart-previous-year" class="chart-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map and District Ranking Section -->
+                <div class="content-section">
+                    <!-- Left: Map Image -->
+                    <div class="map-container">
+                        <div class="map-card">
+                            <div class="map-header">
+                                <h4 class="map-title">District Map</h4>
+                            </div>
+                            <div class="map-body">
+                                <img src="../assets/images/wee-index-map.jpeg" alt="District Map" class="map-image" id="indicatorMapImage">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Top 10 and Bottom 10 Districts -->
+                    <div class="metric-lists-container">
+                        <div class="ranking-lists-grid">
+                            <div class="ranking-list-card">
+                                <div class="ranking-card-header top">
+                                    <h4 class="ranking-card-title">Top 10 Districts</h4>
+                                </div>
+                                <div class="ranking-card-body" id="top-10-indicator">
+                                    <!-- Top 10 will be populated by JavaScript -->
+                                </div>
+                            </div>
+                            <div class="ranking-list-card">
+                                <div class="ranking-card-header bottom">
+                                    <h4 class="ranking-card-title">Bottom 10 Districts</h4>
+                                </div>
+                                <div class="ranking-card-body" id="bottom-10-indicator">
+                                    <!-- Bottom 10 will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/main.js"></script>
+    <script src="js/indicator.js"></script>
+</body>
+</html>
+
