@@ -1,4 +1,4 @@
-// Entrepreneurship Charts Initialization - Horizontal Bar Charts Comparing 10 Districts
+// Education Charts Initialization - Horizontal Bar Charts Comparing 10 Districts
 document.addEventListener('DOMContentLoaded', function() {
     let chartInstances = {}; // Store chart instances for updates
 
@@ -242,8 +242,8 @@ document.addEventListener('DOMContentLoaded', function() {
         chartInstances[chartId].render();
     }
 
-    // Initialize all entrepreneurship charts
-    function initEntrepreneurshipCharts() {
+    // Initialize all education charts
+    function initEducationCharts() {
         const filters = getSelectedFilters();
         const selectedDistricts = getDistrictsByType(filters.districtType);
         
@@ -262,45 +262,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }).sort((a, b) => b.value - a.value); // Sort by value descending
         }
         
-        // Chart 1: Percentage of women receiving ODOP Margin Money loans
-        initHorizontalBarChart('entrepreneurship-chart-1', 'Percentage of women receiving ODOP Margin Money loans', 
+        // Chart 1: Percentage of girls enrolled in STEM Science in HSS
+        initHorizontalBarChart('education-chart-1', 'Percentage of girls enrolled in STEM Science in HSS', 
             generateChartData(selectedDistricts, 1, 25), '%');
 
-        // Chart 2: Percentage of women receiving PMEGP Margin Money loans
-        initHorizontalBarChart('entrepreneurship-chart-2', 'Percentage of women receiving PMEGP Margin Money loans', 
+        // Chart 2: Percentage of girls completing STEM Science in HSS
+        initHorizontalBarChart('education-chart-2', 'Percentage of girls completing STEM Science in HSS', 
             generateChartData(selectedDistricts, 2, 25), '%');
 
-        // Chart 3: Percentage of women among Udyam registered entrepreneurs
-        initHorizontalBarChart('entrepreneurship-chart-3', 'Percentage of women among Udyam registered entrepreneurs', 
+        // Chart 3: Percentage of women enrolled in paramedical courses
+        initHorizontalBarChart('education-chart-3', 'Percentage of women enrolled in paramedical courses', 
             generateChartData(selectedDistricts, 3, 25), '%');
-
-        // Chart 4: Percentage of women receiving loans under MYSY
-        initHorizontalBarChart('entrepreneurship-chart-4', 'Percentage of women receiving loans under MYSY', 
-            generateChartData(selectedDistricts, 4, 25), '%');
-
-        // Chart 5: Percentage of women trained under ODOP Toolkit
-        initHorizontalBarChart('entrepreneurship-chart-5', 'Percentage of women trained under ODOP Toolkit', 
-            generateChartData(selectedDistricts, 5, 25), '%');
-
-        // Chart 6: Percentage of women trained under Vishwakarma Yojana
-        initHorizontalBarChart('entrepreneurship-chart-6', 'Percentage of women trained under Vishwakarma Yojana', 
-            generateChartData(selectedDistricts, 6, 25), '%');
-
-        // Chart 7: Percentage of women led startups among StartInUP incubatees
-        initHorizontalBarChart('entrepreneurship-chart-7', 'Percentage of women led startups among StartInUP incubatees', 
-            generateChartData(selectedDistricts, 7, 25), '%');
-
-        // Chart 8: Percentage of women availing StartInUP sustenance allowance
-        initHorizontalBarChart('entrepreneurship-chart-8', 'Percentage of women availing StartInUP sustenance allowance', 
-            generateChartData(selectedDistricts, 8, 25), '%');
-
-        // Chart 9: Percentage of women availing StartInUP prototype grant
-        initHorizontalBarChart('entrepreneurship-chart-9', 'Percentage of women availing StartInUP prototype grant', 
-            generateChartData(selectedDistricts, 9, 25), '%');
     }
 
     // Initialize charts on page load
-    initEntrepreneurshipCharts();
+    initEducationCharts();
 
     // Re-initialize charts when filters change
     const yearFilter = document.getElementById('yearFilter');
@@ -309,13 +285,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (yearFilter) {
         yearFilter.addEventListener('change', function() {
-            initEntrepreneurshipCharts();
+            initEducationCharts();
         });
     }
 
     if (districtTypeFilter) {
         districtTypeFilter.addEventListener('change', function() {
-            initEntrepreneurshipCharts();
+            initEducationCharts();
         });
     }
 
@@ -323,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resetFilter.addEventListener('click', function() {
             if (yearFilter) yearFilter.value = '2024';
             if (districtTypeFilter) districtTypeFilter.value = 'top10';
-            initEntrepreneurshipCharts();
+            initEducationCharts();
         });
     }
 });

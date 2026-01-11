@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         dataLabels: {
                             show: true,
                             name: { show: true, fontSize: '13px', fontWeight: 600, color: '#212529', offsetY: -5 },
-                            value: { show: true, fontSize: '18px', fontWeight: 700, color: '#212529', offsetY: 10, formatter: function (val) { return val + "%"; } },
-                            total: { show: true, label: 'Average', fontSize: '15px', fontWeight: 600, color: '#212529', formatter: function (w) { const avg = w.globals.seriesTotals.reduce((a, b) => a + b, 0) / w.globals.seriesTotals.length; return Math.round(avg) + "%"; } }
+                            value: { show: true, fontSize: '18px', fontWeight: 700, color: '#212529', offsetY: 10, formatter: function (val) { return val; } },
+                            total: { show: true, label: 'Average', fontSize: '15px', fontWeight: 600, color: '#212529', formatter: function (w) { const avg = w.globals.seriesTotals.reduce((a, b) => a + b, 0) / w.globals.seriesTotals.length; return Math.round(avg); } }
                         },
                         track: { background: '#e7e7e7', strokeWidth: '97%', margin: 5 },
                         hollow: { margin: 0, size: '30%' }
@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 series: chartIt1Data,
                 labels: categories,
                 colors: ['#f06548', '#ff7a5c', '#ff8f6e', '#ffa480', '#ffb992'],
-                legend: { show: true, position: 'bottom', fontSize: '13px', fontWeight: 500, labels: { useSeriesColors: true }, markers: { size: 8, width: 8, height: 8 }, formatter: function(seriesName, opts) { return seriesName + ": " + opts.w.globals.series[opts.seriesIndex] + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } }
+                legend: { show: true, position: 'bottom', fontSize: '13px', fontWeight: 500, labels: { useSeriesColors: true }, markers: { size: 8, width: 8, height: 8 }, formatter: function(seriesName, opts) { return seriesName + ": " + opts.w.globals.series[opts.seriesIndex]; } },
+                tooltip: { y: { formatter: function (val) { return val; } } }
             });
             chartInstances['chart-it-1'].render();
         }
@@ -164,11 +164,11 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             series: [{ name: seriesName, data: data }],
             xaxis: { categories: categories, title: { text: 'Year' } },
-            colors: ['#3577f1'],
+            colors: ['#333894'],
             tooltip: {
                 y: {
                     formatter: function (val) {
-                        return val + (isPercentage ? suffix : suffix);
+                        return val;
                     }
                 }
             }
@@ -185,14 +185,14 @@ document.addEventListener('DOMContentLoaded', function() {
             chartConfig.dataLabels = {
                 enabled: true,
                 formatter: function (val) {
-                    return val + suffix;
+                    return val;
                 }
             };
         } else if (chartType === 'area' || chartType === 'line') {
             chartConfig.dataLabels = {
                 enabled: true,
                 formatter: function (val) {
-                    return val + suffix;
+                    return val;
                 }
             };
         }

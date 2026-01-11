@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }],
                 dataLabels: {
                     enabled: true,
-                    formatter: function (val) { return val + "%"; }
+                    formatter: function (val) { return val; }
                 },
                 xaxis: {
                     categories: years,
@@ -81,9 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     title: { text: "Percentage" },
                     max: 100
                 },
-                colors: ['#3577f1'],
+                colors: ['#333894'],
                 tooltip: {
-                    y: { formatter: function (val) { return val + "%"; } }
+                    y: { formatter: function (val) { return val; } }
                 },
                 title: {
                     text: selectedDistrict,
@@ -107,8 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#0ab39c'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: {
                     text: selectedDistrict,
                     align: 'left',
@@ -131,8 +131,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: {
                     text: selectedDistrict,
                     align: 'left',
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 color: '#212529',
                                 offsetY: 10,
                                 formatter: function (val) {
-                                    return val + "%";
+                                    return val;
                                 }
                             },
                             total: {
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 color: '#212529',
                                 formatter: function (w) {
                                     const avg = w.globals.seriesTotals.reduce((a, b) => a + b, 0) / w.globals.seriesTotals.length;
-                                    return Math.round(avg) + "%";
+                                    return Math.round(avg);
                                 }
                             }
                         },
@@ -218,13 +218,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         height: 8
                     },
                     formatter: function(seriesName, opts) {
-                        return seriesName + ": " + opts.w.globals.series[opts.seriesIndex] + "%";
+                        return seriesName + ": " + opts.w.globals.series[opts.seriesIndex];
                     }
                 },
                 tooltip: {
                     y: {
                         formatter: function (val) {
-                            return val + "%";
+                            return val;
                         }
                     }
                 }
@@ -246,9 +246,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }],
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
-                colors: ['#3577f1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                colors: ['#333894'],
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: {
                     text: selectedDistrict,
                     align: 'left',
@@ -271,11 +271,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     name: 'Percentage',
                     data: chart6Data
                 }],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#0ab39c'],
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: {
                     text: selectedDistrict,
                     align: 'left',
@@ -298,8 +298,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: {
                     text: selectedDistrict,
                     align: 'left',
@@ -348,9 +348,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }],
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
-                colors: ['#3577f1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                colors: ['#333894'],
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: {
                     text: selectedDistrict,
                     align: 'left',
@@ -379,9 +379,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 series: [{ name: 'Percentage', data: chart1Data }],
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
-                colors: ['#3577f1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                colors: ['#333894'],
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-employment-1'].render();
@@ -397,8 +397,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#0ab39c'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-employment-2'].render();
@@ -412,11 +412,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 chart: { type: 'bar', height: 300, toolbar: { show: false } },
                 plotOptions: { bar: { horizontal: false, borderRadius: 4, dataLabels: { position: 'top' } } },
                 series: [{ name: 'Percentage', data: chart3Data }],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-employment-3'].render();
@@ -432,8 +432,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#f06548'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-employment-4'].render();
@@ -448,9 +448,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 series: [{ name: 'Percentage', data: chart5Data }],
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
-                colors: ['#3577f1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                colors: ['#333894'],
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-employment-5'].render();
@@ -464,11 +464,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 chart: { type: 'bar', height: 300, toolbar: { show: false } },
                 plotOptions: { bar: { horizontal: false, borderRadius: 4, dataLabels: { position: 'top' } } },
                 series: [{ name: 'Percentage', data: chart6Data }],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#0ab39c'],
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-employment-6'].render();
@@ -484,8 +484,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-employment-7'].render();
@@ -510,9 +510,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 series: [{ name: 'Percentage', data: chart1Data }],
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
-                colors: ['#3577f1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                colors: ['#333894'],
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-1'].render();
@@ -528,8 +528,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#0ab39c'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-2'].render();
@@ -543,11 +543,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 chart: { type: 'bar', height: 300, toolbar: { show: false } },
                 plotOptions: { bar: { horizontal: false, borderRadius: 4, dataLabels: { position: 'top' } } },
                 series: [{ name: 'Percentage', data: chart3Data }],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-3'].render();
@@ -563,8 +563,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#f06548'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-4'].render();
@@ -579,9 +579,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 series: [{ name: 'Percentage', data: chart5Data }],
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
-                colors: ['#3577f1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                colors: ['#333894'],
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-5'].render();
@@ -595,11 +595,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 chart: { type: 'bar', height: 300, toolbar: { show: false } },
                 plotOptions: { bar: { horizontal: false, borderRadius: 4, dataLabels: { position: 'top' } } },
                 series: [{ name: 'Percentage', data: chart6Data }],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#0ab39c'],
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-6'].render();
@@ -615,8 +615,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-7'].render();
@@ -632,8 +632,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#f06548'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-8'].render();
@@ -648,9 +648,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 series: [{ name: 'Percentage', data: chart9Data }],
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
-                colors: ['#3577f1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                colors: ['#333894'],
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-9'].render();
@@ -664,11 +664,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 chart: { type: 'bar', height: 300, toolbar: { show: false } },
                 plotOptions: { bar: { horizontal: false, borderRadius: 4, dataLabels: { position: 'top' } } },
                 series: [{ name: 'Percentage', data: chart10Data }],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#0ab39c'],
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-10'].render();
@@ -684,8 +684,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-11'].render();
@@ -701,8 +701,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#f06548'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-12'].render();
@@ -716,11 +716,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 chart: { type: 'bar', height: 300, toolbar: { show: false } },
                 plotOptions: { bar: { horizontal: false, borderRadius: 4, dataLabels: { position: 'top' } } },
                 series: [{ name: 'Percentage', data: chart13Data }],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#0ab39c'],
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-13'].render();
@@ -736,8 +736,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-education-14'].render();
@@ -762,9 +762,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 series: [{ name: 'Percentage', data: chart1Data }],
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
-                colors: ['#3577f1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                colors: ['#333894'],
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-livelihood-1'].render();
@@ -780,8 +780,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#0ab39c'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-livelihood-2'].render();
@@ -795,11 +795,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 chart: { type: 'bar', height: 300, toolbar: { show: false } },
                 plotOptions: { bar: { horizontal: false, borderRadius: 4, dataLabels: { position: 'top' } } },
                 series: [{ name: 'Percentage', data: chart3Data }],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-livelihood-3'].render();
@@ -815,8 +815,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#f06548'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-livelihood-4'].render();
@@ -831,9 +831,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 series: [{ name: 'Percentage', data: chart5Data }],
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
-                colors: ['#3577f1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                colors: ['#333894'],
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-livelihood-5'].render();
@@ -847,11 +847,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 chart: { type: 'bar', height: 300, toolbar: { show: false } },
                 plotOptions: { bar: { horizontal: false, borderRadius: 4, dataLabels: { position: 'top' } } },
                 series: [{ name: 'Percentage', data: chart6Data }],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#0ab39c'],
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-livelihood-6'].render();
@@ -867,8 +867,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-livelihood-7'].render();
@@ -884,8 +884,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#f06548'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-livelihood-8'].render();
@@ -899,11 +899,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 chart: { type: 'bar', height: 300, toolbar: { show: false } },
                 plotOptions: { bar: { horizontal: false, borderRadius: 4, dataLabels: { position: 'top' } } },
                 series: [{ name: 'Percentage', data: chart9Data }],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#0ab39c'],
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-livelihood-9'].render();
@@ -919,8 +919,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-livelihood-10'].render();
@@ -945,9 +945,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 series: [{ name: 'Percentage', data: chart1Data }],
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
-                colors: ['#3577f1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                colors: ['#333894'],
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-mobility-1'].render();
@@ -998,8 +998,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#f06548'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-mobility-4'].render();
@@ -1014,7 +1014,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 series: [{ name: 'Number', data: chart5Data }],
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Number per lakh" } },
-                colors: ['#3577f1'],
+                colors: ['#333894'],
                 dataLabels: { enabled: true },
                 tooltip: { y: { formatter: function (val) { return val + " per lakh"; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
@@ -1050,8 +1050,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 xaxis: { categories: years, title: { text: 'Year' } },
                 yaxis: { title: { text: "Percentage" }, max: 100 },
                 colors: ['#39afd1'],
-                dataLabels: { enabled: true, formatter: function (val) { return val + "%"; } },
-                tooltip: { y: { formatter: function (val) { return val + "%"; } } },
+                dataLabels: { enabled: true, formatter: function (val) { return val; } },
+                tooltip: { y: { formatter: function (val) { return val; } } },
                 title: { text: selectedDistrict, align: 'left', style: { fontSize: '14px', fontWeight: 600 } }
             });
             chartInstances['chart-mobility-7'].render();
