@@ -124,7 +124,7 @@
     }
 
     // Initialize Gradient Circular Chart (Radial Bar Chart)
-    function initGradientCircularChart(chartId, value, year, colors = ['#3577f1', '#0ab39c']) {
+    function initGradientCircularChart(chartId, value, year, colors = ['#333894', '#0ab39c']) {
         const chartElement = document.getElementById(chartId);
         if (!chartElement) return;
 
@@ -261,8 +261,8 @@
         const currentValue = Math.floor(Math.random() * 40) + 60; // 60-100%
         const previousValue = Math.floor(Math.random() * 40) + 60; // 60-100%
 
-        initGradientCircularChart('pie-chart-current-year', currentValue, currentYear.toString(), ['#3577f1', '#0ab39c']);
-        initGradientCircularChart('pie-chart-previous-year', previousValue, previousYear.toString(), ['#3577f1', '#0ab39c']);
+        initGradientCircularChart('pie-chart-current-year', currentValue, currentYear.toString(), ['#333894', '#0ab39c']);
+        initGradientCircularChart('pie-chart-previous-year', previousValue, previousYear.toString(), ['#333894', '#0ab39c']);
 
         // Update chart titles dynamically
         const currentYearTitle = document.getElementById('current-year-title');

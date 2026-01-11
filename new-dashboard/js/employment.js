@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Create colors array: first bar (State Average) gets teal, rest get blue
         const barColors = values.map((val, index) => {
-            return index === 0 ? '#0ab39c' : '#3577f1';
+            return index === 0 ? '#0ab39c' : '#333894';
         });
 
         const chartConfig = {
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dataLabels: {
                 enabled: true,
                 formatter: function (val, opts) {
-                    return val + (suffix || '%');
+                    return val;
                 },
                 offsetY: 0,
                 style: {
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
             tooltip: {
                 y: {
                     formatter: function (val) {
-                        return val + (suffix || '%');
+                        return val;
                     }
                 }
             },
