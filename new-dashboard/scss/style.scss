@@ -966,6 +966,15 @@ body {
     gap: 20px;
     margin-bottom: 30px;
 
+    &.cards-grid-5 {
+        grid-template-columns: repeat(5, 1fr);
+
+        .stat-card .card-info .card-change {
+            white-space: nowrap;
+            flex-wrap: nowrap;
+        }
+    }
+
     .stat-card {
         background: white;
         border-radius: 12px;
