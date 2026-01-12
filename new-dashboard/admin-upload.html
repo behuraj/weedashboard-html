@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Upload - WEE Index Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                </div>
+            </div>
+            <div class="header-center">
+                <h1 class="dashboard-title">Women Economic Empowerment Index</h1>
+            </div>
+            <div class="header-right">
+                <div class="profile-dropdown">
+                    <button class="profile-btn" id="profileBtn">
+                        <i class="ri-user-line"></i>
+                    </button>
+                    <div class="dropdown-menu" id="profileMenu">
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-user-line"></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="ri-logout-box-line"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-bar-chart-box-line"></i>
+                            <span class="nav-text">WEE Index</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2025</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2024</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="index.html" class="submenu-link">2023</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="entrepreneurship.html" class="nav-link">
+                            <i class="ri-lightbulb-line"></i>
+                            <span class="nav-text">Entrepreneurship</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="employment.html" class="nav-link">
+                            <i class="ri-user-line"></i>
+                            <span class="nav-text">Employment</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="education.html" class="nav-link">
+                            <i class="ri-book-open-line"></i>
+                            <span class="nav-text">Education & Skilling</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="livelihood.html" class="nav-link">
+                            <i class="ri-hand-heart-line"></i>
+                            <span class="nav-text">Livelihood</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="mobility.html" class="nav-link">
+                            <i class="ri-road-map-line"></i>
+                            <span class="nav-text">Mobility, Safety &<br>Inclusive Infra</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="district.html" class="nav-link">
+                            <i class="ri-map-pin-line"></i>
+                            <span class="nav-text">District wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="department.html" class="nav-link">
+                            <i class="ri-building-line"></i>
+                            <span class="nav-text">Department wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="snapshot.html" class="nav-link">
+                            <i class="ri-camera-line"></i>
+                            <span class="nav-text">UP Snapshot</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="indicator.html" class="nav-link">
+                            <i class="ri-bar-chart-2-line"></i>
+                            <span class="nav-text">Indicator wise</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="admin-upload.html" class="nav-link">
+                            <i class="ri-upload-cloud-2-line"></i>
+                            <span class="nav-text">Data Upload</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h2 class="page-title">Data Upload Management</h2>
+                    <button class="btn-primary" id="uploadBtn">
+                        <i class="ri-upload-cloud-2-line"></i>
+                        Upload New File
+                    </button>
+                </div>
+
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-card">
+                        <div class="filter-header">
+                            <h3 class="filter-title">
+                                <i class="ri-filter-3-line"></i>
+                                Filter Data
+                            </h3>
+                        </div>
+                        <div class="filter-body">
+                            <div class="filter-grid">
+                                <div class="filter-item">
+                                    <label for="filterUploadedBy" class="filter-label">
+                                        <i class="ri-user-line"></i>
+                                        Uploaded By:
+                                    </label>
+                                    <select id="filterUploadedBy" class="filter-select">
+                                        <option value="">All Users</option>
+                                        <option value="admin">Admin User</option>
+                                        <option value="john">John Doe</option>
+                                        <option value="jane">Jane Smith</option>
+                                        <option value="mike">Mike Johnson</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <label for="filterDepartment" class="filter-label">
+                                        <i class="ri-building-line"></i>
+                                        Department:
+                                    </label>
+                                    <select id="filterDepartment" class="filter-select">
+                                        <option value="">All Departments</option>
+                                        <option value="Department of Women & Child Development">Department of Women & Child Development</option>
+                                        <option value="Department of Education">Department of Education</option>
+                                        <option value="Department of Employment">Department of Employment</option>
+                                        <option value="Department of Skill Development">Department of Skill Development</option>
+                                        <option value="Department of Rural Development">Department of Rural Development</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <label for="filterYear" class="filter-label">
+                                        <i class="ri-calendar-line"></i>
+                                        Year:
+                                    </label>
+                                    <select id="filterYear" class="filter-select">
+                                        <option value="">All Years</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
+                                    <button class="filter-reset-btn" id="clearFiltersBtn">
+                                        <i class="ri-refresh-line"></i>
+                                        Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uploaded Files Table -->
+                <div class="upload-table-card">
+                    <div class="table-header">
+                        <h3 class="table-title">Previously Uploaded Files</h3>
+                        <div class="table-actions">
+                            <button class="btn-icon" id="refreshBtn" title="Refresh">
+                                <i class="ri-refresh-line"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>File Name</th>
+                                    <th>Year</th>
+                                    <th>Department</th>
+                                    <th>Uploaded By</th>
+                                    <th>Uploaded Date</th>
+                                    <th>File Size</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="filesTableBody">
+                                <!-- Sample data - will be populated dynamically -->
+                                <tr data-uploaded-by="admin" data-department="Department of Women & Child Development" data-year="2024">
+                                    <td>
+                                        <div class="file-name-cell">
+                                            <i class="ri-file-excel-2-line"></i>
+                                            <span>wee_data_2024.csv</span>
+                                        </div>
+                                    </td>
+                                    <td>2024</td>
+                                    <td>Department of Women & Child Development</td>
+                                    <td>Admin User</td>
+                                    <td>15 Jan 2024</td>
+                                    <td>2.5 MB</td>
+                                    <td>
+                                        <span class="status-badge status-success">Processed</span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-icon-small" title="Download">
+                                                <i class="ri-download-line"></i>
+                                            </button>
+                                            <button class="btn-icon-small" title="Delete">
+                                                <i class="ri-delete-bin-line"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr data-uploaded-by="john" data-department="Department of Women & Child Development" data-year="2023">
+                                    <td>
+                                        <div class="file-name-cell">
+                                            <i class="ri-file-excel-2-line"></i>
+                                            <span>wee_data_2023.csv</span>
+                                        </div>
+                                    </td>
+                                    <td>2023</td>
+                                    <td>Department of Women & Child Development</td>
+                                    <td>John Doe</td>
+                                    <td>10 Dec 2023</td>
+                                    <td>2.3 MB</td>
+                                    <td>
+                                        <span class="status-badge status-success">Processed</span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-icon-small" title="Download">
+                                                <i class="ri-download-line"></i>
+                                            </button>
+                                            <button class="btn-icon-small" title="Delete">
+                                                <i class="ri-delete-bin-line"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr data-uploaded-by="jane" data-department="Department of Education" data-year="2022">
+                                    <td>
+                                        <div class="file-name-cell">
+                                            <i class="ri-file-excel-2-line"></i>
+                                            <span>wee_data_2022.csv</span>
+                                        </div>
+                                    </td>
+                                    <td>2022</td>
+                                    <td>Department of Education</td>
+                                    <td>Jane Smith</td>
+                                    <td>05 Nov 2022</td>
+                                    <td>2.1 MB</td>
+                                    <td>
+                                        <span class="status-badge status-warning">Processing</span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-icon-small" title="Download">
+                                                <i class="ri-download-line"></i>
+                                            </button>
+                                            <button class="btn-icon-small" title="Delete">
+                                                <i class="ri-delete-bin-line"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal-overlay" id="uploadModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title">Upload New Data File</h3>
+                <button class="modal-close" id="closeModal">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="uploadForm">
+                    <!-- Year Selection -->
+                    <div class="form-group">
+                        <label for="yearSelect" class="form-label">
+                            Select Year <span class="required">*</span>
+                        </label>
+                        <select id="yearSelect" class="form-select" required>
+                            <option value="">-- Select Year --</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+
+                    <!-- Department Selection -->
+                    <div class="form-group">
+                        <label for="departmentSelect" class="form-label">
+                            Select Department <span class="required">*</span>
+                        </label>
+                        <select id="departmentSelect" class="form-select" required>
+                            <option value="">-- Select Department --</option>
+                            <option value="dept1">Department of Women & Child Development</option>
+                            <option value="dept2">Department of Education</option>
+                            <option value="dept3">Department of Employment</option>
+                            <option value="dept4">Department of Skill Development</option>
+                            <option value="dept5">Department of Rural Development</option>
+                        </select>
+                    </div>
+
+                    <!-- Download Sample File -->
+                    <div class="form-group">
+                        <label class="form-label">Sample File</label>
+                        <button type="button" class="btn-secondary" id="downloadSampleBtn">
+                            <i class="ri-download-line"></i>
+                            Download Sample File
+                        </button>
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="form-group">
+                        <label for="fileUpload" class="form-label">
+                            Upload CSV File <span class="required">*</span>
+                        </label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="fileUpload" class="file-input" accept=".csv,.xlsx,.xls" required>
+                            <label for="fileUpload" class="file-upload-label">
+                                <div class="file-upload-content">
+                                    <i class="ri-upload-cloud-2-line"></i>
+                                    <span class="file-upload-text">Choose file or drag and drop</span>
+                                    <span class="file-upload-hint">CSV, XLSX (Max 10MB)</span>
+                                </div>
+                            </label>
+                            <div class="file-name-display" id="fileNameDisplay" style="display: none;">
+                                <i class="ri-file-excel-2-line"></i>
+                                <span id="selectedFileName"></span>
+                                <button type="button" class="file-remove" id="removeFile">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="cancelBtn">Cancel</button>
+                        <button type="submit" class="btn-primary">
+                            <i class="ri-upload-cloud-2-line"></i>
+                            Upload File
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin-upload.js"></script>
+</body>
+</html>
