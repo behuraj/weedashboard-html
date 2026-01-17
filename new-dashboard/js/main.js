@@ -4,29 +4,57 @@ document.addEventListener('DOMContentLoaded', function() {
     const profileMenu = document.getElementById('profileMenu');
 
     if (profileBtn && profileMenu) {
+        let touchStarted = false;
+        
+        // Touch start to prevent double-firing on mobile
+        profileBtn.addEventListener('touchstart', function(e) {
+            touchStarted = true;
+        }, { passive: true });
+
+        // Click event handler
         profileBtn.addEventListener('click', function(e) {
+            // On mobile, prevent click if touch was used
+            if (touchStarted) {
+                touchStarted = false;
+                return;
+            }
+            e.preventDefault();
             e.stopPropagation();
             profileMenu.classList.toggle('show');
         });
 
+        // Touch event for mobile
+        profileBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            profileMenu.classList.toggle('show');
+            touchStarted = false;
+        });
+
         // Close dropdown when clicking outside
         document.addEventListener('click', function(e) {
-            if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
+            if (profileBtn && profileMenu && !profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
                 profileMenu.classList.remove('show');
             }
         });
     }
 
-    // Sidebar hover effect (optional - can be enhanced)
+    // Get sidebar and body reference - declared once
     const sidebar = document.getElementById('sidebar');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const body = document.body;
+
+    // Sidebar hover effect - regular nav links (not submenu toggles)
+    const navLinks = document.querySelectorAll('.nav-link:not(.submenu-toggle)');
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Remove active class from all links
-            navLinks.forEach(l => l.classList.remove('active'));
-            // Add active class to clicked link
-            this.classList.add('active');
+            // Only handle if it's not a submenu toggle
+            if (!this.classList.contains('submenu-toggle')) {
+                // Remove active class from all links
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                this.classList.add('active');
+            }
         });
     });
 
@@ -36,10 +64,96 @@ document.addEventListener('DOMContentLoaded', function() {
     submenuToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             const navItem = this.closest('.nav-item');
-            navItem.classList.toggle('submenu-open');
+            if (navItem) {
+                navItem.classList.toggle('submenu-open');
+            }
+        });
+
+        // Touch event for mobile submenu
+        toggle.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const navItem = this.closest('.nav-item');
+            if (navItem) {
+                navItem.classList.toggle('submenu-open');
+            }
         });
     });
+
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+
+    // Create sidebar overlay if it doesn't exist
+    let sidebarOverlay = document.querySelector('.sidebar-overlay');
+    if (!sidebarOverlay) {
+        sidebarOverlay = document.createElement('div');
+        sidebarOverlay.className = 'sidebar-overlay';
+        body.appendChild(sidebarOverlay);
+    }
+
+    if (mobileMenuToggle && sidebar) {
+        let menuTouchStarted = false;
+
+        // Touch start to prevent double-firing on mobile
+        mobileMenuToggle.addEventListener('touchstart', function(e) {
+            menuTouchStarted = true;
+        }, { passive: true });
+
+        // Function to toggle sidebar
+        function toggleSidebar(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const isOpen = sidebar.classList.contains('mobile-open');
+            if (isOpen) {
+                sidebar.classList.remove('mobile-open');
+                if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+                body.style.overflow = '';
+            } else {
+                sidebar.classList.add('mobile-open');
+                if (sidebarOverlay) sidebarOverlay.classList.add('active');
+                body.style.overflow = 'hidden';
+            }
+        }
+
+        // Click event handler
+        mobileMenuToggle.addEventListener('click', function(e) {
+            // On mobile, prevent click if touch was used
+            if (menuTouchStarted) {
+                menuTouchStarted = false;
+                return;
+            }
+            toggleSidebar(e);
+        });
+
+        // Touch event handler for mobile
+        mobileMenuToggle.addEventListener('touchend', function(e) {
+            toggleSidebar(e);
+            menuTouchStarted = false;
+        });
+
+        // Close sidebar when clicking overlay
+        sidebarOverlay.addEventListener('click', function() {
+            sidebar.classList.remove('mobile-open');
+            sidebarOverlay.classList.remove('active');
+            body.style.overflow = '';
+        });
+
+        // Close sidebar when clicking on a nav link on mobile
+        const navLinks = document.querySelectorAll('.nav-link:not(.submenu-toggle)');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('mobile-open');
+                    sidebarOverlay.classList.remove('active');
+                    body.style.overflow = '';
+                }
+            });
+        });
+    }
 
     // Submenu Link Click Handler
     const submenuLinks = document.querySelectorAll('.submenu-link');
