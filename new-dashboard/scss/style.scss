@@ -239,30 +239,9 @@ body {
     left: 0;
     top: 70px;
     height: calc(100vh - 70px);
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: visible;
     transition: width 0.3s ease;
     z-index: 999;
-    display: flex;
-    flex-direction: column;
-
-    // Custom scrollbar styling
-    &::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 3px;
-
-        &:hover {
-            background: rgba(0, 0, 0, 0.3);
-        }
-    }
 
     &:hover {
         width: 260px;
@@ -270,7 +249,6 @@ body {
 
     .sidebar-nav {
         padding: 20px 0;
-        width: 100%;
 
         .nav-menu {
             list-style: none;
@@ -327,6 +305,13 @@ body {
                         width: 0;
                         overflow: hidden;
                     }
+                }
+
+                &.active .nav-link {
+                    background: rgba($primary-color, 0.1);
+                    color: $primary-color;
+                    border-left-color: $primary-color;
+                    font-weight: 600;
                 }
 
                 &.has-submenu {
@@ -1187,6 +1172,21 @@ body {
     .stat-card {
         .card-value {
             font-size: $font-size-base;
+            font-weight: $font-weight-semibold;
+            line-height: $line-height-base;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+    }
+}
+
+// Department Page - Same font size for card values with text (like Frequency, Numerator, Denominator)
+// Match the font size of card-label (Frequency of Data collection)
+.department-charts-section,
+.filter-section + .cards-grid {
+    .stat-card {
+        .card-value {
+            font-size: $font-size-sm;
             font-weight: $font-weight-semibold;
             line-height: $line-height-base;
             word-wrap: break-word;

@@ -260,6 +260,13 @@ body {
     font-weight: 600;
 }
 
+.nav-item.active .nav-link {
+    background: rgba(51, 56, 148, 0.1);
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    font-weight: 600;
+}
+
 .nav-link i {
     font-size: 20px;
     width: 24px;
