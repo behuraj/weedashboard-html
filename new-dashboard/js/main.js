@@ -43,36 +43,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.getElementById('sidebar');
     const body = document.body;
 
-    // Prevent page scrolling when scrolling over sidebar
-    if (sidebar) {
-        sidebar.addEventListener('wheel', function(e) {
-            const sidebarEl = this;
+    // Auto-highlight active menu item based on current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Find and highlight the matching nav link
+    const allNavLinks = document.querySelectorAll('.nav-link:not(.submenu-toggle), .submenu-link');
+    allNavLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref && (linkHref === currentPage || linkHref.includes(currentPage))) {
+            // Remove active class from all links and nav-items
+            document.querySelectorAll('.nav-link, .submenu-link').forEach(l => l.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
             
-            // Check if sidebar is scrollable
-            const canScroll = sidebarEl.scrollHeight > sidebarEl.clientHeight;
-            if (!canScroll) {
-                return; // Allow page scroll if sidebar not scrollable
+            // Add active class to current link
+            link.classList.add('active');
+            
+            // Also add active class to parent nav-item if it exists
+            const navItem = link.closest('.nav-item');
+            if (navItem) {
+                navItem.classList.add('active');
             }
             
-            // Check scroll boundaries
-            const currentScroll = sidebarEl.scrollTop;
-            const maxScroll = sidebarEl.scrollHeight - sidebarEl.clientHeight;
-            const isScrollingUp = e.deltaY < 0;
-            const isScrollingDown = e.deltaY > 0;
-            
-            // Allow page scroll if at boundaries
-            if ((currentScroll <= 0 && isScrollingUp) || (currentScroll >= maxScroll && isScrollingDown)) {
-                return; // At boundary, allow page to scroll
+            // If it's a submenu link, open the parent submenu
+            const submenuItem = link.closest('.submenu-item');
+            if (submenuItem) {
+                const parentNavItem = submenuItem.closest('.nav-item.has-submenu');
+                if (parentNavItem) {
+                    parentNavItem.classList.add('submenu-open');
+                }
             }
-            
-            // Sidebar can scroll - prevent page scroll
-            e.stopPropagation();
-            e.preventDefault();
-            
-            // Scroll the sidebar manually
-            sidebarEl.scrollTop += e.deltaY;
-        }, { passive: false });
-    }
+        }
+    });
 
     // Sidebar hover effect - regular nav links (not submenu toggles)
     const navLinks = document.querySelectorAll('.nav-link:not(.submenu-toggle)');

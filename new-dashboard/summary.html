@@ -26,7 +26,7 @@
             },
         };
     </script>
-<style>
+    <style>
         .material-icons {
             font-size: 16px;
         }
@@ -35,6 +35,19 @@
         }
         .trend-icon {
             font-size: 20px;
+        }
+        /* Fix colored indicator position - always align to the right */
+        td.table-cell-padding.value-with-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
+            min-width: 90px;
+            text-align: right;
+        }
+        td.table-cell-padding.value-with-indicator span[class*="bg-"] {
+            flex-shrink: 0;
+            margin-left: 0;
         }
     </style>
 </head>
@@ -98,8 +111,8 @@
                         </ul>
                     </li>
                     <li class="nav-item active">
-                        <a href="snapshot.html" class="nav-link">
-                            <i class="ri-camera-line"></i>
+                        <a href="summary.html" class="nav-link">
+                            <i class="ri-file-list-3-line"></i>
                             <span class="nav-text">Summary</span>
                         </a>
                     </li>
@@ -257,15 +270,6 @@
                         <div class="filter-body">
                             <div class="filter-grid">
                                 <div class="filter-item">
-                                    <label for="table-display" class="filter-label">
-                                        <i class="ri-table-line"></i>
-                                        Table:
-                                    </label>
-                                    <select id="table-display" class="filter-select">
-<option>WEE Index Summary</option>
-</select>
-</div>
-                                <div class="filter-item">
                                     <label for="performance-filter" class="filter-label">
                                         <i class="ri-bar-chart-line"></i>
                                         Performance:
@@ -329,152 +333,132 @@
 <tbody>
                                 <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
                                     <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">1 Lucknow</td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>86.9</td>
-<td class="table-cell-padding">87.5</td>
+<td class="table-cell-padding">86.9</td>
+<td class="table-cell-padding value-with-indicator">87.5<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-striver mr-3 rounded-sm align-middle"></span>55.5</td>
-<td class="table-cell-padding">56.2</td>
+<td class="table-cell-padding">55.5</td>
+<td class="table-cell-padding value-with-indicator">56.2<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>71.0</td>
-<td class="table-cell-padding">70.5</td>
+<td class="table-cell-padding">71.0</td>
+<td class="table-cell-padding value-with-indicator">70.5<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>73.2</td>
-<td class="table-cell-padding">74.0</td>
+<td class="table-cell-padding">73.2</td>
+<td class="table-cell-padding value-with-indicator">74.0<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-front-runner mr-3 rounded-sm align-middle"></span>58.1</td>
 <td class="table-cell-padding">58.1</td>
+<td class="table-cell-padding value-with-indicator">58.1<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-gray-500 trend-icon">remove</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-contender mr-3 rounded-sm align-middle"></span>42.5</td>
-<td class="table-cell-padding">43.1</td>
+<td class="table-cell-padding">42.5</td>
+<td class="table-cell-padding value-with-indicator">43.1<span class="inline-block w-2 h-5 bg-contender ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
 </tr>
                                 <tr class="bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-700">
                                     <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">2 Kanpur Nagar</td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>82.4</td>
-<td class="table-cell-padding">81.9</td>
+<td class="table-cell-padding">82.4</td>
+<td class="table-cell-padding value-with-indicator">81.9<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-striver mr-3 rounded-sm align-middle"></span>46.6</td>
-<td class="table-cell-padding">47.1</td>
+<td class="table-cell-padding">46.6</td>
+<td class="table-cell-padding value-with-indicator">47.1<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>67.9</td>
-<td class="table-cell-padding">67.2</td>
+<td class="table-cell-padding">67.9</td>
+<td class="table-cell-padding value-with-indicator">67.2<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>78.8</td>
-<td class="table-cell-padding">79.5</td>
+<td class="table-cell-padding">78.8</td>
+<td class="table-cell-padding value-with-indicator">79.5<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-front-runner mr-3 rounded-sm align-middle"></span>60.6</td>
-<td class="table-cell-padding">60.0</td>
+<td class="table-cell-padding">60.6</td>
+<td class="table-cell-padding value-with-indicator">60.0<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-contender mr-3 rounded-sm align-middle"></span>36.4</td>
-<td class="table-cell-padding">37.0</td>
+<td class="table-cell-padding">36.4</td>
+<td class="table-cell-padding value-with-indicator">37.0<span class="inline-block w-2 h-5 bg-contender ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
 </tr>
                                 <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
                                     <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">3 Varanasi</td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>79.3</td>
-<td class="table-cell-padding">80.1</td>
+<td class="table-cell-padding">79.3</td>
+<td class="table-cell-padding value-with-indicator">80.1<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-striver mr-3 rounded-sm align-middle"></span>46.7</td>
 <td class="table-cell-padding">46.7</td>
+<td class="table-cell-padding value-with-indicator">46.7<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-gray-500 trend-icon">remove</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-front-runner mr-3 rounded-sm align-middle"></span>56.8</td>
-<td class="table-cell-padding">57.5</td>
+<td class="table-cell-padding">56.8</td>
+<td class="table-cell-padding value-with-indicator">57.5<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>75.4</td>
-<td class="table-cell-padding">74.9</td>
+<td class="table-cell-padding">75.4</td>
+<td class="table-cell-padding value-with-indicator">74.9<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>73.9</td>
-<td class="table-cell-padding">74.5</td>
+<td class="table-cell-padding">73.9</td>
+<td class="table-cell-padding value-with-indicator">74.5<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-contender mr-3 rounded-sm align-middle"></span>32.7</td>
-<td class="table-cell-padding">32.0</td>
+<td class="table-cell-padding">32.7</td>
+<td class="table-cell-padding value-with-indicator">32.0<span class="inline-block w-2 h-5 bg-contender ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
 </tr>
                                 <tr class="bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-700">
                                     <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">4 Gautam Buddha Nagar</td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>74.8</td>
 <td class="table-cell-padding">74.8</td>
+<td class="table-cell-padding value-with-indicator">74.8<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-gray-500 trend-icon">remove</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-striver mr-3 rounded-sm align-middle"></span>47.0</td>
-<td class="table-cell-padding">47.8</td>
+<td class="table-cell-padding">47.0</td>
+<td class="table-cell-padding value-with-indicator">47.8<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-front-runner mr-3 rounded-sm align-middle"></span>54.7</td>
-<td class="table-cell-padding">55.2</td>
+<td class="table-cell-padding">54.7</td>
+<td class="table-cell-padding value-with-indicator">55.2<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>62.9</td>
-<td class="table-cell-padding">62.1</td>
+<td class="table-cell-padding">62.9</td>
+<td class="table-cell-padding value-with-indicator">62.1<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-front-runner mr-3 rounded-sm align-middle"></span>60.8</td>
-<td class="table-cell-padding">61.3</td>
+<td class="table-cell-padding">60.8</td>
+<td class="table-cell-padding value-with-indicator">61.3<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-striver mr-3 rounded-sm align-middle"></span>47.3</td>
 <td class="table-cell-padding">47.3</td>
+<td class="table-cell-padding value-with-indicator">47.3<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-gray-500 trend-icon">remove</i></td>
 </tr>
                                 <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
                                     <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">5 Ghaziabad</td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>73.8</td>
-<td class="table-cell-padding">73.2</td>
+<td class="table-cell-padding">73.8</td>
+<td class="table-cell-padding value-with-indicator">73.2<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-striver mr-3 rounded-sm align-middle"></span>49.7</td>
-<td class="table-cell-padding">50.1</td>
+<td class="table-cell-padding">49.7</td>
+<td class="table-cell-padding value-with-indicator">50.1<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-front-runner mr-3 rounded-sm align-middle"></span>59.4</td>
-<td class="table-cell-padding">58.9</td>
+<td class="table-cell-padding">59.4</td>
+<td class="table-cell-padding value-with-indicator">58.9<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>69.9</td>
-<td class="table-cell-padding">70.6</td>
+<td class="table-cell-padding">69.9</td>
+<td class="table-cell-padding value-with-indicator">70.6<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-front-runner mr-3 rounded-sm align-middle"></span>51.5</td>
-<td class="table-cell-padding">52.2</td>
+<td class="table-cell-padding">51.5</td>
+<td class="table-cell-padding value-with-indicator">52.2<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-contender mr-3 rounded-sm align-middle"></span>37.6</td>
-<td class="table-cell-padding">37.0</td>
+<td class="table-cell-padding">37.6</td>
+<td class="table-cell-padding value-with-indicator">37.0<span class="inline-block w-2 h-5 bg-contender ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
 </tr>
                                 <tr class="bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-700">
                                     <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">6 Jhansi</td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>73.3</td>
-<td class="table-cell-padding">73.9</td>
+<td class="table-cell-padding">73.3</td>
+<td class="table-cell-padding value-with-indicator">73.9<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-striver mr-3 rounded-sm align-middle"></span>46.4</td>
-<td class="table-cell-padding">45.9</td>
+<td class="table-cell-padding">46.4</td>
+<td class="table-cell-padding value-with-indicator">45.9<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>62.5</td>
-<td class="table-cell-padding">63.1</td>
+<td class="table-cell-padding">62.5</td>
+<td class="table-cell-padding value-with-indicator">63.1<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-champion mr-3 rounded-sm align-middle"></span>74.0</td>
-<td class="table-cell-padding">74.8</td>
+<td class="table-cell-padding">74.0</td>
+<td class="table-cell-padding value-with-indicator">74.8<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-front-runner mr-3 rounded-sm align-middle"></span>53.7</td>
 <td class="table-cell-padding">53.7</td>
+<td class="table-cell-padding value-with-indicator">53.7<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-gray-500 trend-icon">remove</i></td>
-<td class="table-cell-padding"><span class="inline-block w-2 h-5 bg-contender mr-3 rounded-sm align-middle"></span>30.7</td>
-<td class="table-cell-padding">31.3</td>
+<td class="table-cell-padding">30.7</td>
+<td class="table-cell-padding value-with-indicator">31.3<span class="inline-block w-2 h-5 bg-contender ml-3 rounded-sm align-middle"></span></td>
 <td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="flex justify-between items-center pt-4">
-<div class="flex items-center gap-2">
-                            <span class="text-sm text-gray-600 dark:text-gray-400">Show</span>
-                            <select class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 py-1 px-2 text-sm" id="entries">
-<option>10</option>
-<option>25</option>
-<option>50</option>
-</select>
-                            <span class="text-sm text-gray-600 dark:text-gray-400">entries</span>
-</div>
-<div class="inline-flex -space-x-px rounded-md shadow-sm">
-                            <button class="relative inline-flex items-center rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">Previous</button>
-                            <button class="relative inline-flex items-center border border-gray-300 dark:border-gray-600 bg-blue-600 px-4 py-2 text-sm font-medium text-white">1</button>
-                            <button class="relative inline-flex items-center border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">2</button>
-                            <button class="relative inline-flex items-center border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">3</button>
-                            <span class="relative inline-flex items-center border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400">...</span>
-                            <button class="relative inline-flex items-center border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">8</button>
-                            <button class="relative inline-flex items-center rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">Next</button>
-                        </div>
 </div>
 </div>
 </div>
