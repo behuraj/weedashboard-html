@@ -108,6 +108,33 @@
             option.textContent = indicator;
             indicatorFilter.appendChild(option);
         });
+        
+        // Initialize searchable dropdown after populating options (only if >= 5 options)
+        if (typeof SearchableDropdown !== 'undefined' && indicators.length >= 5) {
+            // Check if already converted - need to destroy existing instance first
+            const existingWrapper = indicatorFilter.closest('.searchable-dropdown');
+            if (existingWrapper) {
+                // Remove existing wrapper and restore select
+                const select = existingWrapper.querySelector('select');
+                if (select) {
+                    existingWrapper.parentNode.insertBefore(select, existingWrapper);
+                    existingWrapper.remove();
+                    select.style.display = '';
+                }
+            }
+            
+            // Initialize new searchable dropdown
+            try {
+                new SearchableDropdown(indicatorFilter, {
+                    placeholder: 'Select Indicator',
+                    searchPlaceholder: 'Search indicators...',
+                    noResultsText: 'No indicators found',
+                    minOptionsToShowSearch: 5
+                });
+            } catch (error) {
+                console.error('Error initializing searchable dropdown for indicator filter:', error);
+            }
+        }
     }
 
     // Get selected filters
@@ -209,11 +236,22 @@
 
     // Generate district ranking data
     function generateDistrictRanking() {
-        const districts = allDistricts.map(district => ({
-            district: district,
-            value: Math.floor(Math.random() * 100) + 1,
-            change: (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 10 + 1)
-        }));
+        const districts = allDistricts.map(district => {
+            const random = Math.random();
+            let change;
+            if (random < 0.1) {
+                // 10% chance of no change (grey arrow)
+                change = 0;
+            } else {
+                // 90% chance of positive or negative change
+                change = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 10 + 1);
+            }
+            return {
+                district: district,
+                value: Math.floor(Math.random() * 100) + 1,
+                change: change
+            };
+        });
 
         // Sort by value descending
         districts.sort((a, b) => b.value - a.value);
@@ -233,16 +271,30 @@
         
         districts.forEach((item, index) => {
             const rank = index + 1;
-            const isPositive = item.change > 0;
-            const arrowIcon = isPositive ? 'ri-arrow-up-line' : 'ri-arrow-down-line';
-            const arrowClass = isPositive ? 'arrow-up' : 'arrow-down';
+            const change = item.change || 0;
+            const isPositive = change > 0;
+            const isNegative = change < 0;
+            const isNeutral = change === 0;
+            
+            // Determine arrow icon and class based on change
+            let arrowIcon, arrowClass;
+            if (isPositive) {
+                arrowIcon = 'ri-arrow-up-line';
+                arrowClass = 'arrow-up';
+            } else if (isNegative) {
+                arrowIcon = 'ri-arrow-down-line';
+                arrowClass = 'arrow-down';
+            } else {
+                arrowIcon = 'ri-arrow-right-line';
+                arrowClass = 'arrow-neutral';
+            }
             
             const districtItem = document.createElement('div');
             districtItem.className = 'district-rank-item';
             districtItem.innerHTML = `
                 <div class="rank-number ${isTop ? 'rank-top' : 'rank-bottom'}">${rank}</div>
                 <div class="rank-district-name">${item.district}</div>
-                <div class="rank-value-wrapper">
+                <div class="rank-value-box">
                     <div class="rank-value">${item.value}</div>
                     <i class="${arrowIcon} ${arrowClass}"></i>
                 </div>

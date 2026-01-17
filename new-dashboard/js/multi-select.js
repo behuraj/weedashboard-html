@@ -8,15 +8,8 @@
         const dropdown = document.getElementById('districtMultiSelectDropdown');
         
         if (!multiSelect || !triggerBtn || !dropdown) {
-            console.error('Multi-select elements not found:', {
-                multiSelect: !!multiSelect,
-                triggerBtn: !!triggerBtn,
-                dropdown: !!dropdown
-            });
             return;
         }
-        
-        console.log('Multi-select elements found, initializing...');
 
         const searchInput = document.getElementById('districtSearch');
         const options = document.querySelectorAll('#districtMultiSelectOptions .multi-select-option');
@@ -31,15 +24,44 @@
         triggerBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             e.preventDefault();
-            console.log('Dropdown button clicked, current state:', multiSelect.classList.contains('active'));
-            multiSelect.classList.toggle('active');
-            console.log('Dropdown state after toggle:', multiSelect.classList.contains('active'));
+            const isActive = multiSelect.classList.toggle('active');
+            
+            // On mobile, fix dropdown position
+            if (isActive && window.innerWidth <= 768) {
+                const triggerRect = triggerBtn.getBoundingClientRect();
+                dropdown.style.position = 'fixed';
+                dropdown.style.left = '10px';
+                dropdown.style.right = '10px';
+                dropdown.style.width = `calc(100vw - 20px)`;
+                dropdown.style.maxWidth = `calc(100vw - 20px)`;
+                dropdown.style.top = `${triggerRect.bottom + window.scrollY + 6}px`;
+                dropdown.style.maxHeight = `${window.innerHeight - triggerRect.bottom - 20}px`;
+            } else if (!isActive) {
+                // Reset styles when closed
+                dropdown.style.position = '';
+                dropdown.style.left = '';
+                dropdown.style.right = '';
+                dropdown.style.width = '';
+                dropdown.style.maxWidth = '';
+                dropdown.style.top = '';
+                dropdown.style.maxHeight = '';
+            }
         });
 
         // Close dropdown when clicking outside
         document.addEventListener('click', function(e) {
             if (!multiSelect.contains(e.target)) {
                 multiSelect.classList.remove('active');
+                // Reset mobile styles when closed
+                if (window.innerWidth <= 768) {
+                    dropdown.style.position = '';
+                    dropdown.style.left = '';
+                    dropdown.style.right = '';
+                    dropdown.style.width = '';
+                    dropdown.style.maxWidth = '';
+                    dropdown.style.top = '';
+                    dropdown.style.maxHeight = '';
+                }
             }
         });
 
@@ -149,8 +171,6 @@
         dropdown.addEventListener('click', function(e) {
             e.stopPropagation();
         });
-
-        console.log('Multi-select dropdown initialized');
     }
     
     // Try to initialize when DOM is ready

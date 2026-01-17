@@ -126,16 +126,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Calculate state average from all district values
-        const stateAverage = districtsData.reduce((sum, d) => sum + d.value, 0) / districtsData.length;
+        const stateAverage = Math.round((districtsData.reduce((sum, d) => sum + d.value, 0) / districtsData.length) * 10) / 10;
         
-        // Add state average at the beginning
-        const districts = ['State Average', ...districtsData.map(d => d.district)];
-        const values = [Math.round(stateAverage * 10) / 10, ...districtsData.map(d => d.value)];
-
-        // Create colors array: first bar (State Average) gets teal, rest get blue
-        const barColors = values.map((val, index) => {
-            return index === 0 ? '#0ab39c' : '#333894';
-        });
+        // Remove state average from bar data - only show districts as bars
+        const districts = districtsData.map(d => d.district);
+        const values = districtsData.map(d => d.value);
 
         const chartConfig = {
             chart: {
@@ -150,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     dataLabels: {
                         position: 'center'
                     },
-                    distributed: true
+                    distributed: false
                 }
             },
             series: [{
@@ -181,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 max: suffix === '%' ? 100 : undefined,
                 min: 0
             },
-            colors: barColors,
+            colors: ['#333894'],
             dataLabels: {
                 enabled: true,
                 formatter: function (val) {
@@ -191,10 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 style: {
                     fontSize: '12px',
                     fontWeight: 700,
-                    colors: values.map((val, index) => {
-                        // White text for all bars
-                        return '#ffffff';
-                    })
+                    colors: ['#ffffff'] // White text for bars
                 },
                 background: {
                     enabled: false
@@ -202,6 +194,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 dropShadow: {
                     enabled: false
                 }
+            },
+            annotations: {
+                xaxis: [{
+                    x: stateAverage,
+                    strokeDashArray: 0,
+                    borderColor: '#0ab39c',
+                    borderWidth: 2,
+                    label: {
+                        borderColor: '#0ab39c',
+                        style: {
+                            color: '#0ab39c',
+                            background: '#ffffff',
+                            fontSize: '12px',
+                            fontWeight: 600,
+                            padding: {
+                                left: 5,
+                                right: 5,
+                                top: 2,
+                                bottom: 2
+                            }
+                        },
+                        text: `State Avg: ${stateAverage}${suffix || ''}`,
+                        position: 'top',
+                        offsetY: -5
+                    }
+                }]
             },
             tooltip: {
                 y: {

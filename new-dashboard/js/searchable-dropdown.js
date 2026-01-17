@@ -251,13 +251,15 @@ class SearchableDropdown {
             document.body.appendChild(dropdown);
         }
         
-        // Set fixed position
+        // Set fixed position with high z-index
         dropdown.style.position = 'fixed';
         dropdown.style.top = `${triggerRect.bottom + window.scrollY + 6}px`;
         dropdown.style.left = `${triggerRect.left + window.scrollX}px`;
         dropdown.style.width = `${triggerRect.width}px`;
         dropdown.style.maxWidth = `${triggerRect.width}px`;
         dropdown.style.minWidth = `${triggerRect.width}px`;
+        dropdown.style.zIndex = '99999';
+        dropdown.style.pointerEvents = 'auto';
         
         // Focus search input if present
         if (this.searchInput) {
@@ -272,17 +274,39 @@ class SearchableDropdown {
             selectedOption.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
         }
         
-        // Handle window resize and scroll
+        // Handle window resize only - don't update on scroll to prevent flickering with charts
+        // Only reposition on actual window resize, not scroll events
+        this.lastTriggerRect = {
+            top: triggerRect.top,
+            left: triggerRect.left,
+            width: triggerRect.width
+        };
+        
         this.handleResize = () => {
-            if (this.isOpen) {
+            if (!this.isOpen || !this.trigger) return;
+            
+            try {
                 const newRect = this.trigger.getBoundingClientRect();
-                dropdown.style.top = `${newRect.bottom + window.scrollY + 6}px`;
-                dropdown.style.left = `${newRect.left + window.scrollX}px`;
+                // Only update if position actually changed significantly (resize, not scroll)
+                const threshold = 10; // pixels
+                if (Math.abs(newRect.left - this.lastTriggerRect.left) > threshold ||
+                    Math.abs(newRect.width - this.lastTriggerRect.width) > threshold) {
+                    dropdown.style.top = `${newRect.bottom + window.scrollY + 6}px`;
+                    dropdown.style.left = `${newRect.left + window.scrollX}px`;
+                    dropdown.style.width = `${newRect.width}px`;
+                    this.lastTriggerRect = {
+                        top: newRect.top,
+                        left: newRect.left,
+                        width: newRect.width
+                    };
+                }
+            } catch (e) {
+                console.warn('Error updating dropdown position:', e);
             }
         };
         
-        window.addEventListener('scroll', this.handleResize, true);
-        window.addEventListener('resize', this.handleResize);
+        // Only listen to resize events, not scroll - this prevents flickering with charts
+        window.addEventListener('resize', this.handleResize, { passive: true });
     }
     
     close() {
@@ -297,6 +321,14 @@ class SearchableDropdown {
         this.dropdown.style.width = '';
         this.dropdown.style.maxWidth = '';
         this.dropdown.style.minWidth = '';
+        this.dropdown.style.zIndex = '';
+        this.dropdown.style.pointerEvents = '';
+        
+        // Clear any pending resize timeout
+        if (this.resizeTimeout) {
+            clearTimeout(this.resizeTimeout);
+            this.resizeTimeout = null;
+        }
         
         // Move dropdown back to wrapper if it's in body
         if (document.body.contains(this.dropdown) && this.initialParent && this.initialParent.parentNode) {
@@ -305,9 +337,9 @@ class SearchableDropdown {
         
         // Remove event listeners
         if (this.handleResize) {
-            window.removeEventListener('scroll', this.handleResize, true);
-            window.removeEventListener('resize', this.handleResize);
+            window.removeEventListener('resize', this.handleResize, { passive: true });
         }
+        this.lastTriggerRect = null;
         
         // Clear search
         if (this.searchInput) {
@@ -355,12 +387,17 @@ class SearchableDropdown {
     }
 }
 
-// Initialize all searchable dropdowns
-// Use a function that can be called after DOM is ready
+// Initialize all searchable dropdowns conditionally
+// Only runs if dropdowns exist on the page
 function initSearchableDropdowns() {
     try {
-        // Find all select elements with class 'searchable-select', 'filter-select', or 'form-select' that have many options
+        // Check if there are any selects that need conversion
         const selects = document.querySelectorAll('select.filter-select, select.searchable-select, select.form-select');
+        
+        // Early return if no selects found
+        if (selects.length === 0) {
+            return;
+        }
         
         selects.forEach(select => {
             try {
@@ -388,12 +425,28 @@ function initSearchableDropdowns() {
     }
 }
 
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSearchableDropdowns);
+// Use Components.initSearchableDropdowns if available, otherwise use local function
+if (typeof Components !== 'undefined' && Components.initSearchableDropdowns) {
+    // Use the centralized component initialization
+    if (typeof AppUtils !== 'undefined') {
+        AppUtils.ready(() => {
+            Components.initSearchableDropdowns();
+        });
+    } else {
+        // Fallback if AppUtils not loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSearchableDropdowns);
+        } else {
+            initSearchableDropdowns();
+        }
+    }
 } else {
-    // DOM already ready, initialize immediately
-    initSearchableDropdowns();
+    // Fallback initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSearchableDropdowns);
+    } else {
+        initSearchableDropdowns();
+    }
 }
 
 // Export for manual initialization
