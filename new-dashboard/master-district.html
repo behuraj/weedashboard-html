@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employment - WEE Index Dashboard</title>
+    <title>Master Data - District - WEE Index Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -82,7 +82,7 @@
                             <span class="nav-text">Entrepreneurship</span>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a href="employment.html" class="nav-link">
                             <i class="ri-user-line"></i>
                             <span class="nav-text">Employment</span>
@@ -168,7 +168,7 @@
                                 <a href="master-year.html" class="submenu-link">Year</a>
                             </li>
                             <li class="submenu-item">
-                                <a href="master-district.html" class="submenu-link">District</a>
+                                <a href="master-district.html" class="submenu-link active">District</a>
                             </li>
                             <li class="submenu-item">
                                 <a href="master-indicators.html" class="submenu-link">Indicators</a>
@@ -191,151 +191,19 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="content-wrapper">
-                <!-- Filter Section -->
-                <div class="filter-section">
-                    <div class="filter-card">
-                        <div class="filter-header">
-                            <h3 class="filter-title">
-                                <i class="ri-filter-3-line"></i>
-                                Filter Data
-                            </h3>
-                        </div>
-                        <div class="filter-body">
-                            <div class="filter-grid">
-                                <div class="filter-item">
-                                    <label for="yearFilter" class="filter-label">
-                                        <i class="ri-calendar-line"></i>
-                                        Year:
-                                    </label>
-                                    <select id="yearFilter" class="filter-select">
-                                        <option value="2024" selected>2024</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2020">2020</option>
-                                    </select>
-                                </div>
-                                <div class="filter-item">
-                                    <label for="districtTypeFilter" class="filter-label">
-                                        <i class="ri-filter-3-line"></i>
-                                        District Type:
-                                    </label>
-                                    <select id="districtTypeFilter" class="filter-select">
-                                        <option value="top10" selected>Top 10</option>
-                                        <option value="bottom10">Bottom 10</option>
-                                        <option value="region">Region</option>
-                                        <option value="aspirational">Aspirational</option>
-                                        <option value="agra-division">Agra Division</option>
-                                        <option value="aligarh-division">Aligarh Division</option>
-                                        <option value="ayodhya-division">Ayodhya Division</option>
-                                        <option value="azamgarh-division">Azamgarh Division</option>
-                                        <option value="bareilly-division">Bareilly Division</option>
-                                        <option value="basti-division">Basti Division</option>
-                                        <option value="chitrakoot-division">Chitrakoot Division</option>
-                                        <option value="devipatan-division">Devipatan Division</option>
-                                        <option value="gorakhpur-division">Gorakhpur Division</option>
-                                        <option value="jhansi-division">Jhansi Division</option>
-                                        <option value="kanpur-division">Kanpur Division</option>
-                                        <option value="lucknow-division">Lucknow Division</option>
-                                        <option value="meerut-division">Meerut Division</option>
-                                        <option value="mirzapur-division">Mirzapur Division</option>
-                                        <option value="moradabad-division">Moradabad Division</option>
-                                        <option value="prayagraj-division">Prayagraj Division</option>
-                                        <option value="saharanpur-division">Saharanpur Division</option>
-                                        <option value="varanasi-division">Varanasi Division</option>
-                                    </select>
-                                </div>
-                                <div class="filter-item">
-                                    <button class="filter-reset-btn" id="resetFilter">
-                                        <i class="ri-refresh-line"></i>
-                                        Reset
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h2 class="page-title">Master Data - District</h2>
                 </div>
 
-                <!-- Employment Charts Section -->
-                <div class="employment-charts-section">
-                    <div class="charts-grid">
-                        <!-- Chart 1: DDUGKY placements -->
-                        <div class="chart-card">
-                            <div class="chart-header">
-                                <h4 class="chart-title">Percentage of women among total DDUGKY placements</h4>
-                            </div>
-                            <div class="chart-body">
-                                <div id="employment-chart-1" class="chart-container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Chart 2: SSDF placements -->
-                        <div class="chart-card">
-                            <div class="chart-header">
-                                <h4 class="chart-title">Percentage of women among total SSDF placements</h4>
-                            </div>
-                            <div class="chart-body">
-                                <div id="employment-chart-2" class="chart-container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Chart 3: Employment exchange Rozgaar Melas -->
-                        <div class="chart-card">
-                            <div class="chart-header">
-                                <h4 class="chart-title">Percentage of women among selections via employment exchange Rozgaar Melas</h4>
-                            </div>
-                            <div class="chart-body">
-                                <div id="employment-chart-3" class="chart-container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Chart 4: ITI employment fairs -->
-                        <div class="chart-card">
-                            <div class="chart-header">
-                                <h4 class="chart-title">Percentage of women placed in ITI employment fairs</h4>
-                            </div>
-                            <div class="chart-body">
-                                <div id="employment-chart-4" class="chart-container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Chart 5: Polytechnic placements -->
-                        <div class="chart-card">
-                            <div class="chart-header">
-                                <h4 class="chart-title">Percentage of women among total polytechnic placements</h4>
-                            </div>
-                            <div class="chart-body">
-                                <div id="employment-chart-5" class="chart-container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Chart 6: Engineering placements -->
-                        <div class="chart-card">
-                            <div class="chart-header">
-                                <h4 class="chart-title">Percentage of women among total engineering placements</h4>
-                            </div>
-                            <div class="chart-body">
-                                <div id="employment-chart-6" class="chart-container"></div>
-                            </div>
-                        </div>
-
-                        <!-- Chart 7: Building and Other Construction Labourers -->
-                        <div class="chart-card">
-                            <div class="chart-header">
-                                <h4 class="chart-title">Percentage of women registered as Building and Other Construction Labourers</h4>
-                            </div>
-                            <div class="chart-body">
-                                <div id="employment-chart-7" class="chart-container"></div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Content Area -->
+                <div class="content-section">
+                    <p>Content will be added here...</p>
                 </div>
             </div>
         </main>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="js/main.js"></script>
-    <script src="js/employment.js"></script>
 </body>
 </html>

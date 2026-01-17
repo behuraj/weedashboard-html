@@ -72,6 +72,12 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a href="snapshot.html" class="nav-link">
+                            <i class="ri-camera-line"></i>
+                            <span class="nav-text">Summary</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="entrepreneurship.html" class="nav-link">
                             <i class="ri-lightbulb-line"></i>
                             <span class="nav-text">Entrepreneurship</span>
@@ -114,12 +120,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="snapshot.html" class="nav-link">
-                            <i class="ri-camera-line"></i>
-                            <span class="nav-text">UP Snapshot</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="indicator.html" class="nav-link">
                             <i class="ri-bar-chart-2-line"></i>
                             <span class="nav-text">Indicator wise</span>
@@ -130,6 +130,60 @@
                             <i class="ri-upload-cloud-2-line"></i>
                             <span class="nav-text">Data Upload</span>
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="glossary.html" class="nav-link">
+                            <i class="ri-book-2-line"></i>
+                            <span class="nav-text">Glossary</span>
+                        </a>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-user-settings-line"></i>
+                            <span class="nav-text">Users</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="users.html" class="submenu-link">Users</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="roles.html" class="submenu-link">Roles</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="role-permissions.html" class="submenu-link">Role Permissions</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="login-log.html" class="submenu-link">Login Log</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-database-2-line"></i>
+                            <span class="nav-text">Master Data</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="master-year.html" class="submenu-link">Year</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-district.html" class="submenu-link">District</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-indicators.html" class="submenu-link">Indicators</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-raw-indicator.html" class="submenu-link">Raw Indicator</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-department.html" class="submenu-link">Department</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-levers.html" class="submenu-link">Levers</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </nav>
@@ -248,6 +302,30 @@
                                     </select>
                                 </div>
                                 <div class="filter-item">
+                                    <label for="departmentFilter" class="filter-label">
+                                        <i class="ri-building-line"></i>
+                                        Department:
+                                    </label>
+                                    <select id="departmentFilter" class="filter-select">
+                                        <option value="">All Departments</option>
+                                        <option value="msme-export">MSME & Export Promotion</option>
+                                        <option value="urban-dev">Urban Development</option>
+                                        <option value="vocational-skill-entrepreneurship">Vocational Education, Skill Development and Entrepreneurship</option>
+                                        <option value="it-electronics">IT & Electronics</option>
+                                        <option value="rural-dev">Rural Development</option>
+                                        <option value="technical-edu">Technical Education</option>
+                                        <option value="secondary-edu">Secondary Education</option>
+                                        <option value="medical-edu">Medical Education</option>
+                                        <option value="transport">Transport</option>
+                                        <option value="home">Home</option>
+                                        <option value="home-guard">Home Guard</option>
+                                        <option value="revenue">Revenue</option>
+                                        <option value="finance">Finance and Institutional Finance</option>
+                                        <option value="youth-welfare">Youth Welfare and Prantiya Rakshak Dal</option>
+                                        <option value="labour">Labour</option>
+                                    </select>
+                                </div>
+                                <div class="filter-item">
                                     <button class="filter-reset-btn" id="resetFilter">
                                         <i class="ri-refresh-line"></i>
                                         Reset
@@ -280,7 +358,7 @@
                     </div>
 
                     <!-- Card 2: Entrepreneurship -->
-                    <div class="stat-card card-info">
+                    <div class="stat-card card-primary">
                         <div class="card-content">
                             <div class="card-info">
                                 <h5 class="card-label">Entrepreneurship</h5>
@@ -312,14 +390,14 @@
                             <div class="card-icon">
                                 <iconify-icon icon="solar:case-bold-duotone"></iconify-icon>
                             </div>
-                            </div>
                         </div>
                     </div>
+                </div>
 
                 <!-- Second Row: 3 Cards -->
                 <div class="cards-grid">
                     <!-- Card 4: Education & Skilling -->
-                    <div class="stat-card card-success">
+                    <div class="stat-card card-primary">
                         <div class="card-content">
                             <div class="card-info">
                                 <h5 class="card-label">Education & Skilling</h5>
@@ -337,7 +415,7 @@
                     </div>
 
                     <!-- Card 5: Livelihood -->
-                    <div class="stat-card card-success">
+                    <div class="stat-card card-primary">
                         <div class="card-content">
                             <div class="card-info">
                                 <h5 class="card-label">Livelihood</h5>
@@ -355,7 +433,7 @@
                     </div>
 
                     <!-- Card 6: Mobility, Safety & Inclusive Infra -->
-                    <div class="stat-card card-info">
+                    <div class="stat-card card-primary">
                         <div class="card-content">
                             <div class="card-info">
                                 <h5 class="card-label">Mobility, Safety & Inclusive Infra</h5>
