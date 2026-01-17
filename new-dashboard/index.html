@@ -15,6 +15,9 @@
     <!-- Top Header -->
     <header class="top-header">
         <div class="header-content">
+            <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <i class="ri-menu-line"></i>
+            </button>
             <div class="header-left">
                 <div class="logo">
                     <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
@@ -25,7 +28,7 @@
             </div>
             <div class="header-right">
                 <div class="profile-dropdown">
-                    <button class="profile-btn" id="profileBtn">
+                    <button type="button" class="profile-btn" id="profileBtn">
                         <i class="ri-user-line"></i>
                     </button>
                     <div class="dropdown-menu" id="profileMenu">
@@ -66,6 +69,12 @@
                                 <a href="index.html" class="submenu-link">2023</a>
                             </li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="snapshot.html" class="nav-link">
+                            <i class="ri-camera-line"></i>
+                            <span class="nav-text">Summary</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a href="entrepreneurship.html" class="nav-link">
@@ -110,12 +119,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="snapshot.html" class="nav-link">
-                            <i class="ri-camera-line"></i>
-                            <span class="nav-text">UP Snapshot</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="indicator.html" class="nav-link">
                             <i class="ri-bar-chart-2-line"></i>
                             <span class="nav-text">Indicator wise</span>
@@ -126,6 +129,60 @@
                             <i class="ri-upload-cloud-2-line"></i>
                             <span class="nav-text">Data Upload</span>
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="glossary.html" class="nav-link">
+                            <i class="ri-book-2-line"></i>
+                            <span class="nav-text">Glossary</span>
+                        </a>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-user-settings-line"></i>
+                            <span class="nav-text">Users</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="users.html" class="submenu-link">Users</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="roles.html" class="submenu-link">Roles</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="role-permissions.html" class="submenu-link">Role Permissions</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="login-log.html" class="submenu-link">Login Log</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-database-2-line"></i>
+                            <span class="nav-text">Master Data</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="master-year.html" class="submenu-link">Year</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-district.html" class="submenu-link">District</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-indicators.html" class="submenu-link">Indicators</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-raw-indicator.html" class="submenu-link">Raw Indicator</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-department.html" class="submenu-link">Department</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-levers.html" class="submenu-link">Levers</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </nav>
@@ -444,10 +501,10 @@
                     </div>
                 </div>
 
-                <!-- Top 10 and Bottom 10 Districts Section -->
+                <!-- District Categories Ranking Section -->
                 <div class="districts-ranking-section">
                     <div class="section-header">
-                        <h3 class="section-title">Top 10 & Bottom 10 Districts Ranking</h3>
+                        <h3 class="section-title">District Categories Ranking</h3>
                     </div>
 
                     <!-- Metric Tabs -->
@@ -466,30 +523,50 @@
                     <div class="metric-content-wrapper">
                         <!-- WEE Index -->
                         <div class="metric-content active" id="metric-wee-index">
-                            <div class="metric-content-grid">
-                                <div class="metric-image-container">
-                                    <div class="metric-image-card">
-                                        <img src="../assets/images/wee-index-map.jpeg" alt="WEE Index Map" class="metric-image">
+                            <div class="category-boxes-grid">
+                                <div class="category-box">
+                                    <div class="category-box-header champions">
+                                        <h4 class="category-box-title">Champions</h4>
+                                        <span class="category-box-subtitle">Rank 1-15</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-champions-wee-index">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
-                                <div class="metric-lists-container">
-                                    <div class="ranking-lists-grid">
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header top">
-                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="top-10-wee-index">
-                                                <!-- Top 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header bottom">
-                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="bottom-10-wee-index">
-                                                <!-- Bottom 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
+                                <div class="category-box">
+                                    <div class="category-box-header front-runners">
+                                        <h4 class="category-box-title">Front Runners</h4>
+                                        <span class="category-box-subtitle">Rank 16-30</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-front-runners-wee-index">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header contenders">
+                                        <h4 class="category-box-title">Contenders</h4>
+                                        <span class="category-box-subtitle">Rank 31-45</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-contenders-wee-index">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header strivers">
+                                        <h4 class="category-box-title">Strivers</h4>
+                                        <span class="category-box-subtitle">Rank 46-60</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-strivers-wee-index">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header aspirants">
+                                        <h4 class="category-box-title">Aspirants</h4>
+                                        <span class="category-box-subtitle">Rank 61-75</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-aspirants-wee-index">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
                             </div>
@@ -497,30 +574,50 @@
 
                         <!-- Entrepreneurship -->
                         <div class="metric-content" id="metric-entrepreneurship">
-                            <div class="metric-content-grid">
-                                <div class="metric-image-container">
-                                    <div class="metric-image-card">
-                                        <img src="../assets/images/wee-index-map.jpeg" alt="Entrepreneurship Map" class="metric-image">
+                            <div class="category-boxes-grid">
+                                <div class="category-box">
+                                    <div class="category-box-header champions">
+                                        <h4 class="category-box-title">Champions</h4>
+                                        <span class="category-box-subtitle">Rank 1-15</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-champions-entrepreneurship">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
-                                <div class="metric-lists-container">
-                                    <div class="ranking-lists-grid">
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header top">
-                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="top-10-entrepreneurship">
-                                                <!-- Top 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header bottom">
-                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="bottom-10-entrepreneurship">
-                                                <!-- Bottom 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
+                                <div class="category-box">
+                                    <div class="category-box-header front-runners">
+                                        <h4 class="category-box-title">Front Runners</h4>
+                                        <span class="category-box-subtitle">Rank 16-30</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-front-runners-entrepreneurship">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header contenders">
+                                        <h4 class="category-box-title">Contenders</h4>
+                                        <span class="category-box-subtitle">Rank 31-45</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-contenders-entrepreneurship">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header strivers">
+                                        <h4 class="category-box-title">Strivers</h4>
+                                        <span class="category-box-subtitle">Rank 46-60</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-strivers-entrepreneurship">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header aspirants">
+                                        <h4 class="category-box-title">Aspirants</h4>
+                                        <span class="category-box-subtitle">Rank 61-75</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-aspirants-entrepreneurship">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
                             </div>
@@ -528,30 +625,50 @@
 
                         <!-- Employment -->
                         <div class="metric-content" id="metric-employment">
-                            <div class="metric-content-grid">
-                                <div class="metric-image-container">
-                                    <div class="metric-image-card">
-                                        <img src="../assets/images/wee-index-map.jpeg" alt="Employment Map" class="metric-image">
+                            <div class="category-boxes-grid">
+                                <div class="category-box">
+                                    <div class="category-box-header champions">
+                                        <h4 class="category-box-title">Champions</h4>
+                                        <span class="category-box-subtitle">Rank 1-15</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-champions-employment">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
-                                <div class="metric-lists-container">
-                                    <div class="ranking-lists-grid">
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header top">
-                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="top-10-employment">
-                                                <!-- Top 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header bottom">
-                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="bottom-10-employment">
-                                                <!-- Bottom 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
+                                <div class="category-box">
+                                    <div class="category-box-header front-runners">
+                                        <h4 class="category-box-title">Front Runners</h4>
+                                        <span class="category-box-subtitle">Rank 16-30</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-front-runners-employment">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header contenders">
+                                        <h4 class="category-box-title">Contenders</h4>
+                                        <span class="category-box-subtitle">Rank 31-45</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-contenders-employment">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header strivers">
+                                        <h4 class="category-box-title">Strivers</h4>
+                                        <span class="category-box-subtitle">Rank 46-60</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-strivers-employment">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header aspirants">
+                                        <h4 class="category-box-title">Aspirants</h4>
+                                        <span class="category-box-subtitle">Rank 61-75</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-aspirants-employment">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
                             </div>
@@ -559,30 +676,50 @@
 
                         <!-- Education -->
                         <div class="metric-content" id="metric-education">
-                            <div class="metric-content-grid">
-                                <div class="metric-image-container">
-                                    <div class="metric-image-card">
-                                        <img src="../assets/images/wee-index-map.jpeg" alt="Education Map" class="metric-image">
+                            <div class="category-boxes-grid">
+                                <div class="category-box">
+                                    <div class="category-box-header champions">
+                                        <h4 class="category-box-title">Champions</h4>
+                                        <span class="category-box-subtitle">Rank 1-15</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-champions-education">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
-                                <div class="metric-lists-container">
-                                    <div class="ranking-lists-grid">
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header top">
-                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="top-10-education">
-                                                <!-- Top 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header bottom">
-                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="bottom-10-education">
-                                                <!-- Bottom 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
+                                <div class="category-box">
+                                    <div class="category-box-header front-runners">
+                                        <h4 class="category-box-title">Front Runners</h4>
+                                        <span class="category-box-subtitle">Rank 16-30</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-front-runners-education">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header contenders">
+                                        <h4 class="category-box-title">Contenders</h4>
+                                        <span class="category-box-subtitle">Rank 31-45</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-contenders-education">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header strivers">
+                                        <h4 class="category-box-title">Strivers</h4>
+                                        <span class="category-box-subtitle">Rank 46-60</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-strivers-education">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header aspirants">
+                                        <h4 class="category-box-title">Aspirants</h4>
+                                        <span class="category-box-subtitle">Rank 61-75</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-aspirants-education">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
                             </div>
@@ -590,30 +727,50 @@
 
                         <!-- Livelihood -->
                         <div class="metric-content" id="metric-livelihood">
-                            <div class="metric-content-grid">
-                                <div class="metric-image-container">
-                                    <div class="metric-image-card">
-                                        <img src="../assets/images/wee-index-map.jpeg" alt="Livelihood Map" class="metric-image">
+                            <div class="category-boxes-grid">
+                                <div class="category-box">
+                                    <div class="category-box-header champions">
+                                        <h4 class="category-box-title">Champions</h4>
+                                        <span class="category-box-subtitle">Rank 1-15</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-champions-livelihood">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
-                                <div class="metric-lists-container">
-                                    <div class="ranking-lists-grid">
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header top">
-                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="top-10-livelihood">
-                                                <!-- Top 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header bottom">
-                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="bottom-10-livelihood">
-                                                <!-- Bottom 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
+                                <div class="category-box">
+                                    <div class="category-box-header front-runners">
+                                        <h4 class="category-box-title">Front Runners</h4>
+                                        <span class="category-box-subtitle">Rank 16-30</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-front-runners-livelihood">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header contenders">
+                                        <h4 class="category-box-title">Contenders</h4>
+                                        <span class="category-box-subtitle">Rank 31-45</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-contenders-livelihood">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header strivers">
+                                        <h4 class="category-box-title">Strivers</h4>
+                                        <span class="category-box-subtitle">Rank 46-60</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-strivers-livelihood">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header aspirants">
+                                        <h4 class="category-box-title">Aspirants</h4>
+                                        <span class="category-box-subtitle">Rank 61-75</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-aspirants-livelihood">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
                             </div>
@@ -621,30 +778,50 @@
 
                         <!-- Mobility -->
                         <div class="metric-content" id="metric-mobility">
-                            <div class="metric-content-grid">
-                                <div class="metric-image-container">
-                                    <div class="metric-image-card">
-                                        <img src="../assets/images/wee-index-map.jpeg" alt="Mobility Map" class="metric-image">
+                            <div class="category-boxes-grid">
+                                <div class="category-box">
+                                    <div class="category-box-header champions">
+                                        <h4 class="category-box-title">Champions</h4>
+                                        <span class="category-box-subtitle">Rank 1-15</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-champions-mobility">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
-                                <div class="metric-lists-container">
-                                    <div class="ranking-lists-grid">
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header top">
-                                                <h4 class="ranking-card-title">Top 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="top-10-mobility">
-                                                <!-- Top 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
-                                        <div class="ranking-list-card">
-                                            <div class="ranking-card-header bottom">
-                                                <h4 class="ranking-card-title">Bottom 10 Districts</h4>
-                                            </div>
-                                            <div class="ranking-card-body" id="bottom-10-mobility">
-                                                <!-- Bottom 10 will be populated by JavaScript -->
-                                            </div>
-                                        </div>
+                                <div class="category-box">
+                                    <div class="category-box-header front-runners">
+                                        <h4 class="category-box-title">Front Runners</h4>
+                                        <span class="category-box-subtitle">Rank 16-30</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-front-runners-mobility">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header contenders">
+                                        <h4 class="category-box-title">Contenders</h4>
+                                        <span class="category-box-subtitle">Rank 31-45</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-contenders-mobility">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header strivers">
+                                        <h4 class="category-box-title">Strivers</h4>
+                                        <span class="category-box-subtitle">Rank 46-60</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-strivers-mobility">
+                                        <!-- 15 districts will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <div class="category-box-header aspirants">
+                                        <h4 class="category-box-title">Aspirants</h4>
+                                        <span class="category-box-subtitle">Rank 61-75</span>
+                                    </div>
+                                    <div class="category-box-body" id="category-aspirants-mobility">
+                                        <!-- 15 districts will be populated by JavaScript -->
                                     </div>
                                 </div>
                             </div>

@@ -4,29 +4,88 @@ document.addEventListener('DOMContentLoaded', function() {
     const profileMenu = document.getElementById('profileMenu');
 
     if (profileBtn && profileMenu) {
+        let touchStarted = false;
+        
+        // Touch start to prevent double-firing on mobile
+        profileBtn.addEventListener('touchstart', function(e) {
+            touchStarted = true;
+        }, { passive: true });
+
+        // Click event handler
         profileBtn.addEventListener('click', function(e) {
+            // On mobile, prevent click if touch was used
+            if (touchStarted) {
+                touchStarted = false;
+                return;
+            }
+            e.preventDefault();
             e.stopPropagation();
             profileMenu.classList.toggle('show');
         });
 
+        // Touch event for mobile
+        profileBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            profileMenu.classList.toggle('show');
+            touchStarted = false;
+        });
+
         // Close dropdown when clicking outside
         document.addEventListener('click', function(e) {
-            if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
+            if (profileBtn && profileMenu && !profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
                 profileMenu.classList.remove('show');
             }
         });
     }
 
-    // Sidebar hover effect (optional - can be enhanced)
+    // Get sidebar and body reference - declared once
     const sidebar = document.getElementById('sidebar');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const body = document.body;
+
+    // Prevent page scrolling when scrolling over sidebar
+    if (sidebar) {
+        sidebar.addEventListener('wheel', function(e) {
+            const sidebarEl = this;
+            
+            // Check if sidebar is scrollable
+            const canScroll = sidebarEl.scrollHeight > sidebarEl.clientHeight;
+            if (!canScroll) {
+                return; // Allow page scroll if sidebar not scrollable
+            }
+            
+            // Check scroll boundaries
+            const currentScroll = sidebarEl.scrollTop;
+            const maxScroll = sidebarEl.scrollHeight - sidebarEl.clientHeight;
+            const isScrollingUp = e.deltaY < 0;
+            const isScrollingDown = e.deltaY > 0;
+            
+            // Allow page scroll if at boundaries
+            if ((currentScroll <= 0 && isScrollingUp) || (currentScroll >= maxScroll && isScrollingDown)) {
+                return; // At boundary, allow page to scroll
+            }
+            
+            // Sidebar can scroll - prevent page scroll
+            e.stopPropagation();
+            e.preventDefault();
+            
+            // Scroll the sidebar manually
+            sidebarEl.scrollTop += e.deltaY;
+        }, { passive: false });
+    }
+
+    // Sidebar hover effect - regular nav links (not submenu toggles)
+    const navLinks = document.querySelectorAll('.nav-link:not(.submenu-toggle)');
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Remove active class from all links
-            navLinks.forEach(l => l.classList.remove('active'));
-            // Add active class to clicked link
-            this.classList.add('active');
+            // Only handle if it's not a submenu toggle
+            if (!this.classList.contains('submenu-toggle')) {
+                // Remove active class from all links
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                this.classList.add('active');
+            }
         });
     });
 
@@ -36,10 +95,96 @@ document.addEventListener('DOMContentLoaded', function() {
     submenuToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             const navItem = this.closest('.nav-item');
-            navItem.classList.toggle('submenu-open');
+            if (navItem) {
+                navItem.classList.toggle('submenu-open');
+            }
+        });
+
+        // Touch event for mobile submenu
+        toggle.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const navItem = this.closest('.nav-item');
+            if (navItem) {
+                navItem.classList.toggle('submenu-open');
+            }
         });
     });
+
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+
+    // Create sidebar overlay if it doesn't exist
+    let sidebarOverlay = document.querySelector('.sidebar-overlay');
+    if (!sidebarOverlay) {
+        sidebarOverlay = document.createElement('div');
+        sidebarOverlay.className = 'sidebar-overlay';
+        body.appendChild(sidebarOverlay);
+    }
+
+    if (mobileMenuToggle && sidebar) {
+        let menuTouchStarted = false;
+
+        // Touch start to prevent double-firing on mobile
+        mobileMenuToggle.addEventListener('touchstart', function(e) {
+            menuTouchStarted = true;
+        }, { passive: true });
+
+        // Function to toggle sidebar
+        function toggleSidebar(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const isOpen = sidebar.classList.contains('mobile-open');
+            if (isOpen) {
+                sidebar.classList.remove('mobile-open');
+                if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+                body.style.overflow = '';
+            } else {
+                sidebar.classList.add('mobile-open');
+                if (sidebarOverlay) sidebarOverlay.classList.add('active');
+                body.style.overflow = 'hidden';
+            }
+        }
+
+        // Click event handler
+        mobileMenuToggle.addEventListener('click', function(e) {
+            // On mobile, prevent click if touch was used
+            if (menuTouchStarted) {
+                menuTouchStarted = false;
+                return;
+            }
+            toggleSidebar(e);
+        });
+
+        // Touch event handler for mobile
+        mobileMenuToggle.addEventListener('touchend', function(e) {
+            toggleSidebar(e);
+            menuTouchStarted = false;
+        });
+
+        // Close sidebar when clicking overlay
+        sidebarOverlay.addEventListener('click', function() {
+            sidebar.classList.remove('mobile-open');
+            sidebarOverlay.classList.remove('active');
+            body.style.overflow = '';
+        });
+
+        // Close sidebar when clicking on a nav link on mobile
+        const navLinks = document.querySelectorAll('.nav-link:not(.submenu-toggle)');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('mobile-open');
+                    sidebarOverlay.classList.remove('active');
+                    body.style.overflow = '';
+                }
+            });
+        });
+    }
 
     // Submenu Link Click Handler
     const submenuLinks = document.querySelectorAll('.submenu-link');
@@ -204,24 +349,31 @@ document.addEventListener('DOMContentLoaded', function() {
             // Sort by value descending
             pairs.sort((a, b) => b.value - a.value);
             
+            // Assign ranks
+            pairs.forEach((pair, index) => {
+                pair.rank = index + 1;
+            });
+            
             data[metric] = {
-                top10: pairs.slice(0, 10),
-                bottom10: pairs.slice(-10).reverse() // Reverse to show lowest first
+                champions: pairs.slice(0, 15),      // Rank 1-15
+                frontRunners: pairs.slice(15, 30),   // Rank 16-30
+                contenders: pairs.slice(30, 45),      // Rank 31-45
+                strivers: pairs.slice(45, 60),       // Rank 46-60
+                aspirants: pairs.slice(60, 75)       // Rank 61-75
             };
         });
 
         return data;
     }
 
-    // Render district ranking list
-    function renderDistrictList(containerId, districts, isTop) {
+    // Render district category list
+    function renderCategoryList(containerId, districts) {
         const container = document.getElementById(containerId);
         if (!container) return;
 
         container.innerHTML = '';
         
-        districts.forEach((item, index) => {
-            const rank = isTop ? index + 1 : index + 1;
+        districts.forEach((item) => {
             const isPositive = item.change > 0;
             const arrowIcon = isPositive ? 'ri-arrow-up-line' : 'ri-arrow-down-line';
             const arrowClass = isPositive ? 'arrow-up' : 'arrow-down';
@@ -229,9 +381,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const districtItem = document.createElement('div');
             districtItem.className = 'district-rank-item';
             districtItem.innerHTML = `
-                <div class="rank-number ${isTop ? 'rank-top' : 'rank-bottom'}">${rank}</div>
                 <div class="rank-district-name">${item.district}</div>
-                <div class="rank-value-wrapper">
+                <div class="rank-value-box">
                     <div class="rank-value">${item.value}</div>
                     <i class="${arrowIcon} ${arrowClass}"></i>
                 </div>
@@ -247,8 +398,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Render initial data
     Object.keys(metricData).forEach(metric => {
-        renderDistrictList(`top-10-${metric}`, metricData[metric].top10, true);
-        renderDistrictList(`bottom-10-${metric}`, metricData[metric].bottom10, false);
+        renderCategoryList(`category-champions-${metric}`, metricData[metric].champions);
+        renderCategoryList(`category-front-runners-${metric}`, metricData[metric].frontRunners);
+        renderCategoryList(`category-contenders-${metric}`, metricData[metric].contenders);
+        renderCategoryList(`category-strivers-${metric}`, metricData[metric].strivers);
+        renderCategoryList(`category-aspirants-${metric}`, metricData[metric].aspirants);
     });
 
     // Tab switching

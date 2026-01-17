@@ -15,6 +15,9 @@
     <!-- Top Header -->
     <header class="top-header">
         <div class="header-content">
+            <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <i class="ri-menu-line"></i>
+            </button>
             <div class="header-left">
                 <div class="logo">
                     <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
@@ -25,7 +28,7 @@
             </div>
             <div class="header-right">
                 <div class="profile-dropdown">
-                    <button class="profile-btn" id="profileBtn">
+                    <button type="button" class="profile-btn" id="profileBtn">
                         <i class="ri-user-line"></i>
                     </button>
                     <div class="dropdown-menu" id="profileMenu">
@@ -66,6 +69,12 @@
                                 <a href="index.html" class="submenu-link">2023</a>
                             </li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="snapshot.html" class="nav-link">
+                            <i class="ri-camera-line"></i>
+                            <span class="nav-text">Summary</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a href="entrepreneurship.html" class="nav-link">
@@ -110,12 +119,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="snapshot.html" class="nav-link">
-                            <i class="ri-camera-line"></i>
-                            <span class="nav-text">UP Snapshot</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="indicator.html" class="nav-link">
                             <i class="ri-bar-chart-2-line"></i>
                             <span class="nav-text">Indicator wise</span>
@@ -126,6 +129,60 @@
                             <i class="ri-upload-cloud-2-line"></i>
                             <span class="nav-text">Data Upload</span>
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="glossary.html" class="nav-link">
+                            <i class="ri-book-2-line"></i>
+                            <span class="nav-text">Glossary</span>
+                        </a>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-user-settings-line"></i>
+                            <span class="nav-text">Users</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="users.html" class="submenu-link">Users</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="roles.html" class="submenu-link">Roles</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="role-permissions.html" class="submenu-link">Role Permissions</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="login-log.html" class="submenu-link">Login Log</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-database-2-line"></i>
+                            <span class="nav-text">Master Data</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="master-year.html" class="submenu-link">Year</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-district.html" class="submenu-link">District</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-indicators.html" class="submenu-link">Indicators</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-raw-indicator.html" class="submenu-link">Raw Indicator</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-department.html" class="submenu-link">Department</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-levers.html" class="submenu-link">Levers</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </nav>
@@ -161,10 +218,10 @@
                                     </label>
                                     <select id="filterUploadedBy" class="filter-select">
                                         <option value="">All Users</option>
-                                        <option value="admin">Admin User</option>
-                                        <option value="john">John Doe</option>
-                                        <option value="jane">Jane Smith</option>
-                                        <option value="mike">Mike Johnson</option>
+                                        <option value="sandeep-anand">Sandeep Anand</option>
+                                        <option value="amit-kumar">Amit Kumar</option>
+                                        <option value="gaurav-sinha">Gaurav Sinha</option>
+                                        <option value="rupali-tyagi">Rupali Tyagi</option>
                                     </select>
                                 </div>
                                 <div class="filter-item">
@@ -174,11 +231,21 @@
                                     </label>
                                     <select id="filterDepartment" class="filter-select">
                                         <option value="">All Departments</option>
-                                        <option value="Department of Women & Child Development">Department of Women & Child Development</option>
-                                        <option value="Department of Education">Department of Education</option>
-                                        <option value="Department of Employment">Department of Employment</option>
-                                        <option value="Department of Skill Development">Department of Skill Development</option>
-                                        <option value="Department of Rural Development">Department of Rural Development</option>
+                                        <option value="msme-export">MSME & Export Promotion</option>
+                                        <option value="urban-dev">Urban Development</option>
+                                        <option value="vocational-skill-entrepreneurship">Vocational Education, Skill Development and Entrepreneurship</option>
+                                        <option value="it-electronics">IT & Electronics</option>
+                                        <option value="rural-dev">Rural Development</option>
+                                        <option value="technical-edu">Technical Education</option>
+                                        <option value="secondary-edu">Secondary Education</option>
+                                        <option value="medical-edu">Medical Education</option>
+                                        <option value="transport">Transport</option>
+                                        <option value="home">Home</option>
+                                        <option value="home-guard">Home Guard</option>
+                                        <option value="revenue">Revenue</option>
+                                        <option value="finance">Finance and Institutional Finance</option>
+                                        <option value="youth-welfare">Youth Welfare and Prantiya Rakshak Dal</option>
+                                        <option value="labour">Labour</option>
                                     </select>
                                 </div>
                                 <div class="filter-item">
@@ -233,7 +300,7 @@
                             </thead>
                             <tbody id="filesTableBody">
                                 <!-- Sample data - will be populated dynamically -->
-                                <tr data-uploaded-by="admin" data-department="Department of Women & Child Development" data-year="2024">
+                                <tr data-uploaded-by="sandeep-anand" data-department="msme-export" data-year="2024">
                                     <td>
                                         <div class="file-name-cell">
                                             <i class="ri-file-excel-2-line"></i>
@@ -241,8 +308,8 @@
                                         </div>
                                     </td>
                                     <td>2024</td>
-                                    <td>Department of Women & Child Development</td>
-                                    <td>Admin User</td>
+                                    <td>MSME & Export Promotion</td>
+                                    <td>Sandeep Anand</td>
                                     <td>15 Jan 2024</td>
                                     <td>2.5 MB</td>
                                     <td>
@@ -259,7 +326,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr data-uploaded-by="john" data-department="Department of Women & Child Development" data-year="2023">
+                                <tr data-uploaded-by="amit-kumar" data-department="rural-dev" data-year="2023">
                                     <td>
                                         <div class="file-name-cell">
                                             <i class="ri-file-excel-2-line"></i>
@@ -267,8 +334,8 @@
                                         </div>
                                     </td>
                                     <td>2023</td>
-                                    <td>Department of Women & Child Development</td>
-                                    <td>John Doe</td>
+                                    <td>Rural Development</td>
+                                    <td>Amit Kumar</td>
                                     <td>10 Dec 2023</td>
                                     <td>2.3 MB</td>
                                     <td>
@@ -285,7 +352,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr data-uploaded-by="jane" data-department="Department of Education" data-year="2022">
+                                <tr data-uploaded-by="gaurav-sinha" data-department="vocational-skill-entrepreneurship" data-year="2022">
                                     <td>
                                         <div class="file-name-cell">
                                             <i class="ri-file-excel-2-line"></i>
@@ -293,8 +360,8 @@
                                         </div>
                                     </td>
                                     <td>2022</td>
-                                    <td>Department of Education</td>
-                                    <td>Jane Smith</td>
+                                    <td>Vocational Education, Skill Development and Entrepreneurship</td>
+                                    <td>Gaurav Sinha</td>
                                     <td>05 Nov 2022</td>
                                     <td>2.1 MB</td>
                                     <td>
@@ -352,11 +419,21 @@
                         </label>
                         <select id="departmentSelect" class="form-select" required>
                             <option value="">-- Select Department --</option>
-                            <option value="dept1">Department of Women & Child Development</option>
-                            <option value="dept2">Department of Education</option>
-                            <option value="dept3">Department of Employment</option>
-                            <option value="dept4">Department of Skill Development</option>
-                            <option value="dept5">Department of Rural Development</option>
+                            <option value="msme-export">MSME & Export Promotion</option>
+                            <option value="urban-dev">Urban Development</option>
+                            <option value="vocational-skill-entrepreneurship">Vocational Education, Skill Development and Entrepreneurship</option>
+                            <option value="it-electronics">IT & Electronics</option>
+                            <option value="rural-dev">Rural Development</option>
+                            <option value="technical-edu">Technical Education</option>
+                            <option value="secondary-edu">Secondary Education</option>
+                            <option value="medical-edu">Medical Education</option>
+                            <option value="transport">Transport</option>
+                            <option value="home">Home</option>
+                            <option value="home-guard">Home Guard</option>
+                            <option value="revenue">Revenue</option>
+                            <option value="finance">Finance and Institutional Finance</option>
+                            <option value="youth-welfare">Youth Welfare and Prantiya Rakshak Dal</option>
+                            <option value="labour">Labour</option>
                         </select>
                     </div>
 

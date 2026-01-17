@@ -15,6 +15,9 @@
     <!-- Top Header -->
     <header class="top-header">
         <div class="header-content">
+            <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <i class="ri-menu-line"></i>
+            </button>
             <div class="header-left">
                 <div class="logo">
                     <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
@@ -25,7 +28,7 @@
             </div>
             <div class="header-right">
                 <div class="profile-dropdown">
-                    <button class="profile-btn" id="profileBtn">
+                    <button type="button" class="profile-btn" id="profileBtn">
                         <i class="ri-user-line"></i>
                     </button>
                     <div class="dropdown-menu" id="profileMenu">
@@ -66,6 +69,12 @@
                                 <a href="index.html" class="submenu-link">2023</a>
                             </li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="snapshot.html" class="nav-link">
+                            <i class="ri-camera-line"></i>
+                            <span class="nav-text">Summary</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a href="entrepreneurship.html" class="nav-link">
@@ -109,12 +118,6 @@
                             <span class="nav-text">Department wise</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="snapshot.html" class="nav-link">
-                            <i class="ri-camera-line"></i>
-                            <span class="nav-text">UP Snapshot</span>
-                        </a>
-                    </li>
                     <li class="nav-item active">
                         <a href="indicator.html" class="nav-link">
                             <i class="ri-bar-chart-2-line"></i>
@@ -126,6 +129,60 @@
                             <i class="ri-upload-cloud-2-line"></i>
                             <span class="nav-text">Data Upload</span>
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="glossary.html" class="nav-link">
+                            <i class="ri-book-2-line"></i>
+                            <span class="nav-text">Glossary</span>
+                        </a>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-user-settings-line"></i>
+                            <span class="nav-text">Users</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="users.html" class="submenu-link">Users</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="roles.html" class="submenu-link">Roles</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="role-permissions.html" class="submenu-link">Role Permissions</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="login-log.html" class="submenu-link">Login Log</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link submenu-toggle">
+                            <i class="ri-database-2-line"></i>
+                            <span class="nav-text">Master Data</span>
+                            <i class="ri-arrow-down-s-line submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="master-year.html" class="submenu-link">Year</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-district.html" class="submenu-link">District</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-indicators.html" class="submenu-link">Indicators</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-raw-indicator.html" class="submenu-link">Raw Indicator</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-department.html" class="submenu-link">Department</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="master-levers.html" class="submenu-link">Levers</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </nav>
@@ -161,7 +218,7 @@
                                 <div class="filter-item">
                                     <label for="categoryFilter" class="filter-label">
                                         <i class="ri-folder-line"></i>
-                                        Category:
+                                        Levers:
                                     </label>
                                     <select id="categoryFilter" class="filter-select">
                                         <option value="wee-index" selected>WEE Index</option>
@@ -182,6 +239,30 @@
                                     </select>
                             </div>
                                 <div class="filter-item">
+                                    <label for="departmentFilter" class="filter-label">
+                                        <i class="ri-building-line"></i>
+                                        Department:
+                                    </label>
+                                    <select id="departmentFilter" class="filter-select">
+                                        <option value="">All Departments</option>
+                                        <option value="msme-export">MSME & Export Promotion</option>
+                                        <option value="urban-dev">Urban Development</option>
+                                        <option value="vocational-skill-entrepreneurship">Vocational Education, Skill Development and Entrepreneurship</option>
+                                        <option value="it-electronics">IT & Electronics</option>
+                                        <option value="rural-dev">Rural Development</option>
+                                        <option value="technical-edu">Technical Education</option>
+                                        <option value="secondary-edu">Secondary Education</option>
+                                        <option value="medical-edu">Medical Education</option>
+                                        <option value="transport">Transport</option>
+                                        <option value="home">Home</option>
+                                        <option value="home-guard">Home Guard</option>
+                                        <option value="revenue">Revenue</option>
+                                        <option value="finance">Finance and Institutional Finance</option>
+                                        <option value="youth-welfare">Youth Welfare and Prantiya Rakshak Dal</option>
+                                        <option value="labour">Labour</option>
+                                    </select>
+                            </div>
+                                <div class="filter-item">
                                     <button class="filter-reset-btn" id="resetFilter">
                                         <i class="ri-refresh-line"></i>
                                         Reset
@@ -191,6 +272,49 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Indicator Info Cards Section -->
+                <div class="cards-grid indicator-info-cards">
+                    <!-- Card 1: Frequency of Data collection -->
+                    <div class="stat-card card-primary">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Frequency of Data collection</h5>
+                                <h3 class="card-value" id="frequencyValue">Annual</h3>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:calendar-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Numerator -->
+                    <div class="stat-card card-primary">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Numerator</h5>
+                                <h3 class="card-value" id="numeratorValue">Number of Women enrolled in Training</h3>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:calculator-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Denominator -->
+                    <div class="stat-card card-primary">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h5 class="card-label">Denominator</h5>
+                                <h3 class="card-value" id="denominatorValue">Number of women passed</h3>
+                            </div>
+                            <div class="card-icon">
+                                <iconify-icon icon="solar:calculator-bold-duotone"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Pie Charts Section (Current Year and Previous Year) -->
                 <div class="pie-charts-section">
