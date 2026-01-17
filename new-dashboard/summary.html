@@ -10,22 +10,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-<script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        champion: "#4F46E5",
-                        "front-runner": "#10B981",
-                        contender: "#F59E0B",
-                        striver: "#3B82F6",
-                        aspirant: "#EF4444",
-                    },
-                },
-            },
-        };
-    </script>
     <style>
         .material-icons {
             font-size: 16px;
@@ -60,7 +44,7 @@
             </button>
             <div class="header-left">
                 <div class="logo">
-                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                    <img src="assets/images/logo.png" alt="Logo" class="logo-img">
 </div>
 </div>
             <div class="header-center">
@@ -72,7 +56,7 @@
                         <i class="ri-user-line"></i>
                     </button>
                     <div class="dropdown-menu" id="profileMenu">
-                        <a href="#" class="dropdown-item">
+                        <a href="profile.html" class="dropdown-item">
                             <i class="ri-user-line"></i>
                             <span>My Profile</span>
                         </a>
@@ -232,36 +216,37 @@
         <main class="main-content">
             <div class="content-wrapper">
                 <!-- Page Title and Legend -->
-                <div class="bg-white p-6 rounded-lg shadow mb-4">
-                    <h2 class="text-lg font-semibold mb-4" style="font-size: 18px; font-weight: 600; color: #212529; margin-bottom: 16px;">Women Economic Empowerment Index 2024 Scores</h2>
-                    <div class="flex flex-wrap items-center gap-x-6 gap-y-4" style="display: flex; flex-wrap: wrap; gap: 24px;">
-                        <div class="flex items-center" style="display: flex; align-items: center; gap: 8px;">
-                            <span class="w-4 h-4 rounded-full bg-champion mr-2" style="width: 16px; height: 16px; border-radius: 4px; background: #4F46E5; display: inline-block;"></span>
-                            <span class="text-sm" style="font-size: 13px; color: #495057; font-weight: 500;">Champions (Rank 1-15)</span>
+                <div class="summary-page-container">
+                    <h2 class="summary-page-title">Women Economic Empowerment Index 2024 Scores</h2>
+                    <div class="summary-legend">
+                        <div class="summary-legend-item">
+                            <span class="summary-legend-indicator champion"></span>
+                            <span class="summary-legend-text">Champions (Rank 1-15)</span>
                         </div>
-                        <div class="flex items-center" style="display: flex; align-items: center; gap: 8px;">
-                            <span class="w-4 h-4 rounded-full bg-front-runner mr-2" style="width: 16px; height: 16px; border-radius: 4px; background: #10B981; display: inline-block;"></span>
-                            <span class="text-sm" style="font-size: 13px; color: #495057; font-weight: 500;">Front Runners (Rank 16-30)</span>
-</div>
-                        <div class="flex items-center" style="display: flex; align-items: center; gap: 8px;">
-                            <span class="w-4 h-4 rounded-full bg-contender mr-2" style="width: 16px; height: 16px; border-radius: 4px; background: #F59E0B; display: inline-block;"></span>
-                            <span class="text-sm" style="font-size: 13px; color: #495057; font-weight: 500;">Contenders (Rank 31-45)</span>
-</div>
-                        <div class="flex items-center" style="display: flex; align-items: center; gap: 8px;">
-                            <span class="w-4 h-4 rounded-full bg-striver mr-2" style="width: 16px; height: 16px; border-radius: 4px; background: #3B82F6; display: inline-block;"></span>
-                            <span class="text-sm" style="font-size: 13px; color: #495057; font-weight: 500;">Strivers (Rank 46-60)</span>
-</div>
-                        <div class="flex items-center" style="display: flex; align-items: center; gap: 8px;">
-                            <span class="w-4 h-4 rounded-full bg-aspirant mr-2" style="width: 16px; height: 16px; border-radius: 4px; background: #EF4444; display: inline-block;"></span>
-                            <span class="text-sm" style="font-size: 13px; color: #495057; font-weight: 500;">Aspirants (Rank 61-75)</span>
-</div>
-</div>
-</div>
+                        <div class="summary-legend-item">
+                            <span class="summary-legend-indicator front-runner"></span>
+                            <span class="summary-legend-text">Front Runners (Rank 16-30)</span>
+                        </div>
+                        <div class="summary-legend-item">
+                            <span class="summary-legend-indicator contender"></span>
+                            <span class="summary-legend-text">Contenders (Rank 31-45)</span>
+                        </div>
+                        <div class="summary-legend-item">
+                            <span class="summary-legend-indicator striver"></span>
+                            <span class="summary-legend-text">Strivers (Rank 46-60)</span>
+                        </div>
+                        <div class="summary-legend-item">
+                            <span class="summary-legend-indicator aspirant"></span>
+                            <span class="summary-legend-text">Aspirants (Rank 61-75)</span>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Filter Section -->
                 <div class="filter-section">
                     <div class="filter-card">
                         <div class="filter-header">
+                            <h2 class="page-title-in-header">Summary</h2>
                             <h3 class="filter-title">
                                 <i class="ri-filter-3-line"></i>
                                 Filter Data
@@ -269,6 +254,20 @@
                         </div>
                         <div class="filter-body">
                             <div class="filter-grid">
+                                <div class="filter-item">
+                                    <label for="yearFilter" class="filter-label">
+                                        <i class="ri-calendar-line"></i>
+                                        Year:
+                                    </label>
+                                    <select id="yearFilter" class="filter-select">
+                                        <option value="">All Years</option>
+                                        <option value="2024" selected>2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
                                 <div class="filter-item">
                                     <label for="performance-filter" class="filter-label">
                                         <i class="ri-bar-chart-line"></i>
@@ -297,165 +296,165 @@
                         </div>
 </div>
 </div>
-<div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left text-gray-600 dark:text-gray-400 whitespace-nowrap">
-                            <thead class="text-xs text-gray-800 dark:text-gray-200 uppercase bg-gray-50 dark:bg-gray-900">
+<div class="summary-table-wrapper">
+                        <table class="summary-table">
+                            <thead>
 <tr>
-                                    <th class="py-3 px-6" rowspan="2" scope="col">District <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Index Score <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Entrepreneurship <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Employment <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Education &amp; Skilling <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Livelihood <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Mobility <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
+                                    <th rowspan="2" scope="col" class="summary-table-header">District</th>
+                                    <th class="summary-table-header text-center" colspan="3" scope="col">Index Score</th>
+                                    <th class="summary-table-header text-center" colspan="3" scope="col">Entrepreneurship</th>
+                                    <th class="summary-table-header text-center" colspan="3" scope="col">Employment</th>
+                                    <th class="summary-table-header text-center" colspan="3" scope="col">Education &amp; Skilling</th>
+                                    <th class="summary-table-header text-center" colspan="3" scope="col">Livelihood</th>
+                                    <th class="summary-table-header text-center" colspan="3" scope="col">Mobility</th>
 </tr>
-                                <tr class="text-xs text-gray-800 dark:text-gray-200 uppercase bg-gray-50 dark:bg-gray-900">
-<th class="py-2 px-3 font-medium">2024</th>
-<th class="py-2 px-3 font-medium">2025</th>
-<th class="py-2 px-3 font-medium">Trend</th>
-<th class="py-2 px-3 font-medium">2024</th>
-<th class="py-2 px-3 font-medium">2025</th>
-<th class="py-2 px-3 font-medium">Trend</th>
-<th class="py-2 px-3 font-medium">2024</th>
-<th class="py-2 px-3 font-medium">2025</th>
-<th class="py-2 px-3 font-medium">Trend</th>
-<th class="py-2 px-3 font-medium">2024</th>
-<th class="py-2 px-3 font-medium">2025</th>
-<th class="py-2 px-3 font-medium">Trend</th>
-<th class="py-2 px-3 font-medium">2024</th>
-<th class="py-2 px-3 font-medium">2025</th>
-<th class="py-2 px-3 font-medium">Trend</th>
-<th class="py-2 px-3 font-medium">2024</th>
-<th class="py-2 px-3 font-medium">2025</th>
-<th class="py-2 px-3 font-medium">Trend</th>
+                                <tr>
+<th class="summary-table-subheader">2024</th>
+<th class="summary-table-subheader">2025</th>
+<th class="summary-table-subheader">Trend</th>
+<th class="summary-table-subheader">2024</th>
+<th class="summary-table-subheader">2025</th>
+<th class="summary-table-subheader">Trend</th>
+<th class="summary-table-subheader">2024</th>
+<th class="summary-table-subheader">2025</th>
+<th class="summary-table-subheader">Trend</th>
+<th class="summary-table-subheader">2024</th>
+<th class="summary-table-subheader">2025</th>
+<th class="summary-table-subheader">Trend</th>
+<th class="summary-table-subheader">2024</th>
+<th class="summary-table-subheader">2025</th>
+<th class="summary-table-subheader">Trend</th>
+<th class="summary-table-subheader">2024</th>
+<th class="summary-table-subheader">2025</th>
+<th class="summary-table-subheader">Trend</th>
 </tr>
 </thead>
 <tbody>
-                                <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
-                                    <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">1 Lucknow</td>
+                                <tr>
+                                    <td class="summary-table-district">1 Lucknow</td>
 <td class="table-cell-padding">86.9</td>
-<td class="table-cell-padding value-with-indicator">87.5<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">87.5<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">55.5</td>
-<td class="table-cell-padding value-with-indicator">56.2<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">56.2<span class="summary-indicator striver "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">71.0</td>
-<td class="table-cell-padding value-with-indicator">70.5<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
+<td class="table-cell-padding value-with-indicator">70.5<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-down trend-icon">arrow_downward</i></td>
 <td class="table-cell-padding">73.2</td>
-<td class="table-cell-padding value-with-indicator">74.0<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">74.0<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">58.1</td>
-<td class="table-cell-padding value-with-indicator">58.1<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-gray-500 trend-icon">remove</i></td>
+<td class="table-cell-padding value-with-indicator">58.1<span class="summary-indicator front-runner "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-neutral trend-icon">remove</i></td>
 <td class="table-cell-padding">42.5</td>
-<td class="table-cell-padding value-with-indicator">43.1<span class="inline-block w-2 h-5 bg-contender ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">43.1<span class="summary-indicator contender "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 </tr>
-                                <tr class="bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-700">
-                                    <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">2 Kanpur Nagar</td>
+                                <tr>
+                                    <td class="summary-table-district">2 Kanpur Nagar</td>
 <td class="table-cell-padding">82.4</td>
-<td class="table-cell-padding value-with-indicator">81.9<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
+<td class="table-cell-padding value-with-indicator">81.9<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-down trend-icon">arrow_downward</i></td>
 <td class="table-cell-padding">46.6</td>
-<td class="table-cell-padding value-with-indicator">47.1<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">47.1<span class="summary-indicator striver "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">67.9</td>
-<td class="table-cell-padding value-with-indicator">67.2<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
+<td class="table-cell-padding value-with-indicator">67.2<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-down trend-icon">arrow_downward</i></td>
 <td class="table-cell-padding">78.8</td>
-<td class="table-cell-padding value-with-indicator">79.5<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">79.5<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">60.6</td>
-<td class="table-cell-padding value-with-indicator">60.0<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
+<td class="table-cell-padding value-with-indicator">60.0<span class="summary-indicator front-runner "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-down trend-icon">arrow_downward</i></td>
 <td class="table-cell-padding">36.4</td>
-<td class="table-cell-padding value-with-indicator">37.0<span class="inline-block w-2 h-5 bg-contender ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">37.0<span class="summary-indicator contender "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 </tr>
-                                <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
-                                    <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">3 Varanasi</td>
+                                <tr>
+                                    <td class="summary-table-district">3 Varanasi</td>
 <td class="table-cell-padding">79.3</td>
-<td class="table-cell-padding value-with-indicator">80.1<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">80.1<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">46.7</td>
-<td class="table-cell-padding value-with-indicator">46.7<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-gray-500 trend-icon">remove</i></td>
+<td class="table-cell-padding value-with-indicator">46.7<span class="summary-indicator striver "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-neutral trend-icon">remove</i></td>
 <td class="table-cell-padding">56.8</td>
-<td class="table-cell-padding value-with-indicator">57.5<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">57.5<span class="summary-indicator front-runner "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">75.4</td>
-<td class="table-cell-padding value-with-indicator">74.9<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
+<td class="table-cell-padding value-with-indicator">74.9<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-down trend-icon">arrow_downward</i></td>
 <td class="table-cell-padding">73.9</td>
-<td class="table-cell-padding value-with-indicator">74.5<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">74.5<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">32.7</td>
-<td class="table-cell-padding value-with-indicator">32.0<span class="inline-block w-2 h-5 bg-contender ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
+<td class="table-cell-padding value-with-indicator">32.0<span class="summary-indicator contender "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-down trend-icon">arrow_downward</i></td>
 </tr>
-                                <tr class="bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-700">
-                                    <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">4 Gautam Buddha Nagar</td>
+                                <tr>
+                                    <td class="summary-table-district">4 Gautam Buddha Nagar</td>
 <td class="table-cell-padding">74.8</td>
-<td class="table-cell-padding value-with-indicator">74.8<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-gray-500 trend-icon">remove</i></td>
+<td class="table-cell-padding value-with-indicator">74.8<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-neutral trend-icon">remove</i></td>
 <td class="table-cell-padding">47.0</td>
-<td class="table-cell-padding value-with-indicator">47.8<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">47.8<span class="summary-indicator striver "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">54.7</td>
-<td class="table-cell-padding value-with-indicator">55.2<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">55.2<span class="summary-indicator front-runner "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">62.9</td>
-<td class="table-cell-padding value-with-indicator">62.1<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
+<td class="table-cell-padding value-with-indicator">62.1<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-down trend-icon">arrow_downward</i></td>
 <td class="table-cell-padding">60.8</td>
-<td class="table-cell-padding value-with-indicator">61.3<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">61.3<span class="summary-indicator front-runner "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">47.3</td>
-<td class="table-cell-padding value-with-indicator">47.3<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-gray-500 trend-icon">remove</i></td>
+<td class="table-cell-padding value-with-indicator">47.3<span class="summary-indicator striver "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-neutral trend-icon">remove</i></td>
 </tr>
-                                <tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
-                                    <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">5 Ghaziabad</td>
+                                <tr>
+                                    <td class="summary-table-district">5 Ghaziabad</td>
 <td class="table-cell-padding">73.8</td>
-<td class="table-cell-padding value-with-indicator">73.2<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
+<td class="table-cell-padding value-with-indicator">73.2<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-down trend-icon">arrow_downward</i></td>
 <td class="table-cell-padding">49.7</td>
-<td class="table-cell-padding value-with-indicator">50.1<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">50.1<span class="summary-indicator striver "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">59.4</td>
-<td class="table-cell-padding value-with-indicator">58.9<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
+<td class="table-cell-padding value-with-indicator">58.9<span class="summary-indicator front-runner "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-down trend-icon">arrow_downward</i></td>
 <td class="table-cell-padding">69.9</td>
-<td class="table-cell-padding value-with-indicator">70.6<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">70.6<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">51.5</td>
-<td class="table-cell-padding value-with-indicator">52.2<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">52.2<span class="summary-indicator front-runner "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">37.6</td>
-<td class="table-cell-padding value-with-indicator">37.0<span class="inline-block w-2 h-5 bg-contender ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
+<td class="table-cell-padding value-with-indicator">37.0<span class="summary-indicator contender "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-down trend-icon">arrow_downward</i></td>
 </tr>
-                                <tr class="bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-700">
-                                    <td class="py-4 px-6 font-medium text-gray-900 dark:text-white">6 Jhansi</td>
+                                <tr>
+                                    <td class="summary-table-district">6 Jhansi</td>
 <td class="table-cell-padding">73.3</td>
-<td class="table-cell-padding value-with-indicator">73.9<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">73.9<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">46.4</td>
-<td class="table-cell-padding value-with-indicator">45.9<span class="inline-block w-2 h-5 bg-striver ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-red-500 trend-icon">arrow_downward</i></td>
+<td class="table-cell-padding value-with-indicator">45.9<span class="summary-indicator striver "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-down trend-icon">arrow_downward</i></td>
 <td class="table-cell-padding">62.5</td>
-<td class="table-cell-padding value-with-indicator">63.1<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">63.1<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">74.0</td>
-<td class="table-cell-padding value-with-indicator">74.8<span class="inline-block w-2 h-5 bg-champion ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">74.8<span class="summary-indicator champion "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 <td class="table-cell-padding">53.7</td>
-<td class="table-cell-padding value-with-indicator">53.7<span class="inline-block w-2 h-5 bg-front-runner ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-gray-500 trend-icon">remove</i></td>
+<td class="table-cell-padding value-with-indicator">53.7<span class="summary-indicator front-runner "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-neutral trend-icon">remove</i></td>
 <td class="table-cell-padding">30.7</td>
-<td class="table-cell-padding value-with-indicator">31.3<span class="inline-block w-2 h-5 bg-contender ml-3 rounded-sm align-middle"></span></td>
-<td class="table-cell-padding"><i class="material-icons text-green-500 trend-icon">arrow_upward</i></td>
+<td class="table-cell-padding value-with-indicator">31.3<span class="summary-indicator contender "></span></td>
+<td class="table-cell-padding"><i class="material-icons trend-up trend-icon">arrow_upward</i></td>
 </tr>
 </tbody>
 </table>
@@ -465,6 +464,10 @@
 </main>
 </div>
 
+    <script src="js/utils.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/searchable-dropdown.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/back-to-top.js"></script>
 </body>
 </html>

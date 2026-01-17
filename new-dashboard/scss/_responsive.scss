@@ -1,0 +1,334 @@
+// Responsive Design
+@import 'variables';
+
+// Mobile and Tablet Breakpoints
+@media (max-width: 1200px) {
+    .content-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .ranking-lists-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .category-boxes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .charts-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .summary-table {
+        font-size: 12px;
+    }
+    
+    .summary-table thead th,
+    .summary-table tbody td {
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    // Mobile Header Layout
+    .top-header {
+        height: auto;
+        min-height: 90px;
+
+        .header-content {
+            flex-direction: column;
+            align-items: stretch;
+            padding: 10px 15px;
+            height: auto;
+            min-height: 90px;
+            position: relative;
+
+            .mobile-menu-toggle {
+                display: flex;
+                position: absolute;
+                left: 15px;
+                top: 10px;
+            }
+
+            .header-left {
+                order: 2;
+                justify-content: center;
+                width: 100%;
+                margin-top: 10px;
+
+                .logo .logo-img {
+                    height: 50px;
+                }
+            }
+
+            .header-center {
+                position: static;
+                transform: none;
+                order: 3;
+                width: 100%;
+                margin-top: 8px;
+                text-align: center;
+
+                .dashboard-title {
+                    font-size: 14px;
+                    line-height: 1.4;
+                }
+            }
+
+            .header-right {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                order: 1;
+            }
+        }
+    }
+
+    // Mobile Sidebar - Drawer Menu
+    .sidebar {
+        width: 260px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+
+        &.mobile-open {
+            transform: translateX(0);
+        }
+
+        .nav-text {
+            display: block !important;
+            opacity: 1 !important;
+            width: auto !important;
+        }
+
+        .nav-link {
+            justify-content: flex-start !important;
+            padding: 12px 25px !important;
+        }
+
+        .submenu-icon {
+            opacity: 1 !important;
+            width: auto !important;
+        }
+    }
+
+    // Sidebar Overlay for Mobile
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        &.active {
+            display: block;
+            opacity: 1;
+        }
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px 15px;
+        padding-top: 95px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .content-wrapper {
+        margin-top: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .filter-section {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        
+        &.cards-grid-5 {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // Department Layout Mobile Responsive
+    .department-layout {
+        flex-direction: column;
+        gap: 15px;
+        min-height: auto;
+    }
+
+    .department-tabs-sidebar {
+        width: 100%;
+        position: static;
+        max-height: none;
+        top: auto;
+    }
+
+    .department-content-wrapper {
+        width: 100%;
+    }
+
+    // Charts Grid Mobile Responsive
+    .charts-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    // Chart Card Mobile Responsive
+    .chart-card {
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .chart-container {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        min-width: 0;
+    }
+
+    .chart-body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        padding: 20px 15px;
+        box-sizing: border-box;
+    }
+
+    .chart-header {
+        padding: 16px 15px;
+        box-sizing: border-box;
+    }
+
+    .chart-title {
+        font-size: 13px;
+        line-height: 1.5;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    // Department Charts Section Mobile
+    .department-charts-section,
+    .entrepreneurship-charts-section,
+    .employment-charts-section,
+    .education-charts-section,
+    .livelihood-charts-section,
+    .mobility-charts-section {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    // Section Tabs Mobile
+    .section-tabs {
+        flex-wrap: wrap;
+        overflow-x: auto;
+    }
+
+    .section-tab-btn {
+        min-width: 120px;
+        font-size: 12px;
+        padding: 12px 16px;
+        flex: 1 1 auto;
+    }
+
+    .section-tabs-container {
+        overflow-x: hidden;
+    }
+
+    // Category boxes mobile
+    .category-boxes-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .category-box-body {
+        max-height: 400px;
+    }
+    
+    // Summary page mobile
+    .summary-legend {
+        gap: 12px;
+    }
+    
+    .summary-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .searchable-dropdown {
+        min-width: 100%;
+    }
+
+    // Multi-select dropdown mobile responsiveness
+    .custom-multi-select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .custom-multi-select .custom-multi-select-dropdown {
+        position: fixed !important;
+        left: 10px !important;
+        right: 10px !important;
+        width: calc(100vw - 20px) !important;
+        max-width: calc(100vw - 20px) !important;
+        transform: translateX(0) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-grid {
+        gap: 8px;
+    }
+    
+    .filter-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    
+    .summary-table {
+        font-size: 11px;
+    }
+    
+    .summary-table thead th,
+    .summary-table tbody td {
+        padding: 6px 8px;
+    }
+}
