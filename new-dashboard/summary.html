@@ -60,7 +60,7 @@
             </button>
             <div class="header-left">
                 <div class="logo">
-                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                    <img src="assets/images/logo.png" alt="Logo" class="logo-img">
 </div>
 </div>
             <div class="header-center">
@@ -262,6 +262,7 @@
                 <div class="filter-section">
                     <div class="filter-card">
                         <div class="filter-header">
+                            <h2 class="page-title-in-header">Summary</h2>
                             <h3 class="filter-title">
                                 <i class="ri-filter-3-line"></i>
                                 Filter Data
@@ -269,6 +270,20 @@
                         </div>
                         <div class="filter-body">
                             <div class="filter-grid">
+                                <div class="filter-item">
+                                    <label for="yearFilter" class="filter-label">
+                                        <i class="ri-calendar-line"></i>
+                                        Year:
+                                    </label>
+                                    <select id="yearFilter" class="filter-select">
+                                        <option value="">All Years</option>
+                                        <option value="2024" selected>2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
                                 <div class="filter-item">
                                     <label for="performance-filter" class="filter-label">
                                         <i class="ri-bar-chart-line"></i>
@@ -301,13 +316,13 @@
                         <table class="w-full text-sm text-left text-gray-600 dark:text-gray-400 whitespace-nowrap">
                             <thead class="text-xs text-gray-800 dark:text-gray-200 uppercase bg-gray-50 dark:bg-gray-900">
 <tr>
-                                    <th class="py-3 px-6" rowspan="2" scope="col">District <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Index Score <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Entrepreneurship <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Employment <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Education &amp; Skilling <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Livelihood <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
-                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Mobility <i class="material-icons align-middle text-gray-500 dark:text-gray-400">info</i></th>
+                                    <th class="py-3 px-6" rowspan="2" scope="col">District</th>
+                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Index Score</th>
+                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Entrepreneurship</th>
+                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Employment</th>
+                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Education &amp; Skilling</th>
+                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Livelihood</th>
+                                    <th class="py-3 px-6 text-center" colspan="3" scope="col">Mobility</th>
 </tr>
                                 <tr class="text-xs text-gray-800 dark:text-gray-200 uppercase bg-gray-50 dark:bg-gray-900">
 <th class="py-2 px-3 font-medium">2024</th>

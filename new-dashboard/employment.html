@@ -20,7 +20,7 @@
             </button>
             <div class="header-left">
                 <div class="logo">
-                    <img src="../assets/images/logo.png" alt="Logo" class="logo-img">
+                    <img src="assets/images/logo.png" alt="Logo" class="logo-img">
                 </div>
             </div>
             <div class="header-center">
@@ -195,6 +195,7 @@
                 <div class="filter-section">
                     <div class="filter-card">
                         <div class="filter-header">
+                            <h2 class="page-title-in-header">Employment</h2>
                             <h3 class="filter-title">
                                 <i class="ri-filter-3-line"></i>
                                 Filter Data
@@ -244,6 +245,330 @@
                                         <option value="saharanpur-division">Saharanpur Division</option>
                                         <option value="varanasi-division">Varanasi Division</option>
                                     </select>
+                                </div>
+                                <div class="filter-item">
+                                    <label class="filter-label">
+                                        <i class="ri-map-pin-line"></i>
+                                        Districts:
+                                    </label>
+                                    <div class="custom-multi-select">
+                                        <button type="button" class="custom-multi-select-trigger" id="districtMultiSelectBtn">
+                                            <span class="multi-select-placeholder">Select districts...</span>
+                                            <span class="selected-count" id="selectedDistrictsCount" style="display: none;"></span>
+                                            <i class="ri-arrow-down-s-line multi-select-arrow"></i>
+                                        </button>
+                                        <div class="custom-multi-select-dropdown" id="districtMultiSelectDropdown">
+                                            <div class="multi-select-search">
+                                                <input type="text" class="multi-select-search-input" id="districtSearch" placeholder="Search districts...">
+                                            </div>
+                                            <div class="multi-select-options" id="districtMultiSelectOptions">
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="agra" data-district="Agra">
+                                                    <span>Agra</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="aligarh" data-district="Aligarh">
+                                                    <span>Aligarh</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="ambedkar nagar" data-district="Ambedkar Nagar">
+                                                    <span>Ambedkar Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="amethi" data-district="Amethi">
+                                                    <span>Amethi</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="amroha" data-district="Amroha">
+                                                    <span>Amroha</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="auraiya" data-district="Auraiya">
+                                                    <span>Auraiya</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="ayodhya" data-district="Ayodhya">
+                                                    <span>Ayodhya</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="azamgarh" data-district="Azamgarh">
+                                                    <span>Azamgarh</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="badaun" data-district="Badaun">
+                                                    <span>Badaun</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="baghpat" data-district="Baghpat">
+                                                    <span>Baghpat</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="bahraich" data-district="Bahraich">
+                                                    <span>Bahraich</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="ballia" data-district="Ballia">
+                                                    <span>Ballia</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="balrampur" data-district="Balrampur">
+                                                    <span>Balrampur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="banda" data-district="Banda">
+                                                    <span>Banda</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="barabanki" data-district="Barabanki">
+                                                    <span>Barabanki</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="bareilly" data-district="Bareilly">
+                                                    <span>Bareilly</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="basti" data-district="Basti">
+                                                    <span>Basti</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="bhadohi" data-district="Bhadohi">
+                                                    <span>Bhadohi</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="bijnor" data-district="Bijnor">
+                                                    <span>Bijnor</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="bulandshahar" data-district="Bulandshahar">
+                                                    <span>Bulandshahar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="chandauli" data-district="Chandauli">
+                                                    <span>Chandauli</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="chitrakoot" data-district="Chitrakoot">
+                                                    <span>Chitrakoot</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="deoria" data-district="Deoria">
+                                                    <span>Deoria</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="etah" data-district="Etah">
+                                                    <span>Etah</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="etawah" data-district="Etawah">
+                                                    <span>Etawah</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="farrukhabad" data-district="Farrukhabad">
+                                                    <span>Farrukhabad</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="fatehpur" data-district="Fatehpur">
+                                                    <span>Fatehpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="firozabad" data-district="Firozabad">
+                                                    <span>Firozabad</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="gautam buddha nagar" data-district="Gautam Buddha Nagar">
+                                                    <span>Gautam Buddha Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="ghaziabad" data-district="Ghaziabad">
+                                                    <span>Ghaziabad</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="ghazipur" data-district="Ghazipur">
+                                                    <span>Ghazipur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="gonda" data-district="Gonda">
+                                                    <span>Gonda</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="gorakhpur" data-district="Gorakhpur">
+                                                    <span>Gorakhpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="hamirpur" data-district="Hamirpur">
+                                                    <span>Hamirpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="hapur" data-district="Hapur">
+                                                    <span>Hapur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="hardoi" data-district="Hardoi">
+                                                    <span>Hardoi</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="hathras" data-district="Hathras">
+                                                    <span>Hathras</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="jalaun" data-district="Jalaun">
+                                                    <span>Jalaun</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="jaunpur" data-district="Jaunpur">
+                                                    <span>Jaunpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="jhansi" data-district="Jhansi">
+                                                    <span>Jhansi</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kannauj" data-district="Kannauj">
+                                                    <span>Kannauj</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kanpur dehat" data-district="Kanpur Dehat">
+                                                    <span>Kanpur Dehat</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kanpur nagar" data-district="Kanpur Nagar">
+                                                    <span>Kanpur Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kasganj" data-district="Kasganj">
+                                                    <span>Kasganj</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kaushambi" data-district="Kaushambi">
+                                                    <span>Kaushambi</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="kushi nagar" data-district="Kushi Nagar">
+                                                    <span>Kushi Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="lakhimpur kheri" data-district="Lakhimpur Kheri">
+                                                    <span>Lakhimpur Kheri</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="lalitpur" data-district="Lalitpur">
+                                                    <span>Lalitpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="lucknow" data-district="Lucknow">
+                                                    <span>Lucknow</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mahoba" data-district="Mahoba">
+                                                    <span>Mahoba</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mahrajganj" data-district="Mahrajganj">
+                                                    <span>Mahrajganj</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mainpuri" data-district="Mainpuri">
+                                                    <span>Mainpuri</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mathura" data-district="Mathura">
+                                                    <span>Mathura</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mau" data-district="Mau">
+                                                    <span>Mau</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="meerut" data-district="Meerut">
+                                                    <span>Meerut</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="mirzapur" data-district="Mirzapur">
+                                                    <span>Mirzapur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="moradabad" data-district="Moradabad">
+                                                    <span>Moradabad</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="muzaffarnagar" data-district="Muzaffarnagar">
+                                                    <span>Muzaffarnagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="pilibhit" data-district="Pilibhit">
+                                                    <span>Pilibhit</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="pratapgarh" data-district="Pratapgarh">
+                                                    <span>Pratapgarh</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="prayagraj" data-district="Prayagraj">
+                                                    <span>Prayagraj</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="raebareli" data-district="Raebareli">
+                                                    <span>Raebareli</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="rampur" data-district="Rampur">
+                                                    <span>Rampur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="saharanpur" data-district="Saharanpur">
+                                                    <span>Saharanpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="sambhal" data-district="Sambhal">
+                                                    <span>Sambhal</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="sant kabir nagar" data-district="Sant Kabir Nagar">
+                                                    <span>Sant Kabir Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="shahjahanpur" data-district="Shahjahanpur">
+                                                    <span>Shahjahanpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="shamli" data-district="Shamli">
+                                                    <span>Shamli</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="shrawasti" data-district="Shrawasti">
+                                                    <span>Shrawasti</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="siddharth nagar" data-district="Siddharth Nagar">
+                                                    <span>Siddharth Nagar</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="sitapur" data-district="Sitapur">
+                                                    <span>Sitapur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="sonbhadra" data-district="Sonbhadra">
+                                                    <span>Sonbhadra</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="sultanpur" data-district="Sultanpur">
+                                                    <span>Sultanpur</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="unnao" data-district="Unnao">
+                                                    <span>Unnao</span>
+                                                </label>
+                                                <label class="multi-select-option">
+                                                    <input type="checkbox" value="varanasi" data-district="Varanasi">
+                                                    <span>Varanasi</span>
+                                                </label>
+                                            </div>
+                                            <div class="multi-select-actions">
+                                                <button type="button" class="multi-select-select-all" id="selectAllDistricts">Select All</button>
+                                                <button type="button" class="multi-select-clear-all" id="clearAllDistricts">Clear All</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="filter-item">
                                     <button class="filter-reset-btn" id="resetFilter">

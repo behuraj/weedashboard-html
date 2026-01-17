@@ -44,35 +44,89 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
 
     // Auto-highlight active menu item based on current page
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    
-    // Find and highlight the matching nav link
-    const allNavLinks = document.querySelectorAll('.nav-link:not(.submenu-toggle), .submenu-link');
-    allNavLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
-        if (linkHref && (linkHref === currentPage || linkHref.includes(currentPage))) {
-            // Remove active class from all links and nav-items
-            document.querySelectorAll('.nav-link, .submenu-link').forEach(l => l.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+    function highlightActiveMenu() {
+        try {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             
-            // Add active class to current link
-            link.classList.add('active');
+            // Find and highlight the matching nav link
+            const allNavLinks = document.querySelectorAll('.nav-link:not(.submenu-toggle), .submenu-link');
             
-            // Also add active class to parent nav-item if it exists
-            const navItem = link.closest('.nav-item');
-            if (navItem) {
-                navItem.classList.add('active');
+            if (allNavLinks.length === 0) {
+                // If links not found yet, retry after a short delay
+                setTimeout(highlightActiveMenu, 100);
+                return;
             }
             
-            // If it's a submenu link, open the parent submenu
-            const submenuItem = link.closest('.submenu-item');
-            if (submenuItem) {
-                const parentNavItem = submenuItem.closest('.nav-item.has-submenu');
-                if (parentNavItem) {
-                    parentNavItem.classList.add('submenu-open');
+            let found = false;
+            const activeLinks = [];
+            const activeNavItems = [];
+            
+            // First pass: find matching links
+            allNavLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref) {
+                    // Normalize the href and current page for comparison
+                    const linkPage = linkHref.split('/').pop() || linkHref;
+                    const pageName = currentPage.split('/').pop() || currentPage;
+                    
+                    // Check multiple matching conditions
+                    const matches = linkPage === pageName || 
+                                  linkPage === currentPage ||
+                                  (linkPage.endsWith('.html') && pageName.endsWith('.html') && linkPage === pageName) ||
+                                  (!linkPage.endsWith('.html') && !pageName.endsWith('.html') && linkPage === pageName.replace('.html', '')) ||
+                                  (linkPage.replace('.html', '') === pageName.replace('.html', ''));
+                    
+                    if (matches) {
+                        found = true;
+                        activeLinks.push(link);
+                        
+                        // Also add active class to parent nav-item if it exists
+                        const navItem = link.closest('.nav-item');
+                        if (navItem) {
+                            activeNavItems.push(navItem);
+                        }
+                        
+                        // If it's a submenu link, open the parent submenu
+                        const submenuItem = link.closest('.submenu-item');
+                        if (submenuItem) {
+                            const parentNavItem = submenuItem.closest('.nav-item.has-submenu');
+                            if (parentNavItem) {
+                                parentNavItem.classList.add('submenu-open');
+                            }
+                        }
+                    }
                 }
+            });
+            
+            // Only remove active classes if we found matches
+            if (found) {
+                // Remove active class from all links and nav-items first
+                document.querySelectorAll('.nav-link, .submenu-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                
+                // Add active classes to matching items
+                activeLinks.forEach(link => link.classList.add('active'));
+                activeNavItems.forEach(item => item.classList.add('active'));
             }
+            
+            // Debug log if no match found
+            if (!found) {
+                console.log('Menu highlighting: No match found for', currentPage);
+            }
+        } catch (error) {
+            console.error('Error highlighting active menu:', error);
         }
+    }
+    
+    // Run multiple times to ensure it executes after all scripts
+    highlightActiveMenu();
+    setTimeout(highlightActiveMenu, 100);
+    setTimeout(highlightActiveMenu, 300);
+    setTimeout(highlightActiveMenu, 500);
+    
+    // Also run on window load as final fallback
+    window.addEventListener('load', () => {
+        setTimeout(highlightActiveMenu, 100);
     });
 
     // Sidebar hover effect - regular nav links (not submenu toggles)
